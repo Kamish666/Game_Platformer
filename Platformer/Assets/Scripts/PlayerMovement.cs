@@ -7,10 +7,13 @@ public class PlayerMovement : MonoBehaviour
 {
     [Range (0f, 10f)]
     [SerializeField] private float _spead;
+    [Range(0, 50)]
+    [SerializeField] private float _jumpPower;
     [SerializeField] private LayerMask _platformLayer;
     private Rigidbody2D _rigidbody;
     private BoxCollider2D _collider; 
     private Vector3 _scale;
+    private float _horizpntalInput;
 
     private void Awake()
     {
@@ -22,14 +25,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        float horizpntalInput = Input.GetAxis("Horizontal");
-        if (horizpntalInput != 0)
+        _horizpntalInput = Input.GetAxis("Horizontal");
+        if (_horizpntalInput != 0)
         {
-            Run(horizpntalInput);
-            FlipSprite(horizpntalInput);
+            Run(_horizpntalInput);
+            FlipSprite(_horizpntalInput);
         }
 
-        if (Input.GetKey(KeyCode.Space) && isPlatform())
+        if (Input.GetKey(KeyCode.Space))
             Jump();
 
     }
@@ -38,7 +41,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _spead);
+        if (isGround())
+        {
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpPower);
+        }
+        else if (onWal() && !isGround())
+        {
+            if (_horizpntalInput == 0)
+            {
+                _rigidbody.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 10, 0);
+                transform.localScale = new Vector3(-Mathf.Sign(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+            else
+                _rigidbody.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, 6);
+        }
+
 
     }
 
@@ -50,12 +67,15 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1 * _scale.x, _scale.y, 1);
     }
 
-    private bool isPlatform()
+    private bool isGround()
     {
         RaycastHit2D ray = Physics2D.BoxCast(_collider.bounds.center, _collider.bounds.size, 0, Vector2.down, 0.1f, _platformLayer);
-        if (ray.collider != null)
-            return true;
-        ray = Physics2D.BoxCast(_collider.bounds.center, _collider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, _platformLayer);
+        return ray.collider != null;
+    }
+
+    private bool onWal()
+    {
+        RaycastHit2D ray = Physics2D.BoxCast(_collider.bounds.center, _collider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, _platformLayer);
         return ray.collider != null;
     }
 }

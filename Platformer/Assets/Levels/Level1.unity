@@ -679,6 +679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spead: 10
+  _jumpPower: 12
   _platformLayer:
     serializedVersion: 2
     m_Bits: 256
