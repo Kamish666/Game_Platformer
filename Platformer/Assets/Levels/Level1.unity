@@ -809,8 +809,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8532a2fb6d1742847baff63f642e10b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 8.41
-  _jumpPower: 12
+  _speed: 0.79
+  _jumpPower: 6.8
   _platformLayer:
     serializedVersion: 2
     m_Bits: 256

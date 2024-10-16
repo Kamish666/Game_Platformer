@@ -25,13 +25,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
         _horizontalInput = Input.GetAxis("Horizontal");
         if (_horizontalInput != 0)
         {
-            Run(_horizontalInput);
-            FlipSprite(_horizontalInput);
+            Run();
+            FlipSprite();
         }
 
         if (Input.GetKey(KeyCode.Space))
@@ -48,15 +48,17 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (onWall() && !isGround())
         {
-            if (_horizontalInput == 0)
+            if (_horizontalInput == 0 || _horizontalInput == Mathf.Sign(transform.localScale.x))
             {
+                print("¬ишу на стене");
                 _rigidbody.velocity = Vector2.zero;
                 _rigidbody.gravityScale = 0;
             }
             else if (_horizontalInput != Mathf.Sign(transform.localScale.x))
             {
-                _rigidbody.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 10, 0);
+                print("я прыгаю");
                 _rigidbody.gravityScale = _gravityScale;
+                _rigidbody.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 10, 10);
                 transform.localScale = new Vector3(-transform.localScale.x, _scale.y, 1);
             }
 
@@ -65,13 +67,16 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.gravityScale = _gravityScale;
     }
 
-    private void Run(float horizpntalInput) => _rigidbody.velocity = new Vector2(horizpntalInput * _speed, _rigidbody.velocity.y);
-
-    private void FlipSprite(float horizontalInput)
+    private void Run()
     {
-        if (horizontalInput > 0)
+        _rigidbody.AddForce(new Vector2(_horizontalInput, _rigidbody.velocity.y).normalized * _speed, ForceMode2D.Impulse); 
+    }
+
+    private void FlipSprite()
+    {
+        if (_horizontalInput > 0)
             transform.localScale = _scale;
-        else if (horizontalInput < 0)
+        else if (_horizontalInput < 0)
             transform.localScale = new Vector3(-1 * _scale.x, _scale.y, 1);
     }
 
