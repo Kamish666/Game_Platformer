@@ -28,48 +28,51 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         _horizontalInput = Input.GetAxis("Horizontal");
-        if (_horizontalInput != 0)
-        {
-            Run();
-            FlipSprite();
-        }
 
         if (Input.GetKey(KeyCode.Space))
             Jump();
         else
             _rigidbody.gravityScale = _gravityScale;
+
+        if (_horizontalInput != 0)
+        {
+            RunAndFly();
+            FlipSprite();
+        }
+
+
     }
 
     private void Jump()
     {
-        if (isGround())
+        if (IsGround())
         {
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpPower);
         }
-        else if (onWall() && !isGround())
+        else if (OnWall() && !IsGround())
         {
             if (_horizontalInput == 0 || _horizontalInput == Mathf.Sign(transform.localScale.x))
             {
-                print("¬ишу на стене");
+                Debug.Log("¬ишу на стене");
                 _rigidbody.velocity = Vector2.zero;
                 _rigidbody.gravityScale = 0;
             }
-            else if (_horizontalInput != Mathf.Sign(transform.localScale.x))
+            else if (_horizontalInput != 0 && Mathf.Sign(_horizontalInput) != Mathf.Sign(transform.localScale.x))
             {
-                print("я прыгаю");
+                Debug.Log("я прыгаю");
                 _rigidbody.gravityScale = _gravityScale;
-                _rigidbody.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 10, 10);
                 transform.localScale = new Vector3(-transform.localScale.x, _scale.y, 1);
+                _rigidbody.velocity = new Vector2(Mathf.Sign(transform.localScale.x) * 10, 10);
             }
-
+    
         }
         else
             _rigidbody.gravityScale = _gravityScale;
     }
 
-    private void Run()
+    private void RunAndFly()
     {
-        _rigidbody.AddForce(new Vector2(_horizontalInput, _rigidbody.velocity.y).normalized * _speed, ForceMode2D.Impulse); 
+        _rigidbody.velocity = new Vector2(_horizontalInput * _speed, _rigidbody.velocity.y); 
     }
 
     private void FlipSprite()
@@ -80,15 +83,15 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1 * _scale.x, _scale.y, 1);
     }
 
-    private bool isGround()
+    private bool IsGround()
     {
         RaycastHit2D ray = Physics2D.BoxCast(_collider.bounds.center, _collider.bounds.size, 0, Vector2.down, 0.1f, _platformLayer);
         return ray.collider != null;
     }
 
-    private bool onWall()
+    private bool OnWall()
     {
-        RaycastHit2D ray = Physics2D.BoxCast(_collider.bounds.center, _collider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, _platformLayer);
+        RaycastHit2D ray = Physics2D.BoxCast(_collider.bounds.center, _collider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.01f, _platformLayer);
         return ray.collider != null;
     }
 }
