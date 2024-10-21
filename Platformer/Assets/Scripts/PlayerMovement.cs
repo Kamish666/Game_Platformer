@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private float _gravityScale;
     private float _horizontalInput;
 
-    private void Awake()
+    private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<BoxCollider2D>();
@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         if (IsGround())
         {
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpPower);
+            //_rigidbody.AddForce(Vector2.up * _jumpPower);
         }
         else if (OnWall() && !IsGround())
         {
@@ -60,9 +61,11 @@ public class PlayerMovement : MonoBehaviour
             else if (_horizontalInput != 0 && Mathf.Sign(_horizontalInput) != Mathf.Sign(transform.localScale.x))
             {
                 Debug.Log("Я прыгаю");
+                _rigidbody.velocity = Vector2.zero;
                 _rigidbody.gravityScale = _gravityScale;
                 transform.localScale = new Vector3(-transform.localScale.x, _scale.y, 1);
                 _rigidbody.velocity = new Vector2(Mathf.Sign(transform.localScale.x) * 10, 10);
+                //_rigidbody.AddForce(new Vector2(Mathf.Sign(transform.localScale.x) * 10, 10));
             }
     
         }
@@ -72,6 +75,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void RunAndFly()
     {
+        //if (Mathf.Abs(_rigidbody.velocity.x) < 4)
+        //    _rigidbody.AddForce( new Vector2(_horizontalInput * _speed, 0));
         _rigidbody.velocity = new Vector2(_horizontalInput * _speed, _rigidbody.velocity.y); 
     }
 
