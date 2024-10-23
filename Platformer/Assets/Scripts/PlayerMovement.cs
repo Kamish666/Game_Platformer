@@ -88,6 +88,14 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1 * _scale.x, _scale.y, 1);
     }
 
+/*    private void FlipSprite()
+    {
+        if (_horizontalInput > 0)
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        else if (_horizontalInput < 0)
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+    }*/
+
     private bool IsGround()
     {
         RaycastHit2D ray = Physics2D.BoxCast(_collider.bounds.center, _collider.bounds.size, 0, Vector2.down, 0.1f, _platformLayer);
