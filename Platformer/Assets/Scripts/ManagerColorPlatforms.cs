@@ -71,6 +71,13 @@ public class ManagerColorPlatforms : MonoBehaviour
                 {
                     spriteRenderer.transform.SetParent(colorBlocks[textureName].transform);
                     spriteRenderer.gameObject.layer = 8;
+                    
+                    // ѕроверка наличи€ BoxCollider2D и добавление, если его нет
+                    BoxCollider2D boxCollider = spriteRenderer.GetComponent<BoxCollider2D>();
+                    if (boxCollider == null)
+                    {
+                        boxCollider = spriteRenderer.gameObject.AddComponent<BoxCollider2D>();
+                    }
                 }
             }
         }
