@@ -14,16 +14,26 @@ public class HealthUI : MonoBehaviour
 
     private void Start()
     {
+        _objectHealt.GetDamage += UpdateHealthUI;
+
         _maxHealth = _objectHealt.MaxHealth;
-        _totalHealthBar.fillAmount = _maxHealth / 10;
+
+/*        float amountHealth = _maxHealth / 10;
+
+        _totalHealthBar.fillAmount = amountHealth;
+        _currentHealthBar.fillAmount = amountHealth;*/
+        _totalHealthBar.fillAmount = 1;
+        _currentHealthBar.fillAmount = 1;
+
+
         _textHealth.text = $"HP: {_maxHealth}/{_maxHealth}";
     }
 
-    private void Update()
+
+    public void UpdateHealthUI(float health)
     {
-        _currentHealthBar.fillAmount = _objectHealt.CurrentHealth / 10;
-        _textHealth.text = $"HP: {_objectHealt.CurrentHealth}/{_maxHealth}";
-
+/*        _currentHealthBar.fillAmount = health / 10;*/
+        _currentHealthBar.fillAmount = health / _maxHealth;
+        _textHealth.text = $"HP: {health}/{_maxHealth}";
     }
-
 }
