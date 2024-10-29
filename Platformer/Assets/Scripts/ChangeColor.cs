@@ -14,6 +14,8 @@ public class ChangeColor : MonoBehaviour
         _colorBlocs = new GameObject[] { GameObject.Find("GreenBlocks"), GameObject.Find("BlueBlocks"), GameObject.Find("RedBlocks") };
 
         UpdateColorVisibility();
+
+        FindObjectOfType<PlayerMovement>().GetComponent<Health>().OnDie += DeactiveScript;
     }
 
     private void Update()
@@ -41,5 +43,10 @@ public class ChangeColor : MonoBehaviour
         {
             _colorBlocs[i].SetActive(i == _currentColorIndex);
         }
+    }
+
+    private void DeactiveScript()
+    {
+        GetComponent<ChangeColor>().enabled = false;
     }
 }

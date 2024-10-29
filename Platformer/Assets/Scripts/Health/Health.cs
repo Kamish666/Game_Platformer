@@ -1,26 +1,44 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Health : MonoBehaviour
+
+
+public delegate void Damage(float damage);
+public delegate void Die();
+
+public interface IHealth
+{
+
+    public event Damage GetDamage;
+    public event Die OnDie;
+
+    public float MaxHealth { get; }
+    public float CurrentHealth { get; }
+}
+
+public class Health : MonoBehaviour, IHealth
 {
 
     [SerializeField] private float _maxHealth;
-    public delegate void Damage(float damage);
-    public Damage GetDamage;
+
+    public event Damage GetDamage;
+    public event Die OnDie;
+
     public float MaxHealth => _maxHealth;
     public float CurrentHealth { get; private set; }
 
+
     void Start()
     {
-        CurrentHealth = _maxHealth;
-    }
+        CurrentHealth = MaxHealth;    }
 
 
     public void TakeDamage(float damage)
     {
-        CurrentHealth = Mathf.Clamp(CurrentHealth - damage, 0, _maxHealth);
+        CurrentHealth = Mathf.Clamp(CurrentHealth - damage, 0, MaxHealth);
         GetDamage?.Invoke(CurrentHealth);
         if (CurrentHealth > 0)
         {
@@ -29,14 +47,7 @@ public class Health : MonoBehaviour
         else
         {
             // anim.SetTrigger("die");
-            GetComponent<PlayerMovement>().enabled = false;
-            StartCoroutine(HandleDeath());
+            OnDie?.Invoke();
         }
-    }
-
-    private IEnumerator HandleDeath()
-    {
-        yield return new WaitForSeconds(5f); // ∆дем 5 секунд
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // ѕерезапускаем текущую сцену
     }
 }

@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         _collider = GetComponent<BoxCollider2D>();
         _scale = transform.localScale;
         _gravityScale = _rigidbody.gravityScale;
+        GetComponent<Health>().OnDie += DeactiveScript;
     }
 
 
@@ -106,5 +107,10 @@ public class PlayerMovement : MonoBehaviour
     {
         RaycastHit2D ray = Physics2D.BoxCast(_collider.bounds.center, _collider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.01f, _platformLayer);
         return ray.collider != null;
+    }
+
+    private void DeactiveScript()
+    {
+        GetComponent<PlayerMovement>().enabled = false;
     }
 }
