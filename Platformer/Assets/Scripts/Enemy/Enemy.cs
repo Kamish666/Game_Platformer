@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Range(0, 10)]
     [SerializeField] private float _damage;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -14,7 +15,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<PlayerMovement>() != null)
         {
