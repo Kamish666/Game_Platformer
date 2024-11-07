@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     [Range(0, 10)]
     [SerializeField] private float _damage;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<PlayerMovement>() != null)
         {
@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    protected void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<PlayerMovement>() != null)
         {

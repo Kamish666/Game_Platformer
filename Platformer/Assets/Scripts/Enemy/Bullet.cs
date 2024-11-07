@@ -25,9 +25,10 @@ public class Bullet : Enemy
         Destroy(gameObject);
     }
 
-    protected override void OnCollisionEnter2D(Collision2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
-        base.OnCollisionEnter2D(collision);
+        //Debug.Log("Я ребенок");
+        base.OnTriggerEnter2D (collision);
         Destroy(gameObject);
     }
 }
