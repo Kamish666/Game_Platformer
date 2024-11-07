@@ -7,7 +7,12 @@ public class ChangeColor : MonoBehaviour
 
     private int _currentColorIndex = 0; // 0: Зеленый, 1: Синий, 2: Красный
 
+    private bool[] _activeColorsM = { true, false, false}; // 0: Зеленый, 1: Синий, 2: Красный
+
     private GameObject[] _colorBlocs;
+
+    public delegate void Colors(bool green, bool blue, bool red);
+    public event Colors enemyColors;
 
     private void Start()
     {
@@ -41,8 +46,11 @@ public class ChangeColor : MonoBehaviour
     {
         for (int i = 0; i < _colorBlocs.Length; i++)
         {
-            _colorBlocs[i].SetActive(i == _currentColorIndex);
+            bool acitiv = i == _currentColorIndex;
+            _colorBlocs[i].SetActive(acitiv);
+            _activeColorsM[i] = acitiv;
         }
+        enemyColors?.Invoke(_activeColorsM[0], _activeColorsM[1], _activeColorsM[2]);
     }
 
     private void DeactiveScript()
