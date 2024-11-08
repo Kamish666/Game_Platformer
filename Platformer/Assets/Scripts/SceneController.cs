@@ -4,7 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    private GameObject _player;
+    public delegate void LevelAction();
+    public event LevelAction OnLevelRestart;
+    public event LevelAction OnLevelExit;
 
     private void Start()
     {
@@ -15,6 +17,7 @@ public class SceneController : MonoBehaviour
 
     public void RestartScene()
     {
+        OnLevelRestart?.Invoke();
         StartCoroutine(RestartSceneCoroutine());
     }
 
@@ -31,6 +34,8 @@ public class SceneController : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
 
+        OnLevelExit?.Invoke();
+
         // Проверка, существует ли следующая сцена
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
@@ -41,6 +46,11 @@ public class SceneController : MonoBehaviour
             SceneManager.LoadScene(0); // Загрузка главное меню
         }
     }
+
+/*    public void ExitLevel()
+    {
+        OnLevelExit?.Invoke();
+    }*/
 
 }
  

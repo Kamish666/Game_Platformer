@@ -30,10 +30,13 @@ public class Health : MonoBehaviour, IHealth
     public float MaxHealth => _maxHealth;
     public float CurrentHealth { get; private set; }
 
+    private bool _isDied = false;
+
 
     void Start()
     {
-        CurrentHealth = MaxHealth;    }
+        CurrentHealth = MaxHealth;
+    }
 
 
     public void TakeDamage(float damage)
@@ -44,8 +47,9 @@ public class Health : MonoBehaviour, IHealth
         {
             // anim.SetTrigger("hurt");
         }
-        else
+        else if (!_isDied)
         {
+            _isDied = true;
             // anim.SetTrigger("die");
             OnDie?.Invoke();
         }
