@@ -10,18 +10,18 @@ public class SceneController : MonoBehaviour
 
     private void Start()
     {
-        FindObjectOfType<PlayerMovement>().GetComponent<Health>().OnDie += RestartScene;
+        FindObjectOfType<PlayerMovement>().GetComponent<Health>().OnDie += RestartSceneAfterDied;
 
 
     }
 
-    public void RestartScene()
+    private void RestartSceneAfterDied()
     {
         OnLevelRestart?.Invoke();
         StartCoroutine(RestartSceneCoroutine());
     }
 
-    public static IEnumerator RestartSceneCoroutine()
+    private static IEnumerator RestartSceneCoroutine()
     {
         yield return new WaitForSeconds(3f); // ∆дем n секунд
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // ѕерезапускаем текущую сцену
@@ -47,10 +47,18 @@ public class SceneController : MonoBehaviour
         }
     }
 
-/*    public void ExitLevel()
+    public void LoadMainMenu()
     {
+        Time.timeScale = 1f;
         OnLevelExit?.Invoke();
-    }*/
+        SceneManager.LoadScene(0);
+    }
 
+    public void RestartScene()
+    {
+        Time.timeScale = 1f;
+        OnLevelRestart?.Invoke();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
  
