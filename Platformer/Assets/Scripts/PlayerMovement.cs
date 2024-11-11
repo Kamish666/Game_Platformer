@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _scale;
     private float _gravityScale;
     private float _horizontalInput;
+    private bool _jumpInput;
+
+
+    public InputActionReference move;
+    public InputActionReference jump;
+
 
     private void Start()
     {
@@ -28,9 +35,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _horizontalInput = Input.GetAxis("Horizontal");
+        _horizontalInput = move.action.ReadValue<float>();
+        _jumpInput = jump.action.IsPressed();
 
-        if (Input.GetKey(KeyCode.Space))
+        //_jumpInput = Input.GetKey(KeyCode.Space);
+        //_horizontalInput = Input.GetAxis("Horizontal"); 
+
+        Debug.Log(_horizontalInput);
+
+        if (_jumpInput)
             Jump();
         else
             _rigidbody.gravityScale = _gravityScale;

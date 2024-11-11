@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ChangeColor : MonoBehaviour
 {
+
+    public InputActionReference changeColor;
+    private float _changeInput;
+
+
 
     private int _currentColorIndex = 0; // 0: Зеленый, 1: Синий, 2: Красный
 
@@ -25,12 +31,14 @@ public class ChangeColor : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Левая кнопка мыши
+        _changeInput = changeColor.action.ReadValue<float>();
+
+        if (_changeInput == -1) 
         {
             ChangeColorIndex(1);
         }
 
-        if (Input.GetMouseButtonDown(1)) // Правая кнопка мыши
+        if (_changeInput == 1) 
         {
             ChangeColorIndex(-1);
         }

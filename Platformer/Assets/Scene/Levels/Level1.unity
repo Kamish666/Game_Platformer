@@ -5056,6 +5056,7 @@ GameObject:
   - component: {fileID: 1573137419}
   - component: {fileID: 1573137418}
   - component: {fileID: 1573137423}
+  - component: {fileID: 1573137426}
   - component: {fileID: 1573137425}
   - component: {fileID: 1573137424}
   - component: {fileID: 1573137422}
@@ -5222,6 +5223,8 @@ MonoBehaviour:
   _platformLayer:
     serializedVersion: 2
     m_Bits: 256
+  move: {fileID: -6813400332657366267, guid: e8308c682d47d7849b3519a14d2128ee, type: 3}
+  jump: {fileID: -9128473724114582487, guid: e8308c682d47d7849b3519a14d2128ee, type: 3}
 --- !u!95 &1573137423
 Animator:
   serializedVersion: 5
@@ -5268,6 +5271,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d576801acad8c5d498d957c9eaddc1dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeColor: {fileID: -6130477321901284737, guid: e8308c682d47d7849b3519a14d2128ee, type: 3}
+--- !u!114 &1573137426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573137417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: e8308c682d47d7849b3519a14d2128ee, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keybord
+  m_DefaultActionMap: Gameplay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1577091439
 GameObject:
   m_ObjectHideFlags: 0
