@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private float _gravityScale;
     private float _horizontalInput;
     private bool _jumpInput;
+    [SerializeField] private float _smoothInputSpeed = 10f; // скорость сглаживания
 
 
     public InputActionReference move;
@@ -35,13 +36,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _horizontalInput = move.action.ReadValue<float>();
+        float targetInput = move.action.ReadValue<float>();
+
+        // Применяем сглаживание
+        _horizontalInput = Mathf.Lerp(_horizontalInput, targetInput, Time.deltaTime * _smoothInputSpeed);
+
+        //Debug.Log($"_horizontalInput: {Mathf.Sign(_horizontalInput)}     Mathf.Sign(transform.localScale.x) : {Mathf.Sign(transform.localScale.x)}");
+
+
+        //_horizontalInput = move.action.ReadValue<float>();
         _jumpInput = jump.action.IsPressed();
+
 
         //_jumpInput = Input.GetKey(KeyCode.Space);
         //_horizontalInput = Input.GetAxis("Horizontal"); 
 
-        Debug.Log(_horizontalInput);
 
         if (_jumpInput)
             Jump();
@@ -66,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (OnWall() && !IsGround())
         {
-            if (_horizontalInput == 0 || _horizontalInput == Mathf.Sign(transform.localScale.x))
+            if (_horizontalInput == 0 || Mathf.Sign(_horizontalInput) == Mathf.Sign(transform.localScale.x))
             {
                 Debug.Log("Вишу на стене");
                 _rigidbody.velocity = Vector2.zero;

@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     private bool _pauseGame;
     [SerializeField] private GameObject _pauseMenu;
+    public InputActionReference pause;
 
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (pause.action.WasPressedThisFrame())
         {
             if (_pauseGame)
             {

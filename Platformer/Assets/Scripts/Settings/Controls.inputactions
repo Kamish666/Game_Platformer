@@ -36,7 +36,7 @@
                     "name": "Change Color",
                     "type": "Value",
                     "id": "0b280f4e-8e04-477c-bfc9-f89287f91952",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Touch",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -124,7 +124,7 @@
                     "name": "1D Axis",
                     "id": "124f51ac-6d48-4a7a-9069-ca5495e7fe17",
                     "path": "1DAxis",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "Change Color",

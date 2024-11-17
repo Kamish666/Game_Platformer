@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 public class ChangeColor : MonoBehaviour
 {
 
     public InputActionReference changeColor;
-    private float _changeInput;
-
-
 
     private int _currentColorIndex = 0; // 0: Зеленый, 1: Синий, 2: Красный
 
@@ -29,20 +28,77 @@ public class ChangeColor : MonoBehaviour
         FindObjectOfType<PlayerMovement>().GetComponent<Health>().OnDie += DeactiveScript;
     }
 
-    private void Update()
+
+
+
+
+
+
+
+
+    private void OnEnable()
     {
-        _changeInput = changeColor.action.ReadValue<float>();
+        // Подписываемся на событие started
+        changeColor.action.Enable();
+        changeColor.action.started += OnChangeColor;
+    }
 
-        if (_changeInput == -1) 
+    private void OnDisable()
+    {
+        // Отписываемся от события
+        changeColor.action.started -= OnChangeColor;
+        changeColor.action.Disable();
+    }
+
+
+    private void OnChangeColor(InputAction.CallbackContext context)
+    {
+        // Получаем значение оси
+        float changeInput = context.ReadValue<float>();
+
+        if (changeInput > 0)
         {
-            ChangeColorIndex(1);
+            ChangeColorIndex(1); // Вызов изменения цвета вперёд
         }
-
-        if (_changeInput == 1) 
+        else if (changeInput < 0)
         {
-            ChangeColorIndex(-1);
+            ChangeColorIndex(-1); // Вызов изменения цвета назад
         }
     }
+
+
+    /*    private void Update()
+        {
+            _changeInput = changeColor.action.ReadValue<float>();
+
+            if (_changeInput == -1)
+            {
+                ChangeColorIndex(1);
+            }
+
+            if (_changeInput == 1)
+            {
+                ChangeColorIndex(-1);
+            }
+        }*/
+
+
+
+    /*    private void Update()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+
+                ChangeColorIndex(1);
+            }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                ChangeColorIndex(-1);
+            }
+
+        }
+    */
 
     private void ChangeColorIndex(int number)
     {
