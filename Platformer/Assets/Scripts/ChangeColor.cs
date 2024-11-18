@@ -30,31 +30,19 @@ public class ChangeColor : MonoBehaviour
 
 
 
-
-
-
-
-
-
     private void OnEnable()
     {
-        // Подписываемся на событие started
-        changeColor.action.Enable();
-        changeColor.action.started += OnChangeColor;
-    }
-
-    private void OnDisable()
-    {
-        // Отписываемся от события
-        changeColor.action.started -= OnChangeColor;
-        changeColor.action.Disable();
+        Debug.Log("OnEnable");
+        //changeColor.action.Enable();
+        OnChangeColor();
     }
 
 
-    private void OnChangeColor(InputAction.CallbackContext context)
+    private void OnChangeColor()
     {
-        // Получаем значение оси
-        float changeInput = context.ReadValue<float>();
+        Debug.Log("OnChangeColor");
+
+        float changeInput = changeColor.action.ReadValue<float>();
 
         if (changeInput > 0)
         {
@@ -65,6 +53,41 @@ public class ChangeColor : MonoBehaviour
             ChangeColorIndex(-1); // Вызов изменения цвета назад
         }
     }
+
+
+
+
+
+
+    /*    private void OnEnable()
+        {
+            // Подписываемся на событие started
+            changeColor.action.Enable();
+            changeColor.action.started += OnChangeColor;
+        }
+
+        private void OnDisable()
+        {
+            // Отписываемся от события
+            changeColor.action.started -= OnChangeColor;
+            changeColor.action.Disable();
+        }
+
+
+        private void OnChangeColor(InputAction.CallbackContext context)
+        {
+            // Получаем значение оси
+            float changeInput = context.ReadValue<float>();
+
+            if (changeInput > 0)
+            {
+                ChangeColorIndex(1); // Вызов изменения цвета вперёд
+            }
+            else if (changeInput < 0)
+            {
+                ChangeColorIndex(-1); // Вызов изменения цвета назад
+            }
+        }*/
 
 
     /*    private void Update()
