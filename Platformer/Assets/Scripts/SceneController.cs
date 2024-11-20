@@ -8,11 +8,13 @@ public class SceneController : MonoBehaviour
     public event LevelAction OnLevelRestart;
     public event LevelAction OnLevelExit;
 
+    private SaveLevelsData _saveLvlData;
+
     private void Start()
     {
         FindObjectOfType<PlayerMovement>().GetComponent<Health>().OnDie += RestartSceneAfterDied;
 
-
+        _saveLvlData = GetComponent<SaveLevelsData>();
     }
 
     private void RestartSceneAfterDied()
@@ -33,6 +35,16 @@ public class SceneController : MonoBehaviour
         // Получение индекс текущей сцены
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
+
+        DataLevels data;
+
+        data = _saveLvlData.LoadGame();
+        if (data == null || data.levelsWin < currentSceneIndex)
+        {
+            data = new DataLevels();
+            data.levelsWin = currentSceneIndex;
+            _saveLvlData.SaveGame(data);
+        }
 
         OnLevelExit?.Invoke();
 
