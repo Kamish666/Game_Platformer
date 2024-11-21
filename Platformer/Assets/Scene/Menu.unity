@@ -2206,7 +2206,7 @@ GameObject:
   - component: {fileID: 376949781}
   - component: {fileID: 376949782}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Sound Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2279,8 +2279,8 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1634835901}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
+  m_MaxValue: 10
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7957,6 +7957,8 @@ GameObject:
   - component: {fileID: 1563400282}
   - component: {fileID: 1563400284}
   - component: {fileID: 1563400283}
+  - component: {fileID: 1563400285}
+  - component: {fileID: 1563400286}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8081,6 +8083,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0989f9f17caf65b4db2ba829ff7c3e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1563400285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563400278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d74e7a8bdecdf14d8fe3f64ca97bbd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicSlider: {fileID: 1922166044}
+  _soundSlider: {fileID: 376949782}
+--- !u!114 &1563400286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563400278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b460dd321751d3419c54574d594e469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicSource: {fileID: 713461149}
+  _soundSource: {fileID: 1251047218}
+  _maxVolumeLivel: 10
 --- !u!1 &1625200251
 GameObject:
   m_ObjectHideFlags: 0
@@ -9528,7 +9559,7 @@ GameObject:
   - component: {fileID: 1922166043}
   - component: {fileID: 1922166044}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Music Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9601,8 +9632,8 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1928922550}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
+  m_MaxValue: 10
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10857,7 +10888,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0424/\u0412"
+  m_text: A/D
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d741c3dbf4d9d684fbc7d23f5a4dee27, type: 2}
   m_sharedMaterial: {fileID: -2190630984955199265, guid: d741c3dbf4d9d684fbc7d23f5a4dee27, type: 2}
