@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PlayerColors : MonoBehaviour
+public class IndicatorColors : MonoBehaviour
 {
-    private SpriteRenderer _spriteRenderer;
+
+    [SerializeField] private Image _indicatorCorors;
+    [SerializeField] private Sprite _green, _red, _blue;
 
     private void Start()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
 
         // Найти ChangeColor и подписаться на событие enemyColors
         ChangeColor changeColorScript = FindObjectOfType<ChangeColor>();
@@ -27,20 +29,15 @@ public class PlayerColors : MonoBehaviour
         // Проверка условий на основе цвета врага
         if (green)
         {
-            EnableEnemy(Color.white);
+            _indicatorCorors.sprite = _green;
         }
         else if (blue)
         {
-            EnableEnemy(new Color(0f, 0.231f, 1f));
+            _indicatorCorors.sprite = _blue;
         }
         else
         {
-            EnableEnemy(Color.red);
+            _indicatorCorors.sprite = _red;
         }
-    }
-
-    private void EnableEnemy(Color color)
-    {
-        _spriteRenderer.color = color;
     }
 }

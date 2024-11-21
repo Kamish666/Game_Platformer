@@ -29,7 +29,7 @@ public class EnemyColors : MonoBehaviour
         }
     }
 
-    private void OnColorChanged(bool green, bool blue, bool red)
+    private void OnColorChanged(bool green, bool red, bool blue)
     {
         // Проверка условий на основе цвета врага
         if (_isGreenEnemy && green)

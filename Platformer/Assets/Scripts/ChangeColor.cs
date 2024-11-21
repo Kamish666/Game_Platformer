@@ -10,13 +10,13 @@ public class ChangeColor : MonoBehaviour
 
     public InputActionReference changeColor;
 
-    private int _currentColorIndex = 0; // 0: Зеленый, 1: Синий, 2: Красный
+    private int _currentColorIndex = 0; // 0: Зеленый, 1: Красный, 2: Синий
 
-    private bool[] _activeColorsM = { true, false, false}; // 0: Зеленый, 1: Синий, 2: Красный
+    private bool[] _activeColorsM = { true, false, false}; // 0: Зеленый, 1: Красный, 2: Синий
 
     private GameObject[] _colorBlocs;
 
-    public delegate void Colors(bool green, bool blue, bool red);
+    public delegate void Colors(bool green, bool red, bool blue);
     public event Colors enemyColors;
 
     private void Start()
