@@ -7077,7 +7077,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 167}
+  m_AnchoredPosition: {x: 0, y: 167}
   m_SizeDelta: {x: -504.4, y: -508.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1299367503
@@ -8055,6 +8055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _countLevels: 3
+  _prologIndex: 5
 --- !u!114 &1563400283
 MonoBehaviour:
   m_ObjectHideFlags: 0

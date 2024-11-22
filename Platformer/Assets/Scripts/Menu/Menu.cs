@@ -8,10 +8,23 @@ public class Menu : MonoBehaviour
     private SaveLevelsData _saveLvlData;
 
     [SerializeField] private int _countLevels = 3;
+    [SerializeField] private int _prologIndex;
 
     private void Start()
     {
         _saveLvlData = GetComponent<SaveLevelsData>();
+
+        //PlayerPrefs.DeleteKey("FirstLaunch");
+
+        if (!PlayerPrefs.HasKey("FirstLaunch"))
+        {
+            PlayerPrefs.SetInt("FirstLaunch", 1);
+            PlayerPrefs.Save();
+
+            Debug.Log("«¿œ”—  œ–ŒÀŒ√¿");
+
+            LoadScene(_prologIndex);
+        }
     }
 
     public void PlayGame()
@@ -23,19 +36,21 @@ public class Menu : MonoBehaviour
 
         if (data == null)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else if(data.levelsWin < _countLevels)
         {
             Debug.Log($"data.levelsWin: {data.levelsWin}  _countLevels: {_countLevels}");
-            SceneManager.LoadScene(data.levelsWin + 1);
+            LoadScene(data.levelsWin + 1);
         }
         else
-            SceneManager.LoadScene(data.levelsWin);
+            LoadScene(data.levelsWin);
     }
 
     public void ExitGame()
     {
         Application.Quit();
     }
+
+    public void LoadScene(int sceneIndex) => SceneManager.LoadScene(sceneIndex);
 }

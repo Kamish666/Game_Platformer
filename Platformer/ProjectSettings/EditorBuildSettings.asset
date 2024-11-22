@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Levels/Level3.unity
     guid: df8a50912ada8c543a2f6fd013bbd1f1
+  - enabled: 1
+    path: Assets/Scene/Epilogue.unity
+    guid: 96644c483288ce347b7f63db256215ff
+  - enabled: 1
+    path: Assets/Scene/Prologue.unity
+    guid: 8334f4cf252941f4e9b185dc443c3b13
+  - enabled: 1
+    path: Assets/Scene/Levels/Ttraining.unity
+    guid: 2eb4f3558ef9e8442bda8de91f92c70e
   m_configObjects: {}
