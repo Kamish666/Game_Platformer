@@ -32,10 +32,13 @@ public class Health : MonoBehaviour, IHealth
 
     private bool _isDied = false;
 
+    [SerializeField] Animator _anim;
+
 
     void Start()
     {
         CurrentHealth = MaxHealth;
+        _anim = GetComponent<Animator>();
     }
 
 
@@ -52,6 +55,7 @@ public class Health : MonoBehaviour, IHealth
             _isDied = true;
             // anim.SetTrigger("die");
             OnDie?.Invoke();
+            _anim.SetTrigger("die");
         }
     }
 }
