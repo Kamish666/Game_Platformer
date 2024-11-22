@@ -33,4 +33,6 @@ public class AudioSettings : MonoBehaviour
 
     private float CalculateVolume(int volume) 
         => (float)volume / _maxVolumeLivel;
+
+    public float GetVolumeSound() => _soundSource.volume;
 }

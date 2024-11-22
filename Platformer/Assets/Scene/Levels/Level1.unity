@@ -2601,6 +2601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _countLevels: 3
+  _prologIndex: 0
 --- !u!114 &519420037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6056,6 +6057,7 @@ GameObject:
   - component: {fileID: 1573137424}
   - component: {fileID: 1573137422}
   - component: {fileID: 1573137427}
+  - component: {fileID: 1573137428}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -6311,6 +6313,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8279f6d9ba030e498a267edb11dc177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1573137428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573137417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc793775e71f3c74fbbb9bf6ca62dbd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSourcejSound: {fileID: 1074860232}
+  _changeColor: {fileID: 8300000, guid: c9e19aa55cd30104c91d20130a3a8a18, type: 3}
+  _died:
+  - {fileID: 8300000, guid: 7761787899cba8f48be85cfd4f397677, type: 3}
+  - {fileID: 8300000, guid: e17b76ca13c0e42489180eb7bc46d95d, type: 3}
+  _jump:
+  - {fileID: 8300000, guid: b7f9bbec6891a6746b2be3f861a72c2b, type: 3}
+  - {fileID: 8300000, guid: ae637dae6f1d5244883fa64a705a875d, type: 3}
+  - {fileID: 8300000, guid: 86e86ff88481ffe42ad2b5cf5512aab3, type: 3}
 --- !u!1 &1577091439
 GameObject:
   m_ObjectHideFlags: 0

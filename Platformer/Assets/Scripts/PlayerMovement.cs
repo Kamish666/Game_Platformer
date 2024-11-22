@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     private bool _jumpInput;
     [SerializeField] private float _smoothInputSpeed = 10f; // скорость сглаживания
 
+    public delegate void Act();
+    public event Act jumpAct;
+
 
     public InputActionReference move;
     public InputActionReference jump;
@@ -68,10 +71,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+
         if (IsGround())
         {
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpPower);
             //_rigidbody.AddForce(Vector2.up * _jumpPower);
+            jumpAct?.Invoke();
+            Debug.Log("Я прыгаю от земли");
         }
         else if (OnWall() && !IsGround())
         {
@@ -89,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.localScale = new Vector3(-transform.localScale.x, _scale.y, 1);
                 _rigidbody.velocity = new Vector2(Mathf.Sign(transform.localScale.x) * 10, 10);
                 //_rigidbody.AddForce(new Vector2(Mathf.Sign(transform.localScale.x) * 10, 10));
+                jumpAct?.Invoke();
             }
     
         }
@@ -121,7 +128,10 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGround()
     {
-        RaycastHit2D ray = Physics2D.BoxCast(_collider.bounds.center, _collider.bounds.size, 0, Vector2.down, 0.1f, _platformLayer);
+        //RaycastHit2D ray = Physics2D.BoxCast(_collider.bounds.center, _collider.bounds.size, 0, Vector2.down, 0.1f, _platformLayer);
+
+        //кастыль для звука прыжка
+        RaycastHit2D ray = Physics2D.BoxCast(_collider.bounds.center, new Vector3(_collider.bounds.size.x * 0.7f, _collider.bounds.size.y, _collider.bounds.size.z), 0, Vector2.down, 0.1f, _platformLayer);
         return ray.collider != null;
     }
 

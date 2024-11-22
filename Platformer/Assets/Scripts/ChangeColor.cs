@@ -21,7 +21,7 @@ public class ChangeColor : MonoBehaviour
 
     private void Start()
     {
-        _colorBlocs = new GameObject[] { GameObject.Find("GreenBlocks"), GameObject.Find("BlueBlocks"), GameObject.Find("RedBlocks") };
+        _colorBlocs = new GameObject[] { GameObject.Find("GreenBlocks"), GameObject.Find("RedBlocks"), GameObject.Find("BlueBlocks")};
 
         UpdateColorVisibility();
 
