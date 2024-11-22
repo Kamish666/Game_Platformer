@@ -52,6 +52,12 @@ public class EnemyColors : MonoBehaviour
 
     private void EnableEnemy(Color color)
     {
+        if (_spriteRenderer == null || _collider == null)
+        {
+            Debug.LogWarning("SpriteRenderer или Collider не существует.");
+            return;
+        }
+
         _collider.enabled = true;
         _spriteRenderer.color = color;
         _spriteRenderer.enabled = true;
@@ -59,7 +65,24 @@ public class EnemyColors : MonoBehaviour
 
     private void DisableEnemy()
     {
+        if (_spriteRenderer == null || _collider == null)
+        {
+            Debug.LogWarning("SpriteRenderer или Collider не существует.");
+            return;
+        }
+
         _collider.enabled = false;
         _spriteRenderer.enabled = false;
     }
+
+
+    private void OnDestroy()
+    {
+        ChangeColor changeColorScript = FindObjectOfType<ChangeColor>();
+        if (changeColorScript != null)
+        {
+            changeColorScript.enemyColors -= OnColorChanged;
+        }
+    }
+
 }

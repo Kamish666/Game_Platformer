@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 7216941456728464529}
   - component: {fileID: 7522148554694635014}
   - component: {fileID: 759703811447911169}
+  - component: {fileID: 1112083392303497732}
   m_Layer: 0
-  m_Name: fireball
+  m_Name: GreenBlueFireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,3 +165,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1112083392303497732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150653084952982317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ce5ff739cef01418125a4770301d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isGreenEnemy: 1
+  _isBlueEnemy: 1
+  _isRedEnemy: 0

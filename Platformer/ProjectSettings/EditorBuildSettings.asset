@@ -10,12 +10,21 @@ EditorBuildSettings:
     guid: b0cc80aa6c8e1384a870303f3bcdafc7
   - enabled: 1
     path: Assets/Scene/Levels/Level1.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 9706b1a1b11414a499a1326723be0234
   - enabled: 1
     path: Assets/Scene/Levels/Level2.unity
-    guid: 5d77a1f837808db4ea59706beadaaeb3
+    guid: 88895a980ea8d6d4d9b049778d8b2118
   - enabled: 1
     path: Assets/Scene/Levels/Level3.unity
+    guid: c00fac1b19ae1794f8218c11aa17c71a
+  - enabled: 0
+    path: Assets/Scene/Levels/Older/Level1.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scene/Levels/Older/Level2.unity
+    guid: 5d77a1f837808db4ea59706beadaaeb3
+  - enabled: 0
+    path: Assets/Scene/Levels/Older/Level3.unity
     guid: df8a50912ada8c543a2f6fd013bbd1f1
   - enabled: 1
     path: Assets/Scene/Epilogue.unity
@@ -23,7 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Prologue.unity
     guid: 8334f4cf252941f4e9b185dc443c3b13
-  - enabled: 1
-    path: Assets/Scene/Levels/Ttraining.unity
+  - enabled: 0
+    path: Assets/Scene/Levels/Older/Ttraining.unity
     guid: 2eb4f3558ef9e8442bda8de91f92c70e
+  - enabled: 1
+    path: Assets/Scene/Levels/Training.unity
+    guid: 3d8f57f69ad48144292d6c94424c622e
   m_configObjects: {}
