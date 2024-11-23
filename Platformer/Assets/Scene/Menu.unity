@@ -7543,7 +7543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1326896296
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7959,6 +7959,7 @@ GameObject:
   - component: {fileID: 1563400283}
   - component: {fileID: 1563400285}
   - component: {fileID: 1563400286}
+  - component: {fileID: 1563400287}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8113,6 +8114,18 @@ MonoBehaviour:
   _musicSource: {fileID: 713461149}
   _soundSource: {fileID: 1251047218}
   _maxVolumeLivel: 10
+--- !u!114 &1563400287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563400278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ef09a299d14fb468f51514033f670a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1625200251
 GameObject:
   m_ObjectHideFlags: 0
@@ -10889,7 +10902,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A/D
+  m_text: "\u0424/\u0412"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d741c3dbf4d9d684fbc7d23f5a4dee27, type: 2}
   m_sharedMaterial: {fileID: -2190630984955199265, guid: d741c3dbf4d9d684fbc7d23f5a4dee27, type: 2}
