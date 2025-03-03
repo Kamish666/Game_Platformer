@@ -27,6 +27,9 @@ public class EnemyColors : MonoBehaviour
         {
             Debug.LogWarning("ChangeColor script not found in the scene!");
         }
+
+        //«адание начального значени€ при старте игры
+        OnColorChanged(true, false, false);
     }
 
     private void OnColorChanged(bool green, bool red, bool blue)

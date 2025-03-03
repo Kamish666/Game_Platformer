@@ -2469,6 +2469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _countLevels: 3
+  _prologIndex: 0
 --- !u!114 &519420037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5515,6 +5516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 5
+  _anim: {fileID: 0}
 --- !u!114 &1573137425
 MonoBehaviour:
   m_ObjectHideFlags: 0
