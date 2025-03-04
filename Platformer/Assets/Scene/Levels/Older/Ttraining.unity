@@ -2326,6 +2326,7 @@ GameObject:
   - component: {fileID: 519420042}
   - component: {fileID: 519420043}
   - component: {fileID: 519420044}
+  - component: {fileID: 519420045}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2579,6 +2580,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _background: {fileID: 18374728}
   _paralaxEffect: 0.1
+--- !u!114 &519420045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16bc7e7feed47dd48abe42849ae6fcf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pools:
+  - tag: Bomber Green Blue Projectile
+    bullet: {fileID: 150653084952982317, guid: a6eb3c425a0ae294eac6de786b44c1de, type: 3}
+    amount: 5
 --- !u!1 &659928388
 GameObject:
   m_ObjectHideFlags: 0
@@ -3964,13 +3981,14 @@ GameObject:
   - component: {fileID: 1242352200}
   - component: {fileID: 1242352199}
   - component: {fileID: 1242352203}
+  - component: {fileID: 1242352204}
   m_Layer: 0
   m_Name: bee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!58 &1242352199
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4113,9 +4131,25 @@ MonoBehaviour:
   - {fileID: 69486514}
   _speed: 0.1
   loop: 0
-  bullet: {fileID: 150653084952982317, guid: b0ec3807deee20a4092ead6e9b45fe86, type: 3}
+  _projectileTag: Bomber Green Blue Projectile
   _shoot: {fileID: 950264588}
   tumeShoot: 4
+  _bulletPooler: {fileID: 0}
+--- !u!114 &1242352204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242352197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ce5ff739cef01418125a4770301d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isGreenEnemy: 1
+  _isBlueEnemy: 1
+  _isRedEnemy: 0
 --- !u!1 &1296687474
 GameObject:
   m_ObjectHideFlags: 0

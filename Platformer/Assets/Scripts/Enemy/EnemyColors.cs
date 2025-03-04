@@ -12,7 +12,7 @@ public class EnemyColors : MonoBehaviour
     [SerializeField] private bool _isBlueEnemy;
     [SerializeField] private bool _isRedEnemy;
 
-    private void Start()
+    private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<Collider2D>();
