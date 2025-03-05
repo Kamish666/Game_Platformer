@@ -12,7 +12,7 @@ public class Bullet : Enemy
 
     private void Awake()
     {
-        Debug.Log("Метод успешно отработал");
+        //Debug.Log("Метод успешно отработал");
         _bullet = this.gameObject;
     }
 
