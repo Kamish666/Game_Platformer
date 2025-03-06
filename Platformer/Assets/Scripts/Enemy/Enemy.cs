@@ -45,7 +45,7 @@ using UnityEngine;
 }*/
 
 
-public class Enemy : MonoBehaviour
+/*public class Enemy : MonoBehaviour
 {
     [Range(0, 10)]
     [SerializeField] private float _damage;
@@ -111,4 +111,55 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+}*/
+
+public class Enemy : MonoBehaviour
+{
+    [Range(0, 10)]
+    [SerializeField] private float _damage;
+
+    [SerializeField] private bool _canTakeDamage = false;
+    private GameObject _enemy;
+
+    private void Awake()
+    {
+        _enemy = gameObject;
+    }
+
+    protected void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("OnTriggerEnter2D работает");
+        HandleCollision(collision);
+    }
+
+    protected void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("OnCollisionEnter2D работает");
+        HandleCollision(collision.collider);
+    }
+
+    private void HandleCollision(Collider2D collider)
+    {
+        var player = collider.GetComponentInParent<PlayerMovement>();
+        var playerHealth = collider.GetComponent<Health>();
+        if (_canTakeDamage)
+        {
+            var damageDealer = collider.GetComponent<DamageDealer>();
+            if (damageDealer != null)
+            {
+                damageDealer.GetDamage(_enemy);
+                if (player != null)
+                {
+                    //collider.GetComponentInParent<Rigidbody2D>().AddForce(transform.up * 0.2f, ForceMode2D.Impulse);
+                    player.GetComponent<Rigidbody2D>().AddForce(transform.up * 0.3f, ForceMode2D.Impulse);
+                    
+                }
+            }
+        }
+        if (player != null && playerHealth != null)
+        {
+            playerHealth.TakeDamage(_damage);
+        }
+    }
+
 }
