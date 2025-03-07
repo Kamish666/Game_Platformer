@@ -52,10 +52,15 @@ public class Health : MonoBehaviour, IHealth
         }
         else if (!_isDied)
         {
-            _isDied = true;
-            // anim.SetTrigger("die");
-            OnDie?.Invoke();
-            _anim.SetTrigger("die");
+            HandleDeath();
         }
+    }
+
+    protected virtual void HandleDeath()
+    {
+        _isDied = true;
+        // anim.SetTrigger("die");
+        OnDie?.Invoke();
+        _anim.SetTrigger("die");
     }
 }
