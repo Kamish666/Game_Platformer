@@ -10,13 +10,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _speed;
     [Range(0, 50)]
     [SerializeField] private float _jumpPower;
+
     [SerializeField] private LayerMask _platformLayer;
+
     private Rigidbody2D _rigidbody;
     private BoxCollider2D _collider; 
     private Vector3 _scale;
     private float _gravityScale;
+
     private float _horizontalInput;
     private bool _jumpInput;
+
     [SerializeField] private float _smoothInputSpeed = 10f; // скорость сглаживания
 
     public delegate void Act();
@@ -71,15 +75,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        bool isGound = IsGround();
 
-        if (IsGround())
+        if (isGound)
         {
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpPower);
             //_rigidbody.AddForce(Vector2.up * _jumpPower);
             jumpAct?.Invoke();
             Debug.Log("Я прыгаю от земли");
         }
-        else if (OnWall() && !IsGround())
+        else if (OnWall() && !isGound)
         {
             if (_horizontalInput == 0 || Mathf.Sign(_horizontalInput) == Mathf.Sign(transform.localScale.x))
             {
@@ -93,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
                 _rigidbody.velocity = Vector2.zero;
                 _rigidbody.gravityScale = _gravityScale;
                 transform.localScale = new Vector3(-transform.localScale.x, _scale.y, 1);
-                _rigidbody.velocity = new Vector2(Mathf.Sign(transform.localScale.x) * 10, 10);
+                _rigidbody.velocity = new Vector2(Mathf.Sign(transform.localScale.x) * _jumpPower, _jumpPower);
                 //_rigidbody.AddForce(new Vector2(Mathf.Sign(transform.localScale.x) * 10, 10));
                 jumpAct?.Invoke();
             }

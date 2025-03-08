@@ -7,17 +7,25 @@ public class PlayerMovementForceMode : MonoBehaviour
 {
     [Range(0f, 10f)]
     [SerializeField] private float _speed;
-    [Range(0, 50)]
+    [Range(0, 1)]
     [SerializeField] private float _jumpPower;
+
     [SerializeField] private LayerMask _platformLayer;
+
     private Rigidbody2D _rigidbody;
     private BoxCollider2D _collider;
     private Vector3 _scale;
     private float _gravityScale;
+
     private float _horizontalInput;
     private bool _jumpInput;
+
     [SerializeField] private float _smoothInputSpeed = 10f; // скорость сглаживания
-    [SerializeField] private float _airControlMultiplier = 0.5f; // ослабление движения в воздухе
+    [SerializeField] private float _airControlMultiplier = 0.5f; // ослабление моневрирования в воздухе
+    [SerializeField] private float _airFriction = 0.99f; // уменьшение инерции в воздухе во время бездействия
+    [SerializeField] private float _groundFristion = 0.9f; // уменьшение инерции на земле во время бездействия
+
+    private bool _isGrounded;
 
     public delegate void Act();
     public event Act jumpAct;
@@ -55,14 +63,18 @@ public class PlayerMovementForceMode : MonoBehaviour
         //_horizontalInput = Input.GetAxis("Horizontal"); 
 
 
+        _isGrounded = IsGround();
+
         if (_jumpInput)
             Jump();
         else
             _rigidbody.gravityScale = _gravityScale;
 
+
+        RunAndFly();
         if (_horizontalInput != 0)
         {
-            RunAndFly();
+            //RunAndFly();
             FlipSprite();
         }
 
@@ -72,15 +84,16 @@ public class PlayerMovementForceMode : MonoBehaviour
     private void Jump()
     {
 
-        if (IsGround())
+        if (_isGrounded)
         {
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
             _rigidbody.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
             //_rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpPower);
             //_rigidbody.AddForce(Vector2.up * _jumpPower);
             jumpAct?.Invoke();
             Debug.Log("Я прыгаю от земли");
         }
-        else if (OnWall() && !IsGround())
+        else if (OnWall() && !_isGrounded)
         {
             if (_horizontalInput == 0 || Mathf.Sign(_horizontalInput) == Mathf.Sign(transform.localScale.x))
             {
@@ -110,12 +123,27 @@ public class PlayerMovementForceMode : MonoBehaviour
         //if (Mathf.Abs(_rigidbody.velocity.x) < 4)
         //    _rigidbody.AddForce( new Vector2(_horizontalInput * _speed, 0));
         //_rigidbody.velocity = new Vector2(_horizontalInput * _speed, _rigidbody.velocity.y);
-        float forceMultiplier = IsGround() ? 1f : _airControlMultiplier;
-        _rigidbody.AddForce(new Vector2(_horizontalInput * _speed * forceMultiplier, 0), ForceMode2D.Force);
-        if (_rigidbody.velocity.x > _speed)
-            _rigidbody.velocity = new Vector2(_speed, _rigidbody.velocity.y);
-        else if (_rigidbody.velocity.x < -_speed)
-            _rigidbody.velocity = new Vector2(-_speed, _rigidbody.velocity.y);
+
+        if (_horizontalInput != 0)
+        {
+            float forceMultiplier = _isGrounded ? 1f : _airControlMultiplier;
+            _rigidbody.AddForce(new Vector2(_horizontalInput * _speed * forceMultiplier, 0), ForceMode2D.Force);
+            if (_rigidbody.velocity.x > _speed)
+                _rigidbody.velocity = new Vector2(_speed, _rigidbody.velocity.y);
+            else if (_rigidbody.velocity.x < -_speed)
+                _rigidbody.velocity = new Vector2(-_speed, _rigidbody.velocity.y);
+        }
+
+        if (!_isGrounded && _horizontalInput == 0)
+        {
+            //Debug.Log("Тороможу в воздухе");
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x * _airFriction, _rigidbody.velocity.y);
+        }
+        else if(_horizontalInput == 0)
+        {
+            //Debug.Log("Тороможу на земле");
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x * _groundFristion, _rigidbody.velocity.y);
+        }
 
 
     }
