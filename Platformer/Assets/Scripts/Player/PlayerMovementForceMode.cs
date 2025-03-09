@@ -91,19 +91,19 @@ public class PlayerMovementForceMode : MonoBehaviour
             //_rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpPower);
             //_rigidbody.AddForce(Vector2.up * _jumpPower);
             jumpAct?.Invoke();
-            Debug.Log("я прыгаю от земли");
+            //Debug.Log("я прыгаю от земли");
         }
         else if (OnWall() && !_isGrounded)
         {
             if (_horizontalInput == 0 || Mathf.Sign(_horizontalInput) == Mathf.Sign(transform.localScale.x))
             {
-                Debug.Log("¬ишу на стене");
+                //Debug.Log("¬ишу на стене");
                 _rigidbody.velocity = Vector2.zero;
                 _rigidbody.gravityScale = 0;
             }
             else if (_horizontalInput != 0 && Mathf.Sign(_horizontalInput) != Mathf.Sign(transform.localScale.x))
             {
-                Debug.Log("я прыгаю");
+                //Debug.Log("я прыгаю");
                 _rigidbody.velocity = Vector2.zero;
                 _rigidbody.gravityScale = _gravityScale;
                 transform.localScale = new Vector3(-transform.localScale.x, _scale.y, 1);
@@ -182,5 +182,8 @@ public class PlayerMovementForceMode : MonoBehaviour
     private void DeactiveScript()
     {
         GetComponent<PlayerMovement>().enabled = false;
+
+        move.action.Disable();
+        jump.action.Disable();
     }
 }

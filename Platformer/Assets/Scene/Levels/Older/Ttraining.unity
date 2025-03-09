@@ -856,6 +856,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _bulletPooler: {fileID: 0}
+  _offsetAngle: 90
+  _useRotationLimits: 0
+  _minRotation: 0
+  _maxRotation: 0
 --- !u!212 &129616955
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -128,13 +128,13 @@ public class Enemy : MonoBehaviour
 
     protected void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("OnTriggerEnter2D работает");
+        //Debug.Log("OnTriggerEnter2D работает");
         HandleCollision(collision);
     }
 
     protected void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("OnCollisionEnter2D работает");
+        //Debug.Log("OnCollisionEnter2D работает");
         HandleCollision(collision.collider);
     }
 

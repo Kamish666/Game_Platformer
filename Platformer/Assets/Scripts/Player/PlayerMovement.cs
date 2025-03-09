@@ -149,5 +149,8 @@ public class PlayerMovement : MonoBehaviour
     private void DeactiveScript()
     {
         GetComponent<PlayerMovement>().enabled = false;
+
+        move.action.Disable();
+        jump.action.Disable();
     }
 }

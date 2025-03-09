@@ -32,7 +32,7 @@ public class ChangeColor : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("OnEnable");
+        //Debug.Log("OnEnable");
         //changeColor.action.Enable();
         OnChangeColor();
     }
@@ -40,7 +40,7 @@ public class ChangeColor : MonoBehaviour
 
     private void OnChangeColor()
     {
-        Debug.Log("OnChangeColor");
+        //Debug.Log("OnChangeColor");
 
         float changeInput = changeColor.action.ReadValue<float>();
 
@@ -143,5 +143,7 @@ public class ChangeColor : MonoBehaviour
     private void DeactiveScript()
     {
         GetComponent<ChangeColor>().enabled = false;
+
+        changeColor.action.Disable();
     }
 }
