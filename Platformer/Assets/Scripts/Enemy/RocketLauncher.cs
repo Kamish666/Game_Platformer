@@ -10,9 +10,9 @@ public class RocketLauncher : MonoBehaviour
     [SerializeField] private float _detectionRange = 10f;
 
     [SerializeField] private LayerMask _obstacleMask;
-    [SerializeField] private BulletPooler _bulletPooler;
+    private BulletPooler _bulletPooler;
 
-    [SerializeField] private float _offsetAngle = 90f; // угол на который надо повернуть, чтобы было ок
+    [SerializeField] private float _offsetAngle = 0f; // угол на который надо повернуть, чтобы было ок
 
     [SerializeField] private bool _useRotationLimits = false;
     [SerializeField] private float _minRotation = -45f;

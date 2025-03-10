@@ -9,7 +9,7 @@ public class Bomber : AirPatrol
     [SerializeField] private Transform _shoot;
     public float tumeShoot = 4f;
 
-    [SerializeField] private BulletPooler _bulletPooler;
+    private BulletPooler _bulletPooler;
 
     protected override void Start()
     {
