@@ -3,21 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 using UnityEngine.Tilemaps;
 
 public class BlockCreator : Singleton<BlockCreator>
 {
     [SerializeField] private Tilemap _priviewMap, _defaultMap;
-    private TileBase _tileBase;
 
     [SerializeField] private GameEditor _gameEditor;
 
+    private TileBase _tileBase;
     private BuildingBlockBase _selectObj;
 
     private Vector2 _mousePos;
-
     private Vector3Int _currentGridPosition;
     private Vector3Int _lastGridPosition;
+
+    private bool _holdAction;
+    private Vector3Int _holdStartPosition;
+    private BoundsInt _bounds;
 
     private Camera _camera;
 
@@ -54,6 +58,11 @@ public class BlockCreator : Singleton<BlockCreator>
                 _currentGridPosition = gridPos;
 
                 UpdatePreview();
+
+                if (_holdAction)
+                {
+                    HandleDrawing();
+                }
             }
         }
     }
@@ -73,7 +82,25 @@ public class BlockCreator : Singleton<BlockCreator>
     {
         if (_selectObj != null && !EventSystem.current.IsPointerOverGameObject())
         {
-            HandleDrawing();
+            if (context.phase == InputActionPhase.Started)
+            {
+                _holdAction = true;
+
+                if (context.interaction is TapInteraction)
+                {
+                    _holdStartPosition = _currentGridPosition;
+                }
+                HandleDrawing();
+            }
+            else
+            {
+                if (context.interaction is SlowTapInteraction ||
+                    context.interaction is TapInteraction && context.phase == InputActionPhase.Performed)
+                {
+                    _holdAction = false;
+                    HandleDrawRelease();
+                }
+            }
         }
     }
 
@@ -89,7 +116,43 @@ public class BlockCreator : Singleton<BlockCreator>
 
     private void HandleDrawing()
     {
-        DrawItem();
+        if (_selectObj != null)
+        {
+            RectangleRenderer();
+        }
+        //DrawItem();
+    }
+
+    private void HandleDrawRelease()
+    {
+        if (_selectObj != null)
+        {
+            DrawBounds(_defaultMap);
+            _priviewMap.ClearAllTiles();
+        } 
+    }
+
+    private void RectangleRenderer()
+    {
+        _priviewMap.ClearAllTiles();
+
+        _bounds.xMin = _currentGridPosition.x < _holdStartPosition.x ? _currentGridPosition.x : _holdStartPosition.x;
+        _bounds.xMax = _currentGridPosition.x > _holdStartPosition.x ? _currentGridPosition.x : _holdStartPosition.x;
+        _bounds.yMin = _currentGridPosition.y < _holdStartPosition.y ? _currentGridPosition.y : _holdStartPosition.y;
+        _bounds.yMax = _currentGridPosition.y > _holdStartPosition.y ? _currentGridPosition.y : _holdStartPosition.y;
+
+        DrawBounds(_priviewMap);
+    }
+
+    private void DrawBounds(Tilemap tilemap)
+    {
+        for (int x = _bounds.xMin; x <= _bounds.xMax; x++)
+        {
+            for (int y = _bounds.yMin; y <= _bounds.yMax; y++)
+            {
+                tilemap.SetTile(new Vector3Int(x, y, 0), _tileBase);
+            }
+        }
     }
 
     private void DrawItem()
@@ -102,7 +165,11 @@ public class BlockCreator : Singleton<BlockCreator>
         _gameEditor.Enable();
 
         _gameEditor.Editor.MousePosition.performed += OnMouseMove;
+
         _gameEditor.Editor.MouseLeftClick.performed += OnLeftClick;
+        _gameEditor.Editor.MouseLeftClick.started += OnLeftClick;
+        _gameEditor.Editor.MouseLeftClick.canceled += OnLeftClick;
+
         _gameEditor.Editor.MouseRightClick.performed += OnRightClick;
     }
 
@@ -111,7 +178,11 @@ public class BlockCreator : Singleton<BlockCreator>
         _gameEditor.Disable();
 
         _gameEditor.Editor.MousePosition.performed -= OnMouseMove;
+
         _gameEditor.Editor.MouseLeftClick.performed -= OnLeftClick;
+        _gameEditor.Editor.MouseLeftClick.started -= OnLeftClick;
+        _gameEditor.Editor.MouseLeftClick.canceled -= OnLeftClick;
+
         _gameEditor.Editor.MouseRightClick.performed -= OnRightClick;
     }
 }

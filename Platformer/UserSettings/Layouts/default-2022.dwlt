@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 32173
+  controlID: 120
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 32131
+  controlID: 48
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -167,11 +167,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1303.3334
-    height: 646
+    height: 590
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 32132
+  controlID: 49
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -191,7 +191,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 231.33333
-    height: 646
+    height: 590
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
@@ -217,9 +217,9 @@ MonoBehaviour:
     x: 231.33333
     y: 0
     width: 1072
-    height: 646
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+    height: 590
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 12}
@@ -237,26 +237,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 646
+    y: 590
     width: 1303.3334
-    height: 280
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 16}
+    height: 336
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 16}
   - {fileID: 17}
   - {fileID: 18}
   - {fileID: 19}
   - {fileID: 20}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 3
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -276,8 +276,8 @@ MonoBehaviour:
     y: 0
     width: 403.33325
     height: 926
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -755,7 +755,7 @@ MonoBehaviour:
     x: 0
     y: 72.66667
     width: 230.33333
-    height: 625
+    height: 569
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -769,9 +769,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6e8c0000
-      m_LastClickedID: 35950
-      m_ExpandedIDs: 8067ffff286bffff8070ffff2a73ffff3274ffff9a74ffff34c9ffff42caffffd8caffff1acbffff42ceffff70f6ffffeaf7ffffd6f8ffff30f9ffff8af9fffff6fafffff4ffffff8a710000b07100000e720000da7200008c760000aa760000107700009a770000cc770000d87700000479000012790000a27900004e84000088850000448600004e8600001088000046890000a8890000ac8b0000b28b00006e8c0000788c0000
+      m_SelectedIDs: f8490000
+      m_LastClickedID: 0
+      m_ExpandedIDs: f6faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -818,7 +818,7 @@ MonoBehaviour:
     x: 231.33334
     y: 72.66667
     width: 1070
-    height: 625
+    height: 569
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1070, y: 604}
+  m_TargetSize: {x: 1070, y: 548}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -854,15 +854,15 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -356.6667
     m_HBaseRangeMax: 356.6667
-    m_VBaseRangeMin: -201.33334
-    m_VBaseRangeMax: 201.33334
+    m_VBaseRangeMin: -182.66667
+    m_VBaseRangeMax: 182.66667
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 1
-    m_VSlider: 1
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -874,9 +874,9 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 1070
-      height: 604
+      height: 548
     m_Scale: {x: 1.5, y: 1.5}
-    m_Translation: {x: 535, y: 302}
+    m_Translation: {x: 535, y: 274}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -884,12 +884,12 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -356.66666
-      y: -201.33333
+      y: -182.66667
       width: 713.3333
-      height: 402.66666
+      height: 365.33334
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1605, y: 937.5}
+  m_LastWindowPixelSize: {x: 1605, y: 853.5}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -1105,9 +1105,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 719.3334
+    y: 662.6667
     width: 1302.3334
-    height: 258.3333
+    height: 315
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1129,7 +1129,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/SystemInput
+    - Assets/Scripts/EditorGame/MyEditor
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1137,16 +1137,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/SystemInput
+  - Assets/Scripts/EditorGame/MyEditor
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "D:\\\u0411\u0413\u0423\u0418\u0420\\\u041F\u0413\u0438\u0417\\\u041A\u0423\u0420\u0421\u0410\u0427\\\u0420\u0435\u0448\u0435\u043D\u0438\u0435\\Game_Platformer\\Platformer"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 241.66669}
-    m_SelectedIDs: 2e7f0000
-    m_LastClickedID: 32558
-    m_ExpandedIDs: 0000000088690000e8690000ee690000fe7200008e7d0000d87d0000dc7d0000e07d000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 50690000
+    m_LastClickedID: 26960
+    m_ExpandedIDs: 00000000b4680000b6680000b8680000ba680000bc680000be680000c0680000c268000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1174,7 +1174,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000088690000e8690000ee690000fe7200008e7d0000d87d0000dc7d0000e07d000000ca9a3b
+    m_ExpandedIDs: 00000000b4680000b6680000b8680000ba680000bc680000be680000c0680000c2680000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1199,8 +1199,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: d48b0000
-    m_LastClickedInstanceID: 35796
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000b66600000e63000092620000000000004463000046630000b47300004e68000028690000a0680000c6690000f6650000f26500003e6a0000226b0000e4680000a6680000f268000058ca0000366c0000226c00004e7100008e690000a2690000e07e0000
     m_RenameOverlay:
@@ -1516,9 +1516,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 719.3334
+    y: 662.6667
     width: 1302.3334
-    height: 258.3333
+    height: 315
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1553,8 +1553,8 @@ MonoBehaviour:
     m_SearchString: 
   m_ActionsTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: bb91937b
-    m_LastClickedID: 2073268667
+    m_SelectedIDs: 7bbbc936
+    m_LastClickedID: 919190395
     m_ExpandedIDs: 948c2aee6b6035fc7bbbc936c767b77c
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1601,10 +1601,11 @@ MonoBehaviour:
       \"actions\": [\n                {\n                    \"name\": \"MouseLeftClick\",\n                   
       \"type\": \"Button\",\n                    \"id\": \"063ae4c4-5faf-4269-b495-d6cba4954cb9\",\n                   
       \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      },\n                {\n                    \"name\": \"MouseRightClick\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"6c31d41a-57fb-4606-b301-e05595e56003\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"Tap,SlowTap\",\n                    \"initialStateCheck\":
+      false\n                },\n                {\n                    \"name\":
+      \"MouseRightClick\",\n                    \"type\": \"Button\",\n                   
+      \"id\": \"6c31d41a-57fb-4606-b301-e05595e56003\",\n                    \"expectedControlType\":
+      \"Button\",\n                    \"processors\": \"\",\n                   
       \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
       },\n                {\n                    \"name\": \"MousePosition\",\n                   
       \"type\": \"Value\",\n                    \"id\": \"e2073475-aec1-417f-b16c-4b6a6e960635\",\n                   
