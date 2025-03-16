@@ -103,7 +103,7 @@ MonoBehaviour:
   _damage: 1
   _canTakeDamage: 0
   _timeToDestroy: 10
-  _speed: 0.18
+  _speed: 5
 --- !u!58 &7522148554694635014
 CircleCollider2D:
   m_ObjectHideFlags: 0
