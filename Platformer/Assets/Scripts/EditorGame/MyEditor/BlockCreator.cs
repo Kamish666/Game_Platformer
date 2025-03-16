@@ -8,7 +8,9 @@ using UnityEngine.Tilemaps;
 
 public class BlockCreator : Singleton<BlockCreator>
 {
-    [SerializeField] private Tilemap _priviewMap, _defaultMap;
+    [SerializeField] private Tilemap _previewMap, _defaultMap;
+
+    TilemapRenderer _defaultRenderer;
 
     [SerializeField] private GameEditor _gameEditor;
 
@@ -50,7 +52,7 @@ public class BlockCreator : Singleton<BlockCreator>
         if (_selectObj != null)
         {
             Vector3 pos = _camera.ScreenToWorldPoint(_mousePos);
-            Vector3Int gridPos = _priviewMap.WorldToCell(pos);
+            Vector3Int gridPos = _previewMap.WorldToCell(pos);
 
             if (gridPos != _currentGridPosition)
             {
@@ -69,8 +71,8 @@ public class BlockCreator : Singleton<BlockCreator>
 
     private void UpdatePreview()
     {
-        _priviewMap.SetTile(_lastGridPosition, null);
-        _priviewMap.SetTile(_currentGridPosition, _tileBase);
+        _previewMap.SetTile(_lastGridPosition, null);
+        _previewMap.SetTile(_currentGridPosition, _tileBase);
     }
 
     private void OnMouseMove(InputAction.CallbackContext context)
@@ -112,6 +114,12 @@ public class BlockCreator : Singleton<BlockCreator>
     public void ObjectSelected(BuildingBlockBase obj)
     {
         SelectedObj = obj;
+
+        if (_defaultRenderer != null)
+            _defaultRenderer.sortingOrder = 0;
+        _defaultMap = obj.TileMap;
+        _defaultRenderer = obj.TileRenderer;
+        _defaultRenderer.sortingOrder = 1;
     }
 
     private void HandleDrawing()
@@ -128,20 +136,20 @@ public class BlockCreator : Singleton<BlockCreator>
         if (_selectObj != null)
         {
             DrawBounds(_defaultMap);
-            _priviewMap.ClearAllTiles();
+            _previewMap.ClearAllTiles();
         } 
     }
 
     private void RectangleRenderer()
     {
-        _priviewMap.ClearAllTiles();
+        _previewMap.ClearAllTiles();
 
         _bounds.xMin = _currentGridPosition.x < _holdStartPosition.x ? _currentGridPosition.x : _holdStartPosition.x;
         _bounds.xMax = _currentGridPosition.x > _holdStartPosition.x ? _currentGridPosition.x : _holdStartPosition.x;
         _bounds.yMin = _currentGridPosition.y < _holdStartPosition.y ? _currentGridPosition.y : _holdStartPosition.y;
         _bounds.yMax = _currentGridPosition.y > _holdStartPosition.y ? _currentGridPosition.y : _holdStartPosition.y;
 
-        DrawBounds(_priviewMap);
+        DrawBounds(_previewMap);
     }
 
     private void DrawBounds(Tilemap tilemap)
