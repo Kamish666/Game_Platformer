@@ -15,7 +15,7 @@ public enum CategoryBlocks
 
 
 [CreateAssetMenu(fileName = "BuildBlock", menuName = "BuildingObjects/Create BuildBlock")]
-public class BuildingBlockBase : ScriptableObject
+public class BuildingBlockBase : ScriptableObject, IBuildingBase
 {
     [SerializeField] private CategoryBlocks _category;
     [SerializeField] private TileBase _tileBase;

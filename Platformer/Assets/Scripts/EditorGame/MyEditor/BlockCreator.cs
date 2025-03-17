@@ -111,8 +111,10 @@ public class BlockCreator : Singleton<BlockCreator>
         SelectedObj = null;
     }
 
-    public void ObjectSelected(BuildingBlockBase obj)
+    public void ObjectSelected(IBuildingBase objBase)
     {
+        BuildingBlockBase obj = objBase as BuildingBlockBase;
+
         SelectedObj = obj;
 
         if (_defaultRenderer != null)

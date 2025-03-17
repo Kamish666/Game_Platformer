@@ -11,9 +11,9 @@ public class BlocksButtonHandler : MonoBehaviour
         _blockCreator = BlockCreator.GetInstance();
     }
 
-    public void ButtonClicked(BuildingBlockBase item)
+    public void ButtonClicked(IBuildingBase item)
     {
-        Debug.Log("Button was clicked: " + item.name);
+        //Debug.Log("Button was clicked: " + item.name);
         _blockCreator.ObjectSelected(item);
     }
 }
