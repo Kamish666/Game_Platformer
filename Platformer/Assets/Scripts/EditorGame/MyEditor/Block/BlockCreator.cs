@@ -108,6 +108,8 @@ public class BlockCreator : Singleton<BlockCreator>
 
     private void OnRightClick(InputAction.CallbackContext context)
     {
+        if (_defaultRenderer != null)
+            _defaultRenderer.sortingOrder = 0;
         SelectedObj = null;
     }
 

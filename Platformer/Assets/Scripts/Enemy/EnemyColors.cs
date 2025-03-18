@@ -22,14 +22,15 @@ public class EnemyColors : MonoBehaviour
         if (changeColorScript != null)
         {
             changeColorScript.enemyColors += OnColorChanged;
+
+            //«адание начального значени€ при старте игры
+            OnColorChanged(true, false, false);
         }
         else
         {
-            Debug.LogWarning("ChangeColor script not found in the scene!");
+            Debug.Log("ChangeColor script not found in the scene!");
         }
 
-        //«адание начального значени€ при старте игры
-        OnColorChanged(true, false, false);
     }
 
     private void OnColorChanged(bool green, bool red, bool blue)
