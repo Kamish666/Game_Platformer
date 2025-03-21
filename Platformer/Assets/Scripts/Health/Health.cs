@@ -56,10 +56,12 @@ public class Health : MonoBehaviour, IHealth
         }
     }
 
-    protected virtual void HandleDeath()
+    public virtual void HandleDeath()
     {
+        CurrentHealth = 0;
+        GetDamage?.Invoke(CurrentHealth);
         _isDied = true;
-        // anim.SetTrigger("die");
+        _anim.SetTrigger("die");
         OnDie?.Invoke();
         _anim.SetTrigger("die");
     }

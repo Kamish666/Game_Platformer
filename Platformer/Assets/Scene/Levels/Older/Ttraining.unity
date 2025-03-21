@@ -6671,6 +6671,22 @@ MonoBehaviour:
   _groundFristion: 0.9
   move: {fileID: -6813400332657366267, guid: e8308c682d47d7849b3519a14d2128ee, type: 3}
   jump: {fileID: -9128473724114582487, guid: e8308c682d47d7849b3519a14d2128ee, type: 3}
+--- !u!114 &1769706479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769706469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a359deac351181e4db9e152cac5ee334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _deathDive: 0.7
 --- !u!1 &1822027887
 GameObject:
   m_ObjectHideFlags: 0
@@ -7578,6 +7594,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 940589714757680885, guid: 65d20de68bb62344e959ec0de0acff8a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1769706478}
+    - targetCorrespondingSourceObject: {fileID: 940589714757680885, guid: 65d20de68bb62344e959ec0de0acff8a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1769706479}
   m_SourcePrefab: {fileID: 100100000, guid: 65d20de68bb62344e959ec0de0acff8a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

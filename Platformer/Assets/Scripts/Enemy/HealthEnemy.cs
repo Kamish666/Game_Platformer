@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthEnemy : Health
 {
-    protected override void HandleDeath()
+    public override void HandleDeath()
     {
         base.HandleDeath();
         Destroy(gameObject);
