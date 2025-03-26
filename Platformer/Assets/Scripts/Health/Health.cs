@@ -63,6 +63,6 @@ public class Health : MonoBehaviour, IHealth
         _isDied = true;
         _anim.SetTrigger("die");
         OnDie?.Invoke();
-        _anim.SetTrigger("die");
+        //_anim.SetTrigger("die");
     }
 }

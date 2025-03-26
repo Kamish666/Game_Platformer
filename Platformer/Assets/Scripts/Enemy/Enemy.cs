@@ -148,7 +148,8 @@ public class Enemy : MonoBehaviour
             if (damageDealer != null)
             {
                 damageDealer.GetDamage(_enemy);
-                if (player != null)
+                string _name = collider.name;
+                if (player != null && _name != "MeleeWeapon")
                 {
                     //collider.GetComponentInParent<Rigidbody2D>().AddForce(transform.up * 0.2f, ForceMode2D.Impulse);
                     player.GetComponent<Rigidbody2D>().AddForce(transform.up * 0.3f, ForceMode2D.Impulse);
