@@ -10,10 +10,16 @@ public class ObjectPlacer : MonoBehaviour
     private GameObject _selectedObject;
     private Vector2 _mousePos;
     private GameObject _previewObject;
+    [SerializeField] private Transform _enemyParent;
 
     private void Awake()
     {
         _camera = Camera.main;
+
+        if (_enemyParent == null)
+        {
+            _enemyParent = GameObject.Find("Enemy").transform;
+        }
     }
 
     private void Update()
@@ -59,6 +65,8 @@ public class ObjectPlacer : MonoBehaviour
         Vector3 worldPos = _previewObject.transform.position;
         GameObject newObj = Instantiate(_selectedObject, worldPos, Quaternion.identity);
         newObj.GetComponent<Collider2D>().enabled = true;
+
+        newObj.transform.parent = _enemyParent;
     }
 
     private void CancelSelection()
