@@ -135,6 +135,25 @@ public class ObjectSaveHandler : MonoBehaviour
             if (type == typeof(Vector2)) return JsonUtility.FromJson<Vector2>(value);
             if (type == typeof(Vector3)) return JsonUtility.FromJson<Vector3>(value);
             if (type.IsEnum) return Enum.Parse(type, value);
+
+            // Проверка на List<T>
+            if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>))
+            {
+                Type itemType = type.GetGenericArguments()[0]; // Получаем T из List<T>
+                Type listType = typeof(List<>).MakeGenericType(itemType);
+                object list = Activator.CreateInstance(listType);
+                MethodInfo addMethod = listType.GetMethod("Add");
+
+                // Десериализуем массив объектов из JSON
+                object[] items = JsonUtility.FromJson<SerializationWrapper>(value).items;
+                foreach (object item in items)
+                {
+                    addMethod.Invoke(list, new[] { Convert.ChangeType(item, itemType) });
+                }
+
+                return list;
+            }
+
             if (!type.IsPrimitive && !type.IsEnum)
                 return JsonUtility.FromJson(value, type);
         }
@@ -145,6 +164,14 @@ public class ObjectSaveHandler : MonoBehaviour
 
         return null;
     }
+
+    // Вспомогательный класс для десериализации списка
+    [Serializable]
+    private class SerializationWrapper
+    {
+        public object[] items;
+    }
+
 }
 
 
