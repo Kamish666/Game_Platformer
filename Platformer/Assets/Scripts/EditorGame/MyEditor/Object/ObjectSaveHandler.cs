@@ -34,7 +34,6 @@ public class ObjectSaveHandler : MonoBehaviour
             {
                 if (script == null) continue;
 
-
                 Type type = script.GetType();
                 while (type != null && type != typeof(MonoBehaviour))
                 {
@@ -52,10 +51,23 @@ public class ObjectSaveHandler : MonoBehaviour
                             object val = field.GetValue(script);
                             if (val != null)
                             {
+                                string serializedValue;
+
+                                // Попробуем сериализовать как JSON
+                                if (field.FieldType.IsPrimitive || field.FieldType == typeof(string))
+                                {
+                                    serializedValue = val.ToString();
+                                }
+                                else
+                                {
+                                    serializedValue = JsonUtility.ToJson(val);
+                                }
+
                                 compData.fields.Add(new Field
                                 {
                                     key = field.Name,
-                                    value = JsonUtility.ToJson(new Wrapper { value = val.ToString() })
+                                    type = field.FieldType.AssemblyQualifiedName,
+                                    value = serializedValue
                                 });
                             }
                         }
@@ -64,6 +76,7 @@ public class ObjectSaveHandler : MonoBehaviour
                     type = type.BaseType;
                     data.components.Add(compData);
                 }
+
             }
 
             dataList.Add(data);
@@ -91,17 +104,19 @@ public class ObjectSaveHandler : MonoBehaviour
 
             foreach (var compData in objData.components)
             {
-                Type type = Type.GetType(compData.scriptType);
-                if (type == null) continue;
+                Type scriptType = Type.GetType(compData.scriptType);
+                if (scriptType == null) continue;
 
-                var script = obj.GetComponent(type) ?? obj.AddComponent(type);
+                var script = obj.GetComponent(scriptType) ?? obj.AddComponent(scriptType);
                 foreach (var fieldEntry in compData.fields)
                 {
-                    FieldInfo field = type.GetField(fieldEntry.key, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+                    FieldInfo field = scriptType.GetField(fieldEntry.key, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
                     if (field != null)
                     {
-                        string raw = JsonUtility.FromJson<Wrapper>(fieldEntry.value).value;
-                        object val = ConvertValue(raw, field.FieldType);
+                        Type fieldType = Type.GetType(fieldEntry.type);
+                        if (fieldType == null) continue;
+
+                        object val = DeserializeField(fieldEntry.value, fieldType);
                         field.SetValue(script, val);
                     }
                 }
@@ -109,7 +124,7 @@ public class ObjectSaveHandler : MonoBehaviour
         }
     }
 
-    private object ConvertValue(string value, Type type)
+    private object DeserializeField(string value, Type type)
     {
         try
         {
@@ -119,19 +134,16 @@ public class ObjectSaveHandler : MonoBehaviour
             if (type == typeof(string)) return value;
             if (type == typeof(Vector2)) return JsonUtility.FromJson<Vector2>(value);
             if (type == typeof(Vector3)) return JsonUtility.FromJson<Vector3>(value);
+            if (type.IsEnum) return Enum.Parse(type, value);
+            if (!type.IsPrimitive && !type.IsEnum)
+                return JsonUtility.FromJson(value, type);
         }
         catch (Exception e)
         {
-            Debug.LogWarning($"Ошибка преобразования \"{value}\" в тип {type}: {e.Message}");
+            Debug.LogWarning($"Не удалось десериализовать поле типа {type}: {e.Message}");
         }
 
         return null;
-    }
-
-    [Serializable]
-    private class Wrapper
-    {
-        public string value;
     }
 }
 
@@ -157,8 +169,10 @@ public class ComponentData
 public class Field
 {
     public string key;
-    public string value;
+    public string type; // Тип поля в строковом виде
+    public string value; // Сериализованное значение
 }
+
 
 
 
