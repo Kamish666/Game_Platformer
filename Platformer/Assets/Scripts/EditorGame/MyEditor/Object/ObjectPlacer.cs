@@ -66,6 +66,8 @@ public class ObjectPlacer : MonoBehaviour
         GameObject newObj = Instantiate(_selectedObject, worldPos, Quaternion.identity);
         newObj.GetComponent<Collider2D>().enabled = true;
 
+        newObj.name = _selectedObject.name;
+
         newObj.transform.parent = _enemyParent;
     }
 

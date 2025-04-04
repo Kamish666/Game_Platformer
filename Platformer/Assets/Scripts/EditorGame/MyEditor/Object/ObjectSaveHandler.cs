@@ -12,38 +12,61 @@ public class ObjectSaveHandler : MonoBehaviour
     private void Start()
     {
         if (_enemyParent == null)
-        {
             _enemyParent = GameObject.Find("Enemy").transform;
-        }
     }
 
     public void OnSave()
     {
-        List<ObjectData> dataList = new List<ObjectData>();
+        List<SavedObjectData> dataList = new List<SavedObjectData>();
 
         foreach (Transform child in _enemyParent)
         {
-            ObjectData objData = new ObjectData();
-            objData.name = child.name;
-            objData.position = child.position;
-            objData.rotation = child.rotation.eulerAngles;
-            objData.scriptParameters = new Dictionary<string, string>();
+            var data = new SavedObjectData
+            {
+                prefabName = child.name,
+                position = child.position,
+                rotation = child.rotation.eulerAngles,
+                components = new List<ComponentData>()
+            };
 
             MonoBehaviour[] scripts = child.GetComponents<MonoBehaviour>();
-            foreach (MonoBehaviour script in scripts)
+            foreach (var script in scripts)
             {
+                if (script == null) continue;
+
+
                 Type type = script.GetType();
-                FieldInfo[] fields = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-                foreach (FieldInfo field in fields)
+                while (type != null && type != typeof(MonoBehaviour))
                 {
-                    if (field.IsPublic || field.GetCustomAttribute<SerializeField>() != null)
+                    var compData = new ComponentData
                     {
-                        objData.scriptParameters[field.Name] = field.GetValue(script)?.ToString();
+                        scriptType = type.AssemblyQualifiedName,
+                        fields = new List<Field>()
+                    };
+
+                    FieldInfo[] fieldInfos = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+                    foreach (var field in fieldInfos)
+                    {
+                        if (field.IsPublic || field.GetCustomAttribute<SerializeField>() != null)
+                        {
+                            object val = field.GetValue(script);
+                            if (val != null)
+                            {
+                                compData.fields.Add(new Field
+                                {
+                                    key = field.Name,
+                                    value = JsonUtility.ToJson(new Wrapper { value = val.ToString() })
+                                });
+                            }
+                        }
                     }
+
+                    type = type.BaseType;
+                    data.components.Add(compData);
                 }
             }
 
-            dataList.Add(objData);
+            dataList.Add(data);
         }
 
         FileHandler.SaveToJSON(dataList, _fileName);
@@ -51,33 +74,35 @@ public class ObjectSaveHandler : MonoBehaviour
 
     public void OnLoad()
     {
-        List<ObjectData> dataList = FileHandler.ReadListFromJSON<ObjectData>(_fileName);
+        var dataList = FileHandler.ReadListFromJSON<SavedObjectData>(_fileName);
 
         foreach (Transform child in _enemyParent)
-        {
             Destroy(child.gameObject);
-        }
 
         foreach (var objData in dataList)
         {
-            GameObject obj = new GameObject(objData.name);
+            GameObject prefab = Resources.Load<GameObject>(objData.prefabName);
+            GameObject obj = prefab != null ? Instantiate(prefab) : new GameObject(objData.prefabName);
+
+            obj.name = objData.prefabName;
             obj.transform.parent = _enemyParent;
             obj.transform.position = objData.position;
             obj.transform.rotation = Quaternion.Euler(objData.rotation);
 
-            MonoBehaviour[] scripts = obj.GetComponents<MonoBehaviour>();
-            foreach (MonoBehaviour script in scripts)
+            foreach (var compData in objData.components)
             {
-                Type type = script.GetType();
-                FieldInfo[] fields = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-                foreach (FieldInfo field in fields)
+                Type type = Type.GetType(compData.scriptType);
+                if (type == null) continue;
+
+                var script = obj.GetComponent(type) ?? obj.AddComponent(type);
+                foreach (var fieldEntry in compData.fields)
                 {
-                    if (field.IsPublic || field.GetCustomAttribute<SerializeField>() != null)
+                    FieldInfo field = type.GetField(fieldEntry.key, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+                    if (field != null)
                     {
-                        if (objData.scriptParameters.TryGetValue(field.Name, out string value))
-                        {
-                            field.SetValue(script, ConvertValue(value, field.FieldType));
-                        }
+                        string raw = JsonUtility.FromJson<Wrapper>(fieldEntry.value).value;
+                        object val = ConvertValue(raw, field.FieldType);
+                        field.SetValue(script, val);
                     }
                 }
             }
@@ -86,19 +111,55 @@ public class ObjectSaveHandler : MonoBehaviour
 
     private object ConvertValue(string value, Type type)
     {
-        if (type == typeof(int)) return int.Parse(value);
-        if (type == typeof(float)) return float.Parse(value);
-        if (type == typeof(bool)) return bool.Parse(value);
-        return value;
+        try
+        {
+            if (type == typeof(int)) return int.Parse(value);
+            if (type == typeof(float)) return float.Parse(value);
+            if (type == typeof(bool)) return bool.Parse(value);
+            if (type == typeof(string)) return value;
+            if (type == typeof(Vector2)) return JsonUtility.FromJson<Vector2>(value);
+            if (type == typeof(Vector3)) return JsonUtility.FromJson<Vector3>(value);
+        }
+        catch (Exception e)
+        {
+            Debug.LogWarning($"Ошибка преобразования \"{value}\" в тип {type}: {e.Message}");
+        }
+
+        return null;
+    }
+
+    [Serializable]
+    private class Wrapper
+    {
+        public string value;
     }
 }
 
+
+
 [Serializable]
-public class ObjectData
+public class SavedObjectData
 {
-    public string name;
+    public string prefabName;
     public Vector3 position;
     public Vector3 rotation;
-    public Dictionary<string, string> scriptParameters;
+    public List<ComponentData> components;
 }
+
+[Serializable]
+public class ComponentData
+{
+    public string scriptType;
+    public List<Field> fields;
+}
+
+[Serializable]
+public class Field
+{
+    public string key;
+    public string value;
+}
+
+
+
 
