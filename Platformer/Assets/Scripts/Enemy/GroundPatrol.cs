@@ -5,8 +5,8 @@ using UnityEngine;
 public class GroundPatrol : Enemy
 {
     [Range(0, 0.5f)]
-    [SerializeField] private float _speed = 1f;
-    [SerializeField] private bool _moveLeft = true;
+    [GameEditorAnnotation][SerializeField] private float _speed = 1f;
+    [GameEditorAnnotation][SerializeField] private bool _moveLeft = true;
     [SerializeField] private Transform _groudDetect;
     [SerializeField] private LayerMask _groundLayer;
 

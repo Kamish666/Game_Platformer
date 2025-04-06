@@ -6,8 +6,8 @@ public class MachineGun : MonoBehaviour
 {
     [SerializeField] private string _projectileTag;
     [SerializeField] private Transform _firePoint;
-    [SerializeField] private float _fireRate = 2f;
-    [SerializeField] private float _projectileSpeed = 1f;
+    [GameEditorAnnotation][SerializeField] private float _fireRate = 2f;
+    [GameEditorAnnotation][SerializeField] private float _projectileSpeed = 1f;
     private BulletPooler _bulletPooler;
 
     private void Start()

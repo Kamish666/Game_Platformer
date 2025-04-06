@@ -8,9 +8,9 @@ public class EnemyColors : MonoBehaviour
     private Collider2D _collider;
 
     // Переменные для каждого цвета
-    [SerializeField] private bool _isGreenEnemy;
-    [SerializeField] private bool _isBlueEnemy;
-    [SerializeField] private bool _isRedEnemy;
+    [GameEditorAnnotation][SerializeField] private bool _isGreenEnemy;
+    [GameEditorAnnotation][SerializeField] private bool _isBlueEnemy;
+    [GameEditorAnnotation][SerializeField] private bool _isRedEnemy;
 
     private void Awake()
     {

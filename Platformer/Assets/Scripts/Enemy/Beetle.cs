@@ -5,12 +5,12 @@ using UnityEngine;
 public class Beetle : Enemy
 {
     [Range(0f, 0.5f)]
-    [SerializeField] private float _speed = 2f;
+    [GameEditorAnnotation][SerializeField] private float _speed = 2f;
     private bool _isWait = false;
-    [SerializeField] private bool _isHidden = true;
-    [SerializeField] private float _waitTime = 3f;
+    [GameEditorAnnotation][SerializeField] private bool _isHidden = true;
+    [GameEditorAnnotation][SerializeField] private float _waitTime = 3f;
     private Vector3 _point;
-    [SerializeField] private float _distance = 1.3f;
+    [GameEditorAnnotation][SerializeField] private float _distance = 1.3f;
     
 
     void Start()

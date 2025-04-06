@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class AirPatrol : Enemy
 {
-    [SerializeField] protected Transform[] _points;
+    [GameEditorAnnotation] [SerializeField] protected Transform[] _points;
     protected Transform _target;
     [Range(0, 0.5f)]
-    [SerializeField] private float _speed = 0.1f;
+    [GameEditorAnnotation] [SerializeField] private float _speed = 0.1f;
     protected int _index;
     private bool _moveForward;
 
-    public bool loop;
+    [GameEditorAnnotation] public bool loop;
 
     protected virtual void Start()
     {

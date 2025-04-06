@@ -116,9 +116,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [Range(0, 10)]
-    [SerializeField] private float _damage;
+    [GameEditorAnnotation][SerializeField] private float _damage;
 
-    [SerializeField] private bool _canTakeDamage = false;
+    [GameEditorAnnotation][SerializeField] private bool _canTakeDamage = false;
     private GameObject _enemy;
 
     private void Awake()

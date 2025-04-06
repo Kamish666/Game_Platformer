@@ -6,7 +6,7 @@ public class JumpingTrap : MonoBehaviour
 {
     [SerializeField] private Animation _jamp;
 
-    [SerializeField] private float _strenght;
+    [GameEditorAnnotation] [SerializeField] private float _strenght;
 
     // Start is called before the first frame update
     void Start()

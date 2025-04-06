@@ -7,7 +7,7 @@ public class Bomber : AirPatrol
     //public GameObject bullet;
     [SerializeField] private string _projectileTag;
     [SerializeField] private Transform _shoot;
-    public float tumeShoot = 4f;
+    [GameEditorAnnotation] public float tumeShoot = 4f;
 
     private BulletPooler _bulletPooler;
 
