@@ -10,22 +10,23 @@ public class ChangeColor : MonoBehaviour
 
     public InputActionReference changeColor;
 
-    private int _currentColorIndex = 0; // 0: Зеленый, 1: Красный, 2: Синий
+    private int _currentColorIndex = 1; // 0: Красный, 1: Зеленый, 2: Синий
 
-    private bool[] _activeColorsM = { true, false, false}; // 0: Зеленый, 1: Красный, 2: Синий
+    private bool[] _activeColorsM = { true, false, false}; // 0: Красный, 1: Зеленый, 2: Синий
 
     private GameObject[] _colorBlocs;
 
-    public delegate void Colors(bool green, bool red, bool blue);
+    public delegate void Colors(bool red, bool green, bool blue);
     public event Colors enemyColors;
 
     private void Start()
     {
-        _colorBlocs = new GameObject[] { GameObject.Find("GreenBlocks"), GameObject.Find("RedBlocks"), GameObject.Find("BlueBlocks")};
+        _colorBlocs = new GameObject[] {GameObject.Find("RedBlocks"), GameObject.Find("GreenBlocks"),  GameObject.Find("BlueBlocks")};
 
         UpdateColorVisibility();
 
         FindObjectOfType<PlayerMovement>().GetComponent<Health>().OnDie += DeactiveScript;
+
     }
 
 
@@ -46,11 +47,11 @@ public class ChangeColor : MonoBehaviour
 
         if (changeInput > 0)
         {
-            ChangeColorIndex(1); // Вызов изменения цвета вперёд
+            ChangeColorIndex(-1); // Вызов изменения цвета вперёд
         }
         else if (changeInput < 0)
         {
-            ChangeColorIndex(-1); // Вызов изменения цвета назад
+            ChangeColorIndex(1); // Вызов изменения цвета назад
         }
     }
 

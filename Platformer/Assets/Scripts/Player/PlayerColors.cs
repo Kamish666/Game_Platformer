@@ -22,21 +22,22 @@ public class PlayerColors : MonoBehaviour
         }
     }
 
-    private void OnColorChanged(bool green, bool red, bool blue)
+    private void OnColorChanged(bool red, bool green, bool blue)
     {
         // Проверка условий на основе цвета врага
-        if (green)
-        {
-            EnableEnemy(Color.white);
-        }
-        else if (blue)
-        {
-            EnableEnemy(new Color(0f, 0.231f, 1f));
-        }
-        else
+        if (red)
         {
             EnableEnemy(Color.red);
         }
+        else if (green)
+        {
+            EnableEnemy(Color.white);
+        }
+        else
+        {
+            EnableEnemy(new Color(0f, 0.231f, 1f));
+        }
+
     }
 
     private void EnableEnemy(Color color)

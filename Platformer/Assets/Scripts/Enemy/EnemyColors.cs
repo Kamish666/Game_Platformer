@@ -8,9 +8,10 @@ public class EnemyColors : MonoBehaviour
     private Collider2D _collider;
 
     // Переменные для каждого цвета
+    [GameEditorAnnotation][SerializeField] private bool _isRedEnemy;
     [GameEditorAnnotation][SerializeField] private bool _isGreenEnemy;
     [GameEditorAnnotation][SerializeField] private bool _isBlueEnemy;
-    [GameEditorAnnotation][SerializeField] private bool _isRedEnemy;
+    
 
     private void Awake()
     {
@@ -24,29 +25,35 @@ public class EnemyColors : MonoBehaviour
             changeColorScript.enemyColors += OnColorChanged;
 
             //Задание начального значения при старте игры
-            OnColorChanged(true, false, false);
+            //OnColorChanged(false, true, false);
         }
         else
         {
             Debug.Log("ChangeColor script not found in the scene!");
+            StartCoroutine(SwitchColor());
         }
 
     }
 
-    private void OnColorChanged(bool green, bool red, bool blue)
+    private void OnColorChanged(bool red, bool green, bool blue)
     {
         // Проверка условий на основе цвета врага
-        if (_isGreenEnemy && green)
+        if ((!_isGreenEnemy && !_isBlueEnemy && !_isRedEnemy) ||
+            (_isGreenEnemy && _isBlueEnemy && _isRedEnemy))
+        {
+            EnableEnemy(Color.gray);
+        }       
+        else if (_isRedEnemy && red)
+        {
+            EnableEnemy(Color.red);
+        }
+        else if (_isGreenEnemy && green)
         {
             EnableEnemy(Color.green);
         }
         else if (_isBlueEnemy && blue)
         {
             EnableEnemy(Color.blue);
-        }
-        else if (_isRedEnemy && red)
-        {
-            EnableEnemy(Color.red);
         }
         else
         {
@@ -79,6 +86,44 @@ public class EnemyColors : MonoBehaviour
         _spriteRenderer.enabled = false;
     }
 
+    IEnumerator SwitchColor()
+    {
+        int currentColorIndex = 0;
+        while (true)
+        {
+            bool[] cololorsEnemy = { _isRedEnemy, _isGreenEnemy, _isBlueEnemy };
+            //int currentColorIndex = cololorsEnemy.Length;
+            int iteration = 0;
+
+            while (true)
+            {
+                currentColorIndex = (currentColorIndex + 1) % cololorsEnemy.Length;
+
+                if (cololorsEnemy[currentColorIndex] == true)
+                {
+                    Debug.Log(currentColorIndex);
+                    switch (currentColorIndex)
+                    {
+                        case 0: OnColorChanged(true, false, false); break;
+                        case 1: OnColorChanged(false, true, false); break;
+                        case 2: OnColorChanged(false, false, true); break;
+                    }
+                    break;
+                }
+
+                iteration++;
+                if (iteration == cololorsEnemy.Length)
+                {
+                    OnColorChanged(false, false, false);
+                    break;
+                }
+
+
+            }
+            yield return new WaitForSeconds(1f);
+
+        }
+    }
 
     private void OnDestroy()
     {

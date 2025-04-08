@@ -7,7 +7,7 @@ public class IndicatorColors : MonoBehaviour
 {
 
     [SerializeField] private Image _indicatorCorors;
-    [SerializeField] private Sprite _green, _red, _blue;
+    [SerializeField] private Sprite _red, _green, _blue;
 
     private void Start()
     {
@@ -24,20 +24,21 @@ public class IndicatorColors : MonoBehaviour
         }
     }
 
-    private void OnColorChanged(bool green, bool red, bool blue)
+    private void OnColorChanged(bool red, bool green, bool blue)
     {
         // Проверка условий на основе цвета врага
-        if (green)
-        {
-            _indicatorCorors.sprite = _green;
-        }
-        else if (blue)
-        {
-            _indicatorCorors.sprite = _blue;
-        }
-        else
+        if (red)
         {
             _indicatorCorors.sprite = _red;
         }
+        else if (green)
+        {
+            _indicatorCorors.sprite = _green;
+        }
+        else
+        {
+            _indicatorCorors.sprite = _blue;
+        }
+
     }
 }
