@@ -101,7 +101,7 @@ public class EnemyColors : MonoBehaviour
 
                 if (cololorsEnemy[currentColorIndex] == true)
                 {
-                    Debug.Log(currentColorIndex);
+                    //Debug.Log(currentColorIndex);
                     switch (currentColorIndex)
                     {
                         case 0: OnColorChanged(true, false, false); break;

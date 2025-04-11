@@ -4531,10 +4531,13 @@ MonoBehaviour:
   _damage: 1
   _canTakeDamage: 0
   _points:
-  - {fileID: 1425478960}
-  - {fileID: 69486514}
+  - {x: -3.1800003, y: 1.59}
+  - {x: 3.4699998, y: 1.91}
   _speed: 0.1
   loop: 0
+  _editorPoints:
+  - {fileID: 1425478960}
+  - {fileID: 69486514}
   _projectileTag: Bomber Green Blue Projectile
   _shoot: {fileID: 950264588}
   tumeShoot: 4
@@ -6536,12 +6539,17 @@ MonoBehaviour:
   _damage: 1
   _canTakeDamage: 0
   _points:
+  - {x: -3.1800003, y: 1.59}
+  - {x: -4.71, y: 3.89}
+  - {x: 1.3599999, y: 3.91}
+  - {x: 3.4699998, y: 1.91}
+  _speed: 0.1
+  loop: 0
+  _editorPoints:
   - {fileID: 1425478960}
   - {fileID: 486211106}
   - {fileID: 487130374}
   - {fileID: 69486514}
-  _speed: 0.1
-  loop: 0
 --- !u!114 &1608195981
 MonoBehaviour:
   m_ObjectHideFlags: 0

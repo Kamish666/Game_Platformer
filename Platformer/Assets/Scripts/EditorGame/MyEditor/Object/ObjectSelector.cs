@@ -33,9 +33,13 @@ public class ObjectSelector : MonoBehaviour
         if (hit.collider != null)
         {
             _selectedObject = hit.collider.gameObject;
-            //Debug.Log(_selectedObject.name + " найден");
-            //Debug.Log(_inspector);
             _inspector.DisplayObjectParameters(_selectedObject);
         }
     }
+
+    public GameObject GetSelectedObject()
+    {
+        return _selectedObject;
+    }
 }
+
