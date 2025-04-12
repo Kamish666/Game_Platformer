@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
@@ -6,14 +6,8 @@ using UnityEngine;
 
 public class ObjectSaveHandler : MonoBehaviour
 {
-    [SerializeField] private string _fileName = "objectData.json";
     [SerializeField] private Transform _enemyParent;
-
-    private void Start()
-    {
-        if (_enemyParent == null)
-            _enemyParent = GameObject.Find("Enemy").transform;
-    }
+    [SerializeField] private string _fileName;
 
     public void OnSave()
     {
@@ -34,7 +28,6 @@ public class ObjectSaveHandler : MonoBehaviour
             {
                 if (script == null) continue;
 
-
                 Type type = script.GetType();
                 while (type != null && type != typeof(MonoBehaviour))
                 {
@@ -47,22 +40,33 @@ public class ObjectSaveHandler : MonoBehaviour
                     FieldInfo[] fieldInfos = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
                     foreach (var field in fieldInfos)
                     {
-                        if (field.IsPublic || field.GetCustomAttribute<SerializeField>() != null)
+                        if (/*(field.IsPublic || field.GetCustomAttribute<SerializeField>() != null) &&*/ field.GetCustomAttribute<GameEditorAnnotation>() != null)
                         {
                             object val = field.GetValue(script);
                             if (val != null)
                             {
+                                string jsonValue;
+
+                                if (field.FieldType == typeof(Vector2[]))
+                                {
+                                    jsonValue = JsonUtility.ToJson(new Vector2ArrayWrapper { array = (Vector2[])val });
+                                }
+                                else
+                                {
+                                    jsonValue = JsonUtility.ToJson(new Wrapper { value = val.ToString() });
+                                }
+
                                 compData.fields.Add(new Field
                                 {
                                     key = field.Name,
-                                    value = JsonUtility.ToJson(new Wrapper { value = val.ToString() })
+                                    value = jsonValue
                                 });
                             }
                         }
                     }
 
-                    type = type.BaseType;
                     data.components.Add(compData);
+                    type = type.BaseType;
                 }
             }
 
@@ -100,8 +104,17 @@ public class ObjectSaveHandler : MonoBehaviour
                     FieldInfo field = type.GetField(fieldEntry.key, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
                     if (field != null)
                     {
-                        string raw = JsonUtility.FromJson<Wrapper>(fieldEntry.value).value;
-                        object val = ConvertValue(raw, field.FieldType);
+                        object val;
+                        if (field.FieldType == typeof(Vector2[]))
+                        {
+                            val = JsonUtility.FromJson<Vector2ArrayWrapper>(fieldEntry.value).array;
+                        }
+                        else
+                        {
+                            string raw = JsonUtility.FromJson<Wrapper>(fieldEntry.value).value;
+                            val = ConvertValue(raw, field.FieldType);
+                        }
+
                         field.SetValue(script, val);
                     }
                 }
@@ -111,29 +124,16 @@ public class ObjectSaveHandler : MonoBehaviour
 
     private object ConvertValue(string value, Type type)
     {
-        try
-        {
-            if (type == typeof(int)) return int.Parse(value);
-            if (type == typeof(float)) return float.Parse(value);
-            if (type == typeof(bool)) return bool.Parse(value);
-            if (type == typeof(string)) return value;
-            if (type == typeof(Vector2)) return JsonUtility.FromJson<Vector2>(value);
-            if (type == typeof(Vector3)) return JsonUtility.FromJson<Vector3>(value);
-        }
-        catch (Exception e)
-        {
-            Debug.LogWarning($"Ошибка преобразования \"{value}\" в тип {type}: {e.Message}");
-        }
-
+        if (type == typeof(int)) return int.Parse(value);
+        if (type == typeof(float)) return float.Parse(value);
+        if (type == typeof(bool)) return bool.Parse(value);
+        if (type == typeof(string)) return value;
+        if (type == typeof(Vector2)) return JsonUtility.FromJson<Vector2>(value);
         return null;
     }
 
-    [Serializable]
-    private class Wrapper
-    {
-        public string value;
-    }
 }
+
 
 
 
@@ -161,5 +161,16 @@ public class Field
 }
 
 
+[Serializable]
+public class Wrapper
+{
+    public string value;
+}
+
+[Serializable]
+public class Vector2ArrayWrapper
+{
+    public Vector2[] array;
+}
 
 
