@@ -9,6 +9,12 @@ public class ObjectSaveHandler : MonoBehaviour
     [SerializeField] private Transform _enemyParent;
     [SerializeField] private string _fileName;
 
+    private void Start()
+    {
+        if (_enemyParent == null)
+            _enemyParent = GameObject.Find("Enemy").transform;
+    }
+
     public void OnSave()
     {
         List<SavedObjectData> dataList = new List<SavedObjectData>();

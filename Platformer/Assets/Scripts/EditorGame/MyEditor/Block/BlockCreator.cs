@@ -121,7 +121,11 @@ public class BlockCreator : Singleton<BlockCreator>
 
         if (_defaultRenderer != null)
             _defaultRenderer.sortingOrder = 0;
-        _defaultMap = obj.TileMap;
+
+        if (_selectObj.GetType() != typeof(BuildingBlockTool) )
+        {
+            _defaultMap = obj.TileMap;
+        }
         _defaultRenderer = obj.TileRenderer;
         _defaultRenderer.sortingOrder = 1;
     }
@@ -162,14 +166,24 @@ public class BlockCreator : Singleton<BlockCreator>
         {
             for (int y = _bounds.yMin; y <= _bounds.yMax; y++)
             {
-                tilemap.SetTile(new Vector3Int(x, y, 0), _tileBase);
+                //tilemap.SetTile(new Vector3Int(x, y, 0), _tileBase);
+                DrawItem(tilemap, new Vector3Int(x, y, 0), _tileBase);
             }
         }
     }
 
-    private void DrawItem()
+    private void DrawItem(Tilemap map, Vector3Int position, TileBase tileBase)
     {
-        _defaultMap.SetTile(_currentGridPosition, _tileBase);
+
+        if (map != _previewMap && _selectObj.GetType() == typeof(BuildingBlockTool))
+        {
+            BuildingBlockTool tool = (BuildingBlockTool) _selectObj;
+
+            tool.Use(position);
+        }
+        else {
+            map.SetTile(position, tileBase);
+        }
     }
 
     private void OnEnable()
