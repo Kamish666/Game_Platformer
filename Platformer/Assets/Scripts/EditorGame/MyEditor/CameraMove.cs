@@ -39,7 +39,7 @@ public class CameraMove : MonoBehaviour
 
             if (_zoom != 0)
             {
-                _cam.orthographicSize -= _zoom * _cameraSpeedSlide.value * 3; // Уменьшаем размер при прокрутке вниз
+                _cam.orthographicSize -= _zoom * _cameraSpeedSlide.value * 10; // Уменьшаем размер при прокрутке вниз
                 _cam.orthographicSize = Mathf.Clamp(_cam.orthographicSize, 1, 30); // Ограничиваем размер
                 //Debug.Log("Zoom: " + _zoom + "  cam.orthographicSize: " + _cam.orthographicSize);
             }

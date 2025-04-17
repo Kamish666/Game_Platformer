@@ -91,34 +91,36 @@ public class EnemyColors : MonoBehaviour
         int currentColorIndex = 0;
         while (true)
         {
-            bool[] cololorsEnemy = { _isRedEnemy, _isGreenEnemy, _isBlueEnemy };
-            //int currentColorIndex = cololorsEnemy.Length;
-            int iteration = 0;
+            if (_spriteRenderer.color.a == 1 ) {
+                bool[] cololorsEnemy = { _isRedEnemy, _isGreenEnemy, _isBlueEnemy };
+                //int currentColorIndex = cololorsEnemy.Length;
+                int iteration = 0;
 
-            while (true)
-            {
-                currentColorIndex = (currentColorIndex + 1) % cololorsEnemy.Length;
-
-                if (cololorsEnemy[currentColorIndex] == true)
+                while (true)
                 {
-                    //Debug.Log(currentColorIndex);
-                    switch (currentColorIndex)
+                    currentColorIndex = (currentColorIndex + 1) % cololorsEnemy.Length;
+
+                    if (cololorsEnemy[currentColorIndex] == true)
                     {
-                        case 0: OnColorChanged(true, false, false); break;
-                        case 1: OnColorChanged(false, true, false); break;
-                        case 2: OnColorChanged(false, false, true); break;
+                        //Debug.Log(currentColorIndex);
+                        switch (currentColorIndex)
+                        {
+                            case 0: OnColorChanged(true, false, false); break;
+                            case 1: OnColorChanged(false, true, false); break;
+                            case 2: OnColorChanged(false, false, true); break;
+                        }
+                        break;
                     }
-                    break;
+
+                    iteration++;
+                    if (iteration == cololorsEnemy.Length)
+                    {
+                        OnColorChanged(false, false, false);
+                        break;
+                    }
+
+
                 }
-
-                iteration++;
-                if (iteration == cololorsEnemy.Length)
-                {
-                    OnColorChanged(false, false, false);
-                    break;
-                }
-
-
             }
             yield return new WaitForSeconds(1f);
 
