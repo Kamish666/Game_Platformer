@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using UnityEngine;
 
-public class ObjectSaveHandler : MonoBehaviour
+public class ObjectSaveHandler : MonoBehaviour, ISaveHandler
 {
     [SerializeField] private Transform _enemyParent;
-    [SerializeField] private string _fileName;
+    [SerializeField] private string _fileName = "objectData.json";
+
+    private string _path;
 
     private void Start()
     {
@@ -15,8 +18,10 @@ public class ObjectSaveHandler : MonoBehaviour
             _enemyParent = GameObject.Find("Enemy").transform;
     }
 
-    public void OnSave()
+    public void Save(string path)
     {
+        _path = Path.Combine(path, _fileName);
+
         List<SavedObjectData> dataList = new List<SavedObjectData>();
 
         foreach (Transform child in _enemyParent)
@@ -79,12 +84,12 @@ public class ObjectSaveHandler : MonoBehaviour
             dataList.Add(data);
         }
 
-        FileHandler.SaveToJSON(dataList, _fileName);
+        FileHandler.SaveToJSON(dataList, _path);
     }
 
-    public void OnLoad()
+    public void Load()
     {
-        var dataList = FileHandler.ReadListFromJSON<SavedObjectData>(_fileName);
+        var dataList = FileHandler.ReadListFromJSON<SavedObjectData>(_path);
 
         foreach (Transform child in _enemyParent)
             Destroy(child.gameObject);

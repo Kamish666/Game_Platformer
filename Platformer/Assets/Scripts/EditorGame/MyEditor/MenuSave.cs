@@ -1,0 +1,83 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using TMPro;
+using UnityEngine;
+
+public class MenuSave : MonoBehaviour
+{
+    public delegate void Save(string path);
+    public event Save OnSave;
+
+    [SerializeField] private TMP_InputField levelNameInput;
+    [SerializeField] private GameObject overwriteWarningWindow;
+    [SerializeField] private GameObject emptyNameWarningWindow;
+    [SerializeField] private string levelsFolder = "Levels";
+
+    private string _fullCurrentPath;
+    private string _currentPath;
+
+    private void Start()
+    {
+        var handlers = GetComponents<ISaveHandler>();
+        foreach (var handler in handlers)
+        {
+            OnSave += handler.Save;
+        }
+    }
+
+    // Вызывается при нажатии кнопки "Сохранить"
+    public void TrySaveLevel()
+    {
+        string levelName = levelNameInput.text.Trim();
+
+        if (string.IsNullOrEmpty(levelName))
+        {
+            emptyNameWarningWindow.SetActive(true);
+            return;
+        }
+
+        _currentPath = Path.Combine(levelsFolder, levelName);
+        _fullCurrentPath = Path.Combine(Application.persistentDataPath, _currentPath);
+
+        if (Directory.Exists(_fullCurrentPath))
+        {
+            overwriteWarningWindow.SetActive(true);
+        }
+        else
+        {
+            SaveLevel();
+        }
+    }
+
+    // Вызывается из UI, если игрок соглашается перезаписать
+    public void ConfirmOverwrite()
+    {
+        SaveLevel();
+        overwriteWarningWindow.SetActive(false);
+    }
+
+    private void SaveLevel()
+    {
+        // Создаем папку если её нет
+        if (!Directory.Exists(_fullCurrentPath))
+            Directory.CreateDirectory(_fullCurrentPath);
+
+        // Передаем путь обработчикам
+        OnSave?.Invoke(_currentPath);
+        Debug.Log($"Level saved to: {_fullCurrentPath}/");
+    }
+
+    // Вызывается из UI при закрытии предупреждения о существующем уровне
+    public void CancelOverwrite()
+    {
+        overwriteWarningWindow.SetActive(false);
+    }
+
+    // Вызывается из UI при закрытии окна об ошибке пустого имени
+    public void CloseEmptyNameWarning()
+    {
+        emptyNameWarningWindow.SetActive(false);
+    }
+}

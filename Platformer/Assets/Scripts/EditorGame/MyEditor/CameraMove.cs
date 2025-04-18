@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 public class CameraMove : MonoBehaviour
 {
-    [SerializeField] private Slider _cameraSpeedSlide;
     [SerializeField] private ManagerScript _ms;
+    [SerializeField] private float _speed = 1;
 
     private float _xAxis;
     private float _yAxis;
@@ -14,6 +14,8 @@ public class CameraMove : MonoBehaviour
 
     private Vector3 _position;
     private float _startZoom;
+
+    private float _actualSpeed;
 
 
     void Start()
@@ -33,13 +35,15 @@ public class CameraMove : MonoBehaviour
 
             _zoom = Input.GetAxis("Mouse ScrollWheel") * 10;
 
-            if (_xAxis != 0 || _yAxis != 0) 
-                transform.Translate(new Vector3(_xAxis * _cameraSpeedSlide.value, _yAxis * _cameraSpeedSlide.value, 0.0f));
-
+            _actualSpeed = _cam.orthographicSize * Time.deltaTime * _speed;
+            if (_xAxis != 0 || _yAxis != 0)
+            {
+                transform.Translate(new Vector3(_xAxis * _actualSpeed, _yAxis * _actualSpeed, 0.0f));
+            }
 
             if (_zoom != 0)
             {
-                _cam.orthographicSize -= _zoom * _cameraSpeedSlide.value * 10; // Уменьшаем размер при прокрутке вниз
+                _cam.orthographicSize -= _zoom * 10 * _actualSpeed; // Уменьшаем размер при прокрутке вниз
                 _cam.orthographicSize = Mathf.Clamp(_cam.orthographicSize, 1, 30); // Ограничиваем размер
                 //Debug.Log("Zoom: " + _zoom + "  cam.orthographicSize: " + _cam.orthographicSize);
             }

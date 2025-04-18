@@ -1,16 +1,27 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering.VirtualTexturing;
 using UnityEngine.Tilemaps;
 
-public class SaveHandler : MonoBehaviour
+
+public interface ISaveHandler
+{
+    void Save(string path);
+    void Load();
+}
+
+public class BlockSaveHandler : MonoBehaviour, ISaveHandler
 {
     private Dictionary<string, Tilemap> _tilemaps = new Dictionary<string, Tilemap>();
     //[SerializeField] private BoundsInt _bounds;
     [SerializeField] private string _fileName = "tilemapData.json";
+
+    private string _path;
 
     private void Start()
     {
@@ -27,8 +38,10 @@ public class SaveHandler : MonoBehaviour
         }
     }
 
-    public void OnSave()
+    public void Save(string path)
     {
+        _path = Path.Combine(path, _fileName);
+
         List<TilemapData> data = new List<TilemapData>();
 
         foreach (var mapObj in _tilemaps)
@@ -62,12 +75,12 @@ public class SaveHandler : MonoBehaviour
             data.Add(mapData);
         }
 
-        FileHandler.SaveToJSON<TilemapData>(data, _fileName);
+        FileHandler.SaveToJSON<TilemapData>(data, _path);
     }
 
-    public void OnLoad()
+    public void Load()
     {
-        List<TilemapData> data = FileHandler.ReadListFromJSON<TilemapData>(_fileName);
+        List<TilemapData> data = FileHandler.ReadListFromJSON<TilemapData>(_path);
 
         foreach (var mapData in data)
         {
