@@ -12,7 +12,7 @@ using UnityEngine.Tilemaps;
 public interface ISaveHandler
 {
     void Save(string path);
-    void Load();
+    void Load(string path);
 }
 
 public class BlockSaveHandler : MonoBehaviour, ISaveHandler
@@ -30,7 +30,7 @@ public class BlockSaveHandler : MonoBehaviour, ISaveHandler
 
     private void initTilemap()
     {
-        Tilemap[] maps = FindObjectsOfType<Tilemap>();
+        Tilemap[] maps = FindObjectsOfType<Tilemap>(true);
         foreach (Tilemap map in maps)
         {
             _tilemaps.Add(map.name, map);
@@ -38,9 +38,9 @@ public class BlockSaveHandler : MonoBehaviour, ISaveHandler
         }
     }
 
-    public void Save(string path)
+    public void Save(string pathForFolder)
     {
-        _path = Path.Combine(path, _fileName);
+        GetFullPath(pathForFolder);
 
         List<TilemapData> data = new List<TilemapData>();
 
@@ -78,8 +78,10 @@ public class BlockSaveHandler : MonoBehaviour, ISaveHandler
         FileHandler.SaveToJSON<TilemapData>(data, _path);
     }
 
-    public void Load()
+    public void Load(string pathForFolder)
     {
+        GetFullPath(pathForFolder);
+        Debug.Log(_path);
         List<TilemapData> data = FileHandler.ReadListFromJSON<TilemapData>(_path);
 
         foreach (var mapData in data)
@@ -114,6 +116,8 @@ public class BlockSaveHandler : MonoBehaviour, ISaveHandler
                 }
         }
     }
+
+    private string GetFullPath(string path) => _path = Path.Combine(path, _fileName);
 }
 
 [Serializable]

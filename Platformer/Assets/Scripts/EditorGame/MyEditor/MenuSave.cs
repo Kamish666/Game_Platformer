@@ -7,8 +7,9 @@ using UnityEngine;
 
 public class MenuSave : MonoBehaviour
 {
-    public delegate void Save(string path);
-    public event Save OnSave;
+    public delegate void SaveAndLoad(string path);
+    public event SaveAndLoad OnSave;
+    public event SaveAndLoad OnLoad;
 
     [SerializeField] private TMP_InputField levelNameInput;
     [SerializeField] private GameObject overwriteWarningWindow;
@@ -24,8 +25,19 @@ public class MenuSave : MonoBehaviour
         foreach (var handler in handlers)
         {
             OnSave += handler.Save;
+            OnLoad += handler.Load;
+        }
+
+
+        string levelName = PlayerPrefs.GetString("SelectedLevel");
+        Debug.Log(levelName);
+        if (levelName != "")
+        {
+            GetPath(levelName);
+            OnLoad?.Invoke(_currentPath);
         }
     }
+
 
     // Вызывается при нажатии кнопки "Сохранить"
     public void TrySaveLevel()
@@ -38,8 +50,7 @@ public class MenuSave : MonoBehaviour
             return;
         }
 
-        _currentPath = Path.Combine(levelsFolder, levelName);
-        _fullCurrentPath = Path.Combine(Application.persistentDataPath, _currentPath);
+        GetPath(levelName);
 
         if (Directory.Exists(_fullCurrentPath))
         {
@@ -79,5 +90,11 @@ public class MenuSave : MonoBehaviour
     public void CloseEmptyNameWarning()
     {
         emptyNameWarningWindow.SetActive(false);
+    }
+
+    private void GetPath(string levelName)
+    {
+        _currentPath = Path.Combine(levelsFolder, levelName);
+        _fullCurrentPath = Path.Combine(Application.persistentDataPath, _currentPath);
     }
 }

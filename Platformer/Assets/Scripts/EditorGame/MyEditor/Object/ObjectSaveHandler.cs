@@ -18,9 +18,9 @@ public class ObjectSaveHandler : MonoBehaviour, ISaveHandler
             _enemyParent = GameObject.Find("Enemy").transform;
     }
 
-    public void Save(string path)
+    public void Save(string pathForFolder)
     {
-        _path = Path.Combine(path, _fileName);
+        GetFullPath(pathForFolder);
 
         List<SavedObjectData> dataList = new List<SavedObjectData>();
 
@@ -87,8 +87,9 @@ public class ObjectSaveHandler : MonoBehaviour, ISaveHandler
         FileHandler.SaveToJSON(dataList, _path);
     }
 
-    public void Load()
+    public void Load(string pathForFolder)
     {
+        GetFullPath(pathForFolder);
         var dataList = FileHandler.ReadListFromJSON<SavedObjectData>(_path);
 
         foreach (Transform child in _enemyParent)
@@ -142,6 +143,8 @@ public class ObjectSaveHandler : MonoBehaviour, ISaveHandler
         if (type == typeof(Vector2)) return JsonUtility.FromJson<Vector2>(value);
         return null;
     }
+
+    private string GetFullPath(string path) => _path = Path.Combine(path, _fileName);
 
 }
 

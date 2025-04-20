@@ -2487,10 +2487,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1563400283}
-        m_TargetAssemblyTypeName: LevelChoiceMenu, Assembly-CSharp
-        m_MethodName: LoadLevel
-        m_Mode: 3
+      - m_Target: {fileID: 1563400287}
+        m_TargetAssemblyTypeName: LevelListLoader, Assembly-CSharp
+        m_MethodName: CreateNewLevel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9932,8 +9932,9 @@ MonoBehaviour:
   levelsFolder: Levels
   levelItemPrefab: {fileID: 8890146536449920426, guid: 2dc28add7a7ed98499c63e0b262bfc39, type: 3}
   contentParent: {fileID: 563188213}
-  playSceneName: Editor
+  playSceneName: TtrainingEmpty
   editSceneName: Editor
+  selectedLevel: SelectedLevel
 --- !u!1 &1625200251
 GameObject:
   m_ObjectHideFlags: 0
@@ -13465,7 +13466,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0424/\u0412"
+  m_text: A/D
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d741c3dbf4d9d684fbc7d23f5a4dee27, type: 2}
   m_sharedMaterial: {fileID: -2190630984955199265, guid: d741c3dbf4d9d684fbc7d23f5a4dee27, type: 2}

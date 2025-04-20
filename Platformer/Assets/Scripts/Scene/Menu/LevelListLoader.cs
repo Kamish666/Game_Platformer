@@ -13,6 +13,8 @@ public class LevelListLoader : MonoBehaviour
     public string playSceneName = "GameScene";    // —цена дл€ игры
     public string editSceneName = "EditorScene";  // —цена дл€ редактировани€
 
+    public string selectedLevel = "SelectedLevel";
+
     private void Start()
     {
         LoadLevels();
@@ -35,14 +37,14 @@ public class LevelListLoader : MonoBehaviour
             //  нопка "»грать"
             item.transform.Find("Play").GetComponent<Button>().onClick.AddListener(() =>
             {
-                PlayerPrefs.SetString("SelectedLevel", levelName);
+                PlayerPrefs.SetString(selectedLevel, levelName);
                 SceneManager.LoadScene(playSceneName);
             });
 
             //  нопка "–едактировать"
             item.transform.Find("Edit").GetComponent<Button>().onClick.AddListener(() =>
             {
-                PlayerPrefs.SetString("SelectedLevel", levelName);
+                PlayerPrefs.SetString(selectedLevel, levelName);
                 SceneManager.LoadScene(editSceneName);
             });
 
@@ -53,5 +55,11 @@ public class LevelListLoader : MonoBehaviour
                 Destroy(item);
             });
         }
+    }
+
+    public void CreateNewLevel()
+    {
+        PlayerPrefs.SetString(selectedLevel, "");
+        SceneManager.LoadScene(editSceneName);
     }
 }

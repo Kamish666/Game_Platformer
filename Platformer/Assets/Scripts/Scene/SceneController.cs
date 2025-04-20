@@ -12,9 +12,14 @@ public class SceneController : MonoBehaviour
 
     private void Start()
     {
-        FindObjectOfType<PlayerMovement>().GetComponent<Health>().OnDie += RestartSceneAfterDied;
+        var player = FindObjectOfType<PlayerMovement>();
+        if (player != null)
+        {
+            player.GetComponent<Health>().OnDie += RestartSceneAfterDied;
 
-        _saveLvlData = GetComponent<SaveLevelsData>();
+            _saveLvlData = GetComponent<SaveLevelsData>();
+        }
+
     }
 
     private void RestartSceneAfterDied()
