@@ -112,7 +112,7 @@ public class BlockSaveHandler : MonoBehaviour, ISaveHandler
                         }
                     }
 
-                    map.SetTile(tile.position, tile.tile);
+                    map.SetTile(tile.position, tileBase);
                 }
         }
     }
