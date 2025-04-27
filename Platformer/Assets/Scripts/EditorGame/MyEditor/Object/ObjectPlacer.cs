@@ -71,7 +71,7 @@ public class ObjectPlacer : MonoBehaviour
         newObj.transform.parent = _enemyParent;
     }
 
-    private void CancelSelection()
+    public void CancelSelection()
     {
         _selectedObject = null;
         if (_previewObject != null)

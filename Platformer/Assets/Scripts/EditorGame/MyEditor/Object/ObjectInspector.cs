@@ -122,7 +122,7 @@ public class ObjectInspector : MonoBehaviour
 
     }
 
-    private void ClearUI()
+    public void ClearUI()
     {
         foreach (Transform child in uiParent)
             Destroy(child.gameObject);

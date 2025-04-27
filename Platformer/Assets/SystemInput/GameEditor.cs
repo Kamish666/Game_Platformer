@@ -53,6 +53,24 @@ public partial class @GameEditor: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""PauseCall"",
+                    ""type"": ""Button"",
+                    ""id"": ""b7924875-b291-430c-bf36-1ca6f2a7dfc8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MovementCamera"",
+                    ""type"": ""Value"",
+                    ""id"": ""8c9bc107-2e49-4089-8a91-9a91ef0b310f"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -88,6 +106,72 @@ public partial class @GameEditor: IInputActionCollection2, IDisposable
                     ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""939c4f31-605a-46ee-8b2c-0c42e7edf71a"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keybord"",
+                    ""action"": ""PauseCall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""2ca78e5d-9ee5-4190-af36-d82114df388f"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementCamera"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""89aae689-01d1-4b7c-90b5-85153f1e187a"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""58432416-6552-4254-be09-8520868be083"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""7b05240c-5482-4d87-a9df-a208528d15f6"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""119a1691-c377-497a-9f68-7d9e8b10f6c0"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -99,6 +183,8 @@ public partial class @GameEditor: IInputActionCollection2, IDisposable
         m_Editor_MouseLeftClick = m_Editor.FindAction("MouseLeftClick", throwIfNotFound: true);
         m_Editor_MouseRightClick = m_Editor.FindAction("MouseRightClick", throwIfNotFound: true);
         m_Editor_MousePosition = m_Editor.FindAction("MousePosition", throwIfNotFound: true);
+        m_Editor_PauseCall = m_Editor.FindAction("PauseCall", throwIfNotFound: true);
+        m_Editor_MovementCamera = m_Editor.FindAction("MovementCamera", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -163,6 +249,8 @@ public partial class @GameEditor: IInputActionCollection2, IDisposable
     private readonly InputAction m_Editor_MouseLeftClick;
     private readonly InputAction m_Editor_MouseRightClick;
     private readonly InputAction m_Editor_MousePosition;
+    private readonly InputAction m_Editor_PauseCall;
+    private readonly InputAction m_Editor_MovementCamera;
     public struct EditorActions
     {
         private @GameEditor m_Wrapper;
@@ -170,6 +258,8 @@ public partial class @GameEditor: IInputActionCollection2, IDisposable
         public InputAction @MouseLeftClick => m_Wrapper.m_Editor_MouseLeftClick;
         public InputAction @MouseRightClick => m_Wrapper.m_Editor_MouseRightClick;
         public InputAction @MousePosition => m_Wrapper.m_Editor_MousePosition;
+        public InputAction @PauseCall => m_Wrapper.m_Editor_PauseCall;
+        public InputAction @MovementCamera => m_Wrapper.m_Editor_MovementCamera;
         public InputActionMap Get() { return m_Wrapper.m_Editor; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -188,6 +278,12 @@ public partial class @GameEditor: IInputActionCollection2, IDisposable
             @MousePosition.started += instance.OnMousePosition;
             @MousePosition.performed += instance.OnMousePosition;
             @MousePosition.canceled += instance.OnMousePosition;
+            @PauseCall.started += instance.OnPauseCall;
+            @PauseCall.performed += instance.OnPauseCall;
+            @PauseCall.canceled += instance.OnPauseCall;
+            @MovementCamera.started += instance.OnMovementCamera;
+            @MovementCamera.performed += instance.OnMovementCamera;
+            @MovementCamera.canceled += instance.OnMovementCamera;
         }
 
         private void UnregisterCallbacks(IEditorActions instance)
@@ -201,6 +297,12 @@ public partial class @GameEditor: IInputActionCollection2, IDisposable
             @MousePosition.started -= instance.OnMousePosition;
             @MousePosition.performed -= instance.OnMousePosition;
             @MousePosition.canceled -= instance.OnMousePosition;
+            @PauseCall.started -= instance.OnPauseCall;
+            @PauseCall.performed -= instance.OnPauseCall;
+            @PauseCall.canceled -= instance.OnPauseCall;
+            @MovementCamera.started -= instance.OnMovementCamera;
+            @MovementCamera.performed -= instance.OnMovementCamera;
+            @MovementCamera.canceled -= instance.OnMovementCamera;
         }
 
         public void RemoveCallbacks(IEditorActions instance)
@@ -223,5 +325,7 @@ public partial class @GameEditor: IInputActionCollection2, IDisposable
         void OnMouseLeftClick(InputAction.CallbackContext context);
         void OnMouseRightClick(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
+        void OnPauseCall(InputAction.CallbackContext context);
+        void OnMovementCamera(InputAction.CallbackContext context);
     }
 }
