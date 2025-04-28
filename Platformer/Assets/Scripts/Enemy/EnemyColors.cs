@@ -11,7 +11,10 @@ public class EnemyColors : MonoBehaviour
     [GameEditorAnnotation][SerializeField] private bool _isRedEnemy;
     [GameEditorAnnotation][SerializeField] private bool _isGreenEnemy;
     [GameEditorAnnotation][SerializeField] private bool _isBlueEnemy;
-    
+
+    public bool IsRedEnemy{ get{ return _isRedEnemy; } }
+    public bool IsGreenEnemy { get { return _isGreenEnemy; } }
+    public bool IsBlueEnemy { get { return _isBlueEnemy; } }
 
     private void Awake()
     {

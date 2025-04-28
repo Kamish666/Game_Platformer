@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MachineGun : MonoBehaviour
+public class MachineGun : MonoBehaviour, IShot
 {
-    [SerializeField] private string _projectileTag;
+    [SerializeField] private string projectileTag;
     [SerializeField] private Transform _firePoint;
     [GameEditorAnnotation][SerializeField] private float _fireRate = 2f;
     [GameEditorAnnotation][SerializeField] private float _projectileSpeed = 1f;
     private BulletPooler _bulletPooler;
+
+    public float FireRate { get => _fireRate; }
+
+    public string ProjectileTag { set => projectileTag = value; }
 
     private void Start()
     {
@@ -16,12 +20,12 @@ public class MachineGun : MonoBehaviour
         StartCoroutine(Shooting());
     }
 
-    IEnumerator Shooting()
+    public IEnumerator Shooting()
     {
         while (true)
         {
             yield return new WaitForSeconds(_fireRate);
-            GameObject projectile = _bulletPooler.SpawnFromPool(_projectileTag, _firePoint.position, transform.rotation);
+            GameObject projectile = _bulletPooler.SpawnFromPool(projectileTag, _firePoint.position, transform.rotation);
 
             if (projectile.TryGetComponent(out Rigidbody2D rb))
             {

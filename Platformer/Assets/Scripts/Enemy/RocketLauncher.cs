@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RocketLauncher : MonoBehaviour
+public class RocketLauncher : MonoBehaviour, IShot
 {
-    [SerializeField] private string _projectileTag;
+    [SerializeField] private string projectileTag;
     [SerializeField] private Transform _firePoint;
     [GameEditorAnnotation][SerializeField] private float _fireRate = 2f;
     [GameEditorAnnotation][SerializeField] private float _detectionRange = 10f;
@@ -20,7 +20,11 @@ public class RocketLauncher : MonoBehaviour
 
     private Transform _player;
 
-/*    private Quaternion _angle;*/
+    /*    private Quaternion _angle;*/
+
+    public float FireRate { get => _fireRate; }
+
+    public string ProjectileTag { set => projectileTag = value; }
 
     private void Start()
     {
@@ -55,7 +59,7 @@ public class RocketLauncher : MonoBehaviour
 /*        _angle = Quaternion.Euler(0, 0, angle);*/
     }
 
-    IEnumerator Shooting()
+    public IEnumerator Shooting()
     {
         while (true)
         {
@@ -70,7 +74,7 @@ public class RocketLauncher : MonoBehaviour
                 //rotation.x = 0;
                 //rotation.y = 0;
 
-                _bulletPooler.SpawnFromPool(_projectileTag, _firePoint.position, rotation);
+                _bulletPooler.SpawnFromPool(projectileTag, _firePoint.position, rotation);
             }
         }
     }

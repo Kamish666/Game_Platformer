@@ -71,6 +71,15 @@ public partial class @GameEditor: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ScrollCamera"",
+                    ""type"": ""Value"",
+                    ""id"": ""a8e01620-73b3-4677-9948-2e4d705132e4"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -172,6 +181,17 @@ public partial class @GameEditor: IInputActionCollection2, IDisposable
                     ""action"": ""MovementCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e47ec47-6857-4ddf-9b11-76af6ed07f8c"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ScrollCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -185,6 +205,7 @@ public partial class @GameEditor: IInputActionCollection2, IDisposable
         m_Editor_MousePosition = m_Editor.FindAction("MousePosition", throwIfNotFound: true);
         m_Editor_PauseCall = m_Editor.FindAction("PauseCall", throwIfNotFound: true);
         m_Editor_MovementCamera = m_Editor.FindAction("MovementCamera", throwIfNotFound: true);
+        m_Editor_ScrollCamera = m_Editor.FindAction("ScrollCamera", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -251,6 +272,7 @@ public partial class @GameEditor: IInputActionCollection2, IDisposable
     private readonly InputAction m_Editor_MousePosition;
     private readonly InputAction m_Editor_PauseCall;
     private readonly InputAction m_Editor_MovementCamera;
+    private readonly InputAction m_Editor_ScrollCamera;
     public struct EditorActions
     {
         private @GameEditor m_Wrapper;
@@ -260,6 +282,7 @@ public partial class @GameEditor: IInputActionCollection2, IDisposable
         public InputAction @MousePosition => m_Wrapper.m_Editor_MousePosition;
         public InputAction @PauseCall => m_Wrapper.m_Editor_PauseCall;
         public InputAction @MovementCamera => m_Wrapper.m_Editor_MovementCamera;
+        public InputAction @ScrollCamera => m_Wrapper.m_Editor_ScrollCamera;
         public InputActionMap Get() { return m_Wrapper.m_Editor; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -284,6 +307,9 @@ public partial class @GameEditor: IInputActionCollection2, IDisposable
             @MovementCamera.started += instance.OnMovementCamera;
             @MovementCamera.performed += instance.OnMovementCamera;
             @MovementCamera.canceled += instance.OnMovementCamera;
+            @ScrollCamera.started += instance.OnScrollCamera;
+            @ScrollCamera.performed += instance.OnScrollCamera;
+            @ScrollCamera.canceled += instance.OnScrollCamera;
         }
 
         private void UnregisterCallbacks(IEditorActions instance)
@@ -303,6 +329,9 @@ public partial class @GameEditor: IInputActionCollection2, IDisposable
             @MovementCamera.started -= instance.OnMovementCamera;
             @MovementCamera.performed -= instance.OnMovementCamera;
             @MovementCamera.canceled -= instance.OnMovementCamera;
+            @ScrollCamera.started -= instance.OnScrollCamera;
+            @ScrollCamera.performed -= instance.OnScrollCamera;
+            @ScrollCamera.canceled -= instance.OnScrollCamera;
         }
 
         public void RemoveCallbacks(IEditorActions instance)
@@ -327,5 +356,6 @@ public partial class @GameEditor: IInputActionCollection2, IDisposable
         void OnMousePosition(InputAction.CallbackContext context);
         void OnPauseCall(InputAction.CallbackContext context);
         void OnMovementCamera(InputAction.CallbackContext context);
+        void OnScrollCamera(InputAction.CallbackContext context);
     }
 }

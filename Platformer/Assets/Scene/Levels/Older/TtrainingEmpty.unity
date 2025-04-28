@@ -1803,14 +1803,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pools:
+  - tag: Bomber Red Projectile
+    bullet: {fileID: 150653084952982317, guid: 7bc548dd3a6071f49b500553fd357dd2, type: 3}
+    amount: 5
+  - tag: Bomber Green Projectile
+    bullet: {fileID: 150653084952982317, guid: b0ec3807deee20a4092ead6e9b45fe86, type: 3}
+    amount: 5
+  - tag: Bomber Blue Projectile
+    bullet: {fileID: 150653084952982317, guid: aa43ea7f3752af24b90b602854979dde, type: 3}
+    amount: 5
+  - tag: Bomber Red Green Projectile
+    bullet: {fileID: 150653084952982317, guid: 5365ab7ee3074b54c853eebbe76f12cc, type: 3}
+    amount: 5
+  - tag: Bomber Red Blue Projectile
+    bullet: {fileID: 150653084952982317, guid: c2741940806121f4ca6cb66df2d721e7, type: 3}
+    amount: 5
   - tag: Bomber Green Blue Projectile
     bullet: {fileID: 150653084952982317, guid: a6eb3c425a0ae294eac6de786b44c1de, type: 3}
     amount: 5
-  - tag: Patron Rocket
-    bullet: {fileID: 6145970992995845452, guid: 2d1eb7bf963cf86468112b5c56167370, type: 3}
+  - tag: Bomber All Projectile
+    bullet: {fileID: 150653084952982317, guid: 4d72ff3d35cb3134c9ca962d4f40683c, type: 3}
     amount: 5
   - tag: Patron Machine Gun
     bullet: {fileID: 6475534258011753593, guid: cfe7752dad05fc648a5914f7acd152ff, type: 3}
+    amount: 5
+  - tag: Patron Rocket
+    bullet: {fileID: 6145970992995845452, guid: 2d1eb7bf963cf86468112b5c56167370, type: 3}
     amount: 5
 --- !u!114 &519420046
 MonoBehaviour:
