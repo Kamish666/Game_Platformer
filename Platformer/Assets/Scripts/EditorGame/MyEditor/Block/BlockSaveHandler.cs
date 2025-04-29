@@ -18,9 +18,8 @@ public interface ISaveHandler
 public class BlockSaveHandler : MonoBehaviour, ISaveHandler
 {
     private Dictionary<string, Tilemap> _tilemaps = new Dictionary<string, Tilemap>();
-    //[SerializeField] private BoundsInt _bounds;
-    [SerializeField] private string _fileName = "tilemapData.json";
 
+    [SerializeField] private string _fileName = "tilemapData.json";
     private string _path;
 
     private void Start()
@@ -33,8 +32,7 @@ public class BlockSaveHandler : MonoBehaviour, ISaveHandler
         Tilemap[] maps = FindObjectsOfType<Tilemap>(true);
         foreach (Tilemap map in maps)
         {
-            _tilemaps.Add(map.name, map);
-            //.Log(map.name);
+            _tilemaps[map.name] = map;
         }
     }
 
@@ -46,74 +44,75 @@ public class BlockSaveHandler : MonoBehaviour, ISaveHandler
 
         foreach (var mapObj in _tilemaps)
         {
-            TilemapData mapData = new TilemapData();
-            mapData.key = mapObj.Key;
+            TilemapData mapData = new TilemapData { key = mapObj.Key };
+            BoundsInt bounds = mapObj.Value.cellBounds;
 
-
-            BoundsInt boundsForThisMap = mapObj.Value.cellBounds;
-
-            for (int x = boundsForThisMap.xMin; x < boundsForThisMap.xMax; x++)
-                for (int y = boundsForThisMap.yMin; y < boundsForThisMap.yMax; y++)
+            for (int x = bounds.xMin; x < bounds.xMax; x++)
+            {
+                for (int y = bounds.yMin; y < bounds.yMax; y++)
                 {
                     Vector3Int pos = new Vector3Int(x, y);
                     TileBase tile = mapObj.Value.GetTile(pos);
 
                     if (tile != null)
                     {
-                        if (AssetDatabase.TryGetGUIDAndLocalFileIdentifier(tile, out string guid, out long localId))
+                        TileInfo tileInfo = new TileInfo
                         {
-                            TileInfo ti = new TileInfo(tile, pos, guid);
-                            mapData.tiles.Add(ti);
-                        }
-                        else
-                        {
-                            Debug.Log(tile.name + " ошибка");
-                        }
+                            tile = tile,
+                            tileName = tile.name,
+                            position = pos
+                        };
+                        mapData.tiles.Add(tileInfo);
                     }
                 }
+            }
 
             data.Add(mapData);
         }
 
-        FileHandler.SaveToJSON<TilemapData>(data, _path);
+        FileHandler.SaveToJSON(data, _path);
     }
 
     public void Load(string pathForFolder)
     {
         GetFullPath(pathForFolder);
-        Debug.Log(_path);
         List<TilemapData> data = FileHandler.ReadListFromJSON<TilemapData>(_path);
+        Dictionary<string, TileBase> tileCache = new Dictionary<string, TileBase>();
 
         foreach (var mapData in data)
         {
             if (!_tilemaps.ContainsKey(mapData.key))
             {
-                Debug.Log($"{mapData.key} нету");
+                Debug.LogWarning($"Tilemap {mapData.key} not found.");
                 continue;
             }
 
-            var map = _tilemaps[mapData.key];
+            Tilemap map = _tilemaps[mapData.key];
             map.ClearAllTiles();
 
-            if (mapData.tiles != null && mapData.tiles.Count > 0)
-                foreach (var tile in mapData.tiles)
+            foreach (var tileInfo in mapData.tiles)
+            {
+                TileBase tile = tileInfo.tile;
+
+                // Если прямая ссылка не работает — пробуем через кэш и Resources
+                if (tile == null)
                 {
-                    TileBase tileBase = tile.tile;
-                    if (tileBase == null)
+                    if (!tileCache.TryGetValue(tileInfo.tileName, out tile))
                     {
-                        Debug.Log("InstainceId not found");
-                        string path = AssetDatabase.GUIDToAssetPath(tile.guidFromAssetDB);
-                        tileBase = AssetDatabase.LoadAssetAtPath<TileBase>(path);
-
-                        if (tileBase == null)
-                        {
-                            Debug.Log("Tile not founded in asset store");
-                            continue;
-                        }
+                        tile = Resources.Load<TileBase>($"Tiles/{tileInfo.tileName}");
+                        tileCache[tileInfo.tileName] = tile;
                     }
-
-                    map.SetTile(tile.position, tileBase);
                 }
+
+                if (tile != null)
+                {
+                    map.SetTile(tileInfo.position, tile);
+                }
+                else
+                {
+                    Debug.LogWarning($"Tile '{tileInfo.tileName}' not found in memory or Resources.");
+                }
+            }
         }
     }
 
@@ -129,16 +128,8 @@ public class TilemapData
 
 [Serializable]
 public class TileInfo
-{
+{    
     public TileBase tile;
-    public string guidFromAssetDB;
+    public string tileName;
     public Vector3Int position;
-
-    public TileInfo(TileBase tile, Vector3Int position, string guid)
-    {
-        this.tile = tile;
-        this.position = position;  
-        this.guidFromAssetDB = guid;
-    }
 }
-
