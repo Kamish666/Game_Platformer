@@ -4045,6 +4045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
+  _canTakeDamage: 0
 --- !u!61 &501222265
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4127,6 +4128,7 @@ GameObject:
   - component: {fileID: 519420042}
   - component: {fileID: 519420043}
   - component: {fileID: 519420044}
+  - component: {fileID: 519420045}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4363,8 +4365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _indicatorCorors: {fileID: 1950611579}
-  _green: {fileID: 21300000, guid: b05e473c5a2135249b514584e7398125, type: 3}
   _red: {fileID: 21300000, guid: be005c68d51f32c4294ebd47e6269b33, type: 3}
+  _green: {fileID: 21300000, guid: b05e473c5a2135249b514584e7398125, type: 3}
   _blue: {fileID: 21300000, guid: f8e5fd59360ca354199de75cd08d6c75, type: 3}
 --- !u!114 &519420044
 MonoBehaviour:
@@ -4380,6 +4382,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _background: {fileID: 18374728}
   _paralaxEffect: 0.5
+--- !u!114 &519420045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16bc7e7feed47dd48abe42849ae6fcf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pools:
+  - tag: Bomber Red Projectile
+    bullet: {fileID: 150653084952982317, guid: 7bc548dd3a6071f49b500553fd357dd2, type: 3}
+    amount: 5
+  - tag: Bomber Green Projectile
+    bullet: {fileID: 150653084952982317, guid: b0ec3807deee20a4092ead6e9b45fe86, type: 3}
+    amount: 5
+  - tag: Bomber Blue Projectile
+    bullet: {fileID: 150653084952982317, guid: aa43ea7f3752af24b90b602854979dde, type: 3}
+    amount: 5
+  - tag: Bomber Red Green Projectile
+    bullet: {fileID: 150653084952982317, guid: 5365ab7ee3074b54c853eebbe76f12cc, type: 3}
+    amount: 5
+  - tag: Bomber Red Blue Projectile
+    bullet: {fileID: 150653084952982317, guid: c2741940806121f4ca6cb66df2d721e7, type: 3}
+    amount: 5
+  - tag: Bomber Green Blue Projectile
+    bullet: {fileID: 150653084952982317, guid: a6eb3c425a0ae294eac6de786b44c1de, type: 3}
+    amount: 5
+  - tag: Bomber All Projectile
+    bullet: {fileID: 150653084952982317, guid: 4d72ff3d35cb3134c9ca962d4f40683c, type: 3}
+    amount: 5
+  - tag: Patron Machine Gun
+    bullet: {fileID: 6475534258011753593, guid: cfe7752dad05fc648a5914f7acd152ff, type: 3}
+    amount: 5
+  - tag: Patron Rocket
+    bullet: {fileID: 6145970992995845452, guid: 2d1eb7bf963cf86468112b5c56167370, type: 3}
+    amount: 5
 --- !u!1 &571385114
 GameObject:
   m_ObjectHideFlags: 0
