@@ -46,8 +46,19 @@ public class ObjectPlacer : MonoBehaviour
             Destroy(_previewObject);
 
         _previewObject = Instantiate(_selectedObject);
-        _previewObject.GetComponent<Collider2D>().enabled = false;
-        _previewObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
+
+        foreach (var col in _previewObject.GetComponentsInChildren<Collider2D>())
+        {
+            col.enabled = false;
+        }
+
+        // Делаем все SpriteRenderer полупрозрачными
+        foreach (var sr in _previewObject.GetComponentsInChildren<SpriteRenderer>())
+        {
+            Color c = sr.color;
+            c.a = 0.5f;
+            sr.color = c;
+        }
     }
 
     private void UpdatePreview()
@@ -64,7 +75,11 @@ public class ObjectPlacer : MonoBehaviour
     {
         Vector3 worldPos = _previewObject.transform.position;
         GameObject newObj = Instantiate(_selectedObject, worldPos, Quaternion.identity);
-        newObj.GetComponent<Collider2D>().enabled = true;
+
+        foreach (var col in newObj.GetComponentsInChildren<Collider2D>())
+        {
+            col.enabled = true;
+        }
 
         newObj.name = _selectedObject.name;
 

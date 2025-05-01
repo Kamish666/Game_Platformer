@@ -7,6 +7,7 @@ public class ObjectSelector : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
     [SerializeField] private LayerMask selectableLayer;
+    [SerializeField] private GameObject _parentObject;
     private GameObject _selectedObject;
     private ObjectInspector _inspector;
 
@@ -15,6 +16,9 @@ public class ObjectSelector : MonoBehaviour
         if (_camera == null)
             _camera = Camera.main;
         _inspector = FindObjectOfType<ObjectInspector>();
+
+        if (_parentObject == null) 
+            _parentObject = GameObject.Find("Enemy");
     }
 
     private void Update()
@@ -32,7 +36,15 @@ public class ObjectSelector : MonoBehaviour
 
         if (hit.collider != null)
         {
-            _selectedObject = hit.collider.gameObject;
+            GameObject selected = hit.collider.gameObject;
+
+            // Поднимаемся вверх по иерархии, пока не дойдём до _parentObject или корня
+            while (selected.transform.parent != null && selected.transform.parent.gameObject != _parentObject)
+            {
+                selected = selected.transform.parent.gameObject;
+            }
+            Debug.Log(selected.name);
+            _selectedObject = selected;
             _inspector.DisplayObjectParameters(_selectedObject);
         }
     }

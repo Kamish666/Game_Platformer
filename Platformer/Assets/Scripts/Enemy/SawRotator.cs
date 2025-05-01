@@ -30,6 +30,9 @@ public class SawRotator : Saw
     {
         base.Start();
         UpdateStickAndSaw();
+
+        if (_isEditor == true)
+            StartCoroutine(Editor());
     }
 
     private void UpdateStickAndSaw()
@@ -50,6 +53,17 @@ public class SawRotator : Saw
 
         // Смещаем пилу на конец палки
         _saw.localPosition = new Vector3(_stickLength, 0f, 0f);
+    }
+
+    IEnumerator Editor()
+    {
+        while (true)
+        {
+            ApplyScale();
+            UpdateStickAndSaw();
+            yield return new WaitForSeconds(0.1f);
+
+        }
     }
 }
 

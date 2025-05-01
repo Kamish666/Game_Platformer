@@ -17,6 +17,9 @@ public class Saw : Enemy
             _target = transform;
 
         ApplyScale();
+
+        if (_isEditor == true)
+            StartCoroutine(Editor());
     }
 
     protected virtual void OnValidate()
@@ -27,8 +30,18 @@ public class Saw : Enemy
         ApplyScale();
     }
 
-    private void ApplyScale()
+    protected void ApplyScale()
     {
         _target.localScale = new Vector3(_scaleSaw, _scaleSaw, _target.localScale.z);
+    }
+
+    IEnumerator Editor()
+    {
+        while (true)
+        {
+            ApplyScale();
+            yield return new WaitForSeconds(0.1f);
+
+        }
     }
 }

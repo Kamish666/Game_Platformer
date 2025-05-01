@@ -13,6 +13,7 @@ public class ObjectEraser : MonoBehaviour
 {
     [SerializeField] private GameObject eraserPrefab;
     [SerializeField] private float desiredScreenRadius = 50f; // в пикселях
+    [SerializeField] private GameObject _parentObject;
     private Camera _camera;
     private GameObject _eraserPreview;
     private bool _isErasing = false;
@@ -21,6 +22,9 @@ public class ObjectEraser : MonoBehaviour
     private void Awake()
     {
         _camera = Camera.main;
+
+        if (_parentObject == null)
+            _parentObject = GameObject.Find("Enemy");
     }
 
     private void Update()
@@ -52,9 +56,11 @@ public class ObjectEraser : MonoBehaviour
         if (sr != null)
         {
             var c = sr.color;
-            c.a = 0.5f;
+            c.a = 0.4f;
             sr.color = c;
         }
+
+        sr.sortingOrder = 999;
     }
 
     private void UpdatePreview()
@@ -80,9 +86,18 @@ public class ObjectEraser : MonoBehaviour
         Collider2D[] hits = Physics2D.OverlapCircleAll(worldPos, _eraseRadius);
         foreach (var hit in hits)
         {
-            if (hit.transform.parent != null && hit.transform.parent.name == "Enemy")
+            Transform current = hit.transform;
+
+            // Поднимаемся по иерархии, пока не дойдём до объекта с родителем "Enemy" или корня
+            while (current.parent != null && current.parent.gameObject != _parentObject)
             {
-                Destroy(hit.gameObject);
+                current = current.parent;
+            }
+
+            // Если дошли до объекта, чьим родителем является "Enemy", удаляем его
+            if (current.parent != null && current.parent.gameObject == _parentObject)
+            {
+                Destroy(current.gameObject);
             }
         }
     }

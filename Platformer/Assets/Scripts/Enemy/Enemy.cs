@@ -121,8 +121,14 @@ public class Enemy : MonoBehaviour
     [GameEditorAnnotation][SerializeField] private bool _canTakeDamage = false;
     private GameObject _enemy;
 
+    protected bool _isEditor = false;
+
     private void Awake()
     {
+        ChangeColor changeColor = ChangeColor.Instance;
+        if (changeColor == null)
+            _isEditor = true;
+
         _enemy = gameObject;
     }
 

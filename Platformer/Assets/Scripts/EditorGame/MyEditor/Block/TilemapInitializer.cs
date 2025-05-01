@@ -9,6 +9,7 @@ public class TilemapInitializer : Singleton<TilemapInitializer>
 {
     [SerializeField] private List<BlocksOfTheSameCategory> _blocksOfTheSameCategory;
     [SerializeField] private Transform _grid;
+    [SerializeField] private LayerMask _layerMask;
 
     private void Start()
     {
@@ -40,6 +41,8 @@ public class TilemapInitializer : Singleton<TilemapInitializer>
 
             // Set Parent
             obj.transform.SetParent(_grid);
+
+            obj.layer = _layerMask;
 
             category.buildingBlockBase.TileMap = map;
             category.buildingBlockBase.TileRenderer = render;
