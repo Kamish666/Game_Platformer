@@ -138,7 +138,7 @@ public class Enemy : MonoBehaviour
         HandleCollision(collision.collider);
     }
 
-    private void HandleCollision(Collider2D collider)
+    public void HandleCollision(Collider2D collider)
     {
         var player = collider.GetComponentInParent<PlayerMovement>();
         var playerHealth = collider.GetComponent<Health>();

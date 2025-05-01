@@ -852,7 +852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa84aa9f40ee2b44bcc11710fdb1f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectileTag: Patron Rocket
+  projectileTag: 
   _firePoint: {fileID: 317206959}
   _fireRate: 2
   _detectionRange: 10
@@ -3574,6 +3574,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4594503360979192722, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
   m_PrefabInstance: {fileID: 1477624855}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1008777454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5366695156149154848, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
+  m_PrefabInstance: {fileID: 1477624855}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1008777456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008777454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ce5ff739cef01418125a4770301d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isRedEnemy: 1
+  _isGreenEnemy: 1
+  _isBlueEnemy: 0
 --- !u!1 &1074860231
 GameObject:
   m_ObjectHideFlags: 0
@@ -4538,9 +4558,8 @@ MonoBehaviour:
   _editorPoints:
   - {fileID: 1425478960}
   - {fileID: 69486514}
-  _projectileTag: Bomber Green Blue Projectile
+  projectileTag: 
   _shoot: {fileID: 950264588}
-  tumeShoot: 4
 --- !u!114 &1242352204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5682,6 +5701,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1005076}
     m_Modifications:
+    - target: {fileID: 3401758180074370917, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.36
+      objectReference: {fileID: 0}
     - target: {fileID: 4594503360979192722, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.170721
@@ -5726,14 +5749,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: SawRotate
       objectReference: {fileID: 0}
+    - target: {fileID: 6216131464687450429, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
+      propertyPath: _saw
+      value: 
+      objectReference: {fileID: 1625297196}
+    - target: {fileID: 6216131464687450429, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
+      propertyPath: _scale
+      value: 2.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216131464687450429, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
+      propertyPath: _stick
+      value: 
+      objectReference: {fileID: 1573269430}
+    - target: {fileID: 6216131464687450429, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
+      propertyPath: _damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216131464687450429, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 1625297196}
+    - target: {fileID: 6216131464687450429, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
+      propertyPath: _scaleSaw
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216131464687450429, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
+      propertyPath: _stickLength
+      value: 2.36
+      objectReference: {fileID: 0}
     - target: {fileID: 6364308359162957229, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.25
+      value: 1.4749999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5366695156149154848, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1008777456}
+    - targetCorrespondingSourceObject: {fileID: 5149460079475104651, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1625297198}
+    - targetCorrespondingSourceObject: {fileID: 5149460079475104651, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1625297199}
   m_SourcePrefab: {fileID: 100100000, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
 --- !u!1 &1484005943
 GameObject:
@@ -5914,7 +5974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b425516342ccf9745b915ffc335b393d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectileTag: Patron Machine Gun
+  projectileTag: 
   _firePoint: {fileID: 367906682}
   _fireRate: 2
   _projectileSpeed: 8
@@ -6235,6 +6295,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae05daa622644e941adadbfd580a5387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1573269430 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6364308359162957229, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
+  m_PrefabInstance: {fileID: 1477624855}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1577091439
 GameObject:
   m_ObjectHideFlags: 0
@@ -6565,6 +6630,63 @@ MonoBehaviour:
   _isRedEnemy: 0
   _isGreenEnemy: 1
   _isBlueEnemy: 1
+--- !u!1 &1625297195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5149460079475104651, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
+  m_PrefabInstance: {fileID: 1477624855}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1625297196 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3401758180074370917, guid: eb42b1b6ffaa3864ab2ee075f4ed896f, type: 3}
+  m_PrefabInstance: {fileID: 1477624855}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1625297198
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625297195}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.64
+--- !u!114 &1625297199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625297195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9790c9cd6b958ed4d9d32e58ba82d2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1642509705
 GameObject:
   m_ObjectHideFlags: 0
@@ -6904,7 +7026,7 @@ MonoBehaviour:
   _collisionMask:
     serializedVersion: 2
     m_Bits: 256
-  _deathDive: 0.7
+  _deathThreshold: 0.5
 --- !u!1 &1822027887
 GameObject:
   m_ObjectHideFlags: 0

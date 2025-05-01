@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7996529421970155568}
   - component: {fileID: 145392428696583470}
   - component: {fileID: 7217040826242239737}
-  - component: {fileID: 9207318900054602202}
   - component: {fileID: 8633704936146599970}
   - component: {fileID: 4633563950732363567}
+  - component: {fileID: 3196099191247807035}
   m_Layer: 0
   m_Name: BlueRedSaw
   m_TagString: Untagged
@@ -123,19 +123,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.59
---- !u!114 &9207318900054602202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3238044819595505220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8de426b406b453743a89d3ab50e16dfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 1
 --- !u!95 &8633704936146599970
 Animator:
   serializedVersion: 5
@@ -169,6 +156,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ce5ff739cef01418125a4770301d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isRedEnemy: 1
   _isGreenEnemy: 0
   _isBlueEnemy: 1
-  _isRedEnemy: 1
+--- !u!114 &3196099191247807035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3238044819595505220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 061b27bdd2c1bc34a9090960e9059f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+  _canTakeDamage: 0
+  _scale: 1
+  _target: {fileID: 7996529421970155568}

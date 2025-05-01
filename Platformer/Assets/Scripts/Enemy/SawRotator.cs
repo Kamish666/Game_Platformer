@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class SawRotator : Enemy
+public class SawRotator : Saw
 {
     [Header("Настройки вращения")]
     [GameEditorAnnotation][SerializeField] private float _rotationSpeed = 90f;
@@ -20,13 +20,15 @@ public class SawRotator : Enemy
         transform.Rotate(0f, 0f, _rotationSpeed * Time.deltaTime);
     }
 
-    private void OnValidate()
+    protected override void OnValidate()
     {
+        base.OnValidate();
         UpdateStickAndSaw();
     }
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         UpdateStickAndSaw();
     }
 

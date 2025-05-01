@@ -19,6 +19,13 @@ public class ChangeColor : MonoBehaviour
     public delegate void Colors(bool red, bool green, bool blue);
     public event Colors enemyColors;
 
+    public static ChangeColor Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
         _colorBlocs = new GameObject[] {GameObject.Find("RedBlocks"), GameObject.Find("GreenBlocks"),  GameObject.Find("BlueBlocks")};

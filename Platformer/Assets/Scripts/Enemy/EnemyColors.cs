@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyColors : MonoBehaviour
 {
-    private SpriteRenderer _spriteRenderer;
-    private Collider2D _collider;
+    private List<SpriteRenderer> _spriteRenderers = new List<SpriteRenderer>();
+    private List<Collider2D> _colliders = new List<Collider2D>();
+
 
     // Переменные для каждого цвета
     [GameEditorAnnotation][SerializeField] private bool _isRedEnemy;
@@ -16,27 +18,23 @@ public class EnemyColors : MonoBehaviour
     public bool IsGreenEnemy { get { return _isGreenEnemy; } }
     public bool IsBlueEnemy { get { return _isBlueEnemy; } }
 
-    private void Awake()
+    private void Start()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _collider = GetComponent<Collider2D>();
+        _spriteRenderers = GetComponentsInChildren<SpriteRenderer>(true).ToList();
+        _colliders = GetComponentsInChildren<Collider2D>(true).ToList();
 
-        // Найти ChangeColor и подписаться на событие enemyColors
-        ChangeColor changeColorScript = FindObjectOfType<ChangeColor>();
+        ChangeColor changeColorScript = ChangeColor.Instance;
         if (changeColorScript != null)
         {
             changeColorScript.enemyColors += OnColorChanged;
-
-            //Задание начального значения при старте игры
-            //OnColorChanged(false, true, false);
         }
         else
         {
             Debug.Log("ChangeColor script not found in the scene!");
             StartCoroutine(SwitchColor());
         }
-
     }
+
 
     private void OnColorChanged(bool red, bool green, bool blue)
     {
@@ -66,27 +64,23 @@ public class EnemyColors : MonoBehaviour
 
     private void EnableEnemy(Color color)
     {
-        if (_spriteRenderer == null || _collider == null)
-        {
-            Debug.LogWarning("SpriteRenderer или Collider не существует.");
-            return;
-        }
+        foreach (var col in _colliders)
+            col.enabled = true;
 
-        _collider.enabled = true;
-        _spriteRenderer.color = color;
-        _spriteRenderer.enabled = true;
+        foreach (var sr in _spriteRenderers)
+        {
+            sr.enabled = true;
+            sr.color = color;
+        }
     }
 
     private void DisableEnemy()
     {
-        if (_spriteRenderer == null || _collider == null)
-        {
-            Debug.LogWarning("SpriteRenderer или Collider не существует.");
-            return;
-        }
+        foreach (var col in _colliders)
+            col.enabled = false;
 
-        _collider.enabled = false;
-        _spriteRenderer.enabled = false;
+        foreach (var sr in _spriteRenderers)
+            sr.enabled = false;
     }
 
     IEnumerator SwitchColor()
@@ -94,7 +88,7 @@ public class EnemyColors : MonoBehaviour
         int currentColorIndex = 0;
         while (true)
         {
-            if (_spriteRenderer.color.a == 1 ) {
+            if (_spriteRenderers[0].color.a == 1 ) {
                 bool[] cololorsEnemy = { _isRedEnemy, _isGreenEnemy, _isBlueEnemy };
                 //int currentColorIndex = cololorsEnemy.Length;
                 int iteration = 0;
