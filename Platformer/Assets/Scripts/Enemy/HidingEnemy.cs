@@ -11,7 +11,7 @@ public class HidingEnemy : Enemy
 
     private bool _isWait = true;
 
-    [GameEditorAnnotation][SerializeField] private bool _isHidden = true;
+    [SerializeField] private bool _isHidden = true;
     [GameEditorAnnotation][SerializeField] private float _waitTime = 3f;
 
     [GameEditorAnnotation][SerializeField] private float _distance = 1.3f;
@@ -20,7 +20,7 @@ public class HidingEnemy : Enemy
 
     void Start()
     {
-        _targetY = _beetleBody.localPosition.y;
+        _targetY = 0;
     }
 
     void Update()
@@ -29,7 +29,7 @@ public class HidingEnemy : Enemy
         {
             Vector3 currentPos = _beetleBody.localPosition;
             float newY = Mathf.MoveTowards(currentPos.y, _targetY, _speed * Time.deltaTime);
-            _beetleBody.position = new Vector3(currentPos.x, newY, currentPos.z);
+            _beetleBody.localPosition = new Vector3(currentPos.x, newY, currentPos.z);
         }
 
         if (Mathf.Approximately(_beetleBody.localPosition.y, _targetY))
@@ -41,7 +41,7 @@ public class HidingEnemy : Enemy
             }
             else
             {
-                _targetY = _beetleBody.localPosition.y - _distance;
+                _targetY = 0;
                 _isHidden = true;
             }
 
