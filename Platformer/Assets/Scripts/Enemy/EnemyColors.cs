@@ -23,7 +23,7 @@ public class EnemyColors : MonoBehaviour
         _spriteRenderers = GetComponentsInChildren<SpriteRenderer>(true).ToList();
         _colliders = GetComponentsInChildren<Collider2D>(true).ToList();
 
-        ChangeColor changeColorScript = ChangeColor.Instance;
+        ChangeColor changeColorScript = ChangeColor.instance;
         if (changeColorScript != null)
         {
             changeColorScript.enemyColors += OnColorChanged;

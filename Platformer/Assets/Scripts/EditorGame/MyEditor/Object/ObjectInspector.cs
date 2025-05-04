@@ -30,6 +30,13 @@ public class ObjectInspector : MonoBehaviour
 
     private Dictionary<string, InputField> inputFields = new Dictionary<string, InputField>();
 
+    public static ObjectInspector instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public void DisplayObjectParameters(GameObject obj)
     {
         if (obj == null)

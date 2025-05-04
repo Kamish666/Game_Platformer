@@ -168,8 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 1
   _canTakeDamage: 0
-  _speed: 0.061
-  _isHidden: 0
+  _speed: 3
+  _isHidden: 1
   _waitTime: 3
   _distance: 1.3
 --- !u!114 &98183396202015360

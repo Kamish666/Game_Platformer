@@ -14,7 +14,7 @@ public class AttemptCounter : MonoBehaviour
         _attemptCount = PlayerPrefs.GetInt("AttemptCount", 0);
         UpdateAttemptText();
 
-        SceneController sceneController = FindObjectOfType<SceneController>();
+        SceneController sceneController = SceneController.instance;
 
         if (sceneController != null)
         {
@@ -44,7 +44,7 @@ public class AttemptCounter : MonoBehaviour
 
     private void OnDestroy()
     {
-        SceneController sceneController = FindObjectOfType<SceneController>();
+        SceneController sceneController = SceneController.instance;
         if (sceneController != null)
         {
             sceneController.OnLevelRestart -= IncrementAttemptCount;

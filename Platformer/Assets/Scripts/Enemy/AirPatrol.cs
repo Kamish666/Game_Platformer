@@ -6,8 +6,8 @@ public class AirPatrol : Enemy
 {
     [GameEditorAnnotation][SerializeField] protected Vector2[] _points;
     protected Vector2 _target;
-    [Range(0, 0.5f)]
-    [GameEditorAnnotation][SerializeField] private float _speed = 0.1f;
+    [Range(0, 5f)]
+    [GameEditorAnnotation][SerializeField] private float _speed = 1f;
     protected int _index;
     private bool _moveForward;
 
@@ -33,7 +33,7 @@ public class AirPatrol : Enemy
         }
     }
 
-    protected void FixedUpdate()
+    protected void Update()
     {
         for (int i = 0; i < _points.Length; i++)
         {
@@ -58,7 +58,7 @@ public class AirPatrol : Enemy
     protected void MovePosition()
     {
         Vector3 targetPos = new Vector3(_target.x, _target.y, transform.position.z);
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, _speed);
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, _speed * Time.deltaTime);
     }
 
     protected void ChangeTargetLoop()

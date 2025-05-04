@@ -34,11 +34,11 @@ public class PlayerMovementForceMode : MonoBehaviour
     public InputActionReference move;
     public InputActionReference jump;
 
-    public static PlayerMovementForceMode Instance;
+    public static PlayerMovementForceMode instance;
 
     private void Awake()
     {
-        Instance = this;
+        instance = this;
     }
 
     private void Start()

@@ -19,8 +19,12 @@ public class ObjectEraser : MonoBehaviour
     private bool _isErasing = false;
     private float _eraseRadius;
 
+    private ObjectInspector objectInspector;
+
     private void Awake()
     {
+        objectInspector = ObjectInspector.instance;
+
         _camera = Camera.main;
 
         if (_parentObject == null)
@@ -100,6 +104,7 @@ public class ObjectEraser : MonoBehaviour
                 Destroy(current.gameObject);
             }
         }
+        objectInspector.ClearUI();
     }
 
     private void CancelErasing()

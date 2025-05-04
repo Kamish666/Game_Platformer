@@ -10,11 +10,11 @@ public class BulletPooler : MonoBehaviour
 
     private Dictionary<string, Queue<GameObject>> _poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
-    public static BulletPooler Instance;
+    public static BulletPooler instance;
 
     private void Awake()
     {
-        Instance = this;
+        instance = this;
     }
 
     private void Start()

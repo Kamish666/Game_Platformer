@@ -16,7 +16,7 @@ public class MachineGun : MonoBehaviour, IShot
 
     private void Start()
     {
-        _bulletPooler = BulletPooler.Instance;
+        _bulletPooler = BulletPooler.instance;
         StartCoroutine(Shooting());
     }
 

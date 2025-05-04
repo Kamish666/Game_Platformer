@@ -200,9 +200,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 1
   _canTakeDamage: 0
-  _speed: 0.045
+  _speed: 2
   _moveLeft: 1
-  _groudDetect: {fileID: 1946608162616378560}
+  _detectWallAndGround: {fileID: 1946608162616378560}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 256

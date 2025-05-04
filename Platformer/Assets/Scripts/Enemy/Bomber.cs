@@ -28,7 +28,7 @@ public class Bomber : AirPatrol, IShot
     {
         base.Start();
 
-        _bulletPooler = BulletPooler.Instance;
+        _bulletPooler = BulletPooler.instance;
 
         StartCoroutine(Shooting());
     }

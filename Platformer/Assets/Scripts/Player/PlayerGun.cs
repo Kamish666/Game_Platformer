@@ -14,7 +14,7 @@ public class PlayerGun : MonoBehaviour
 
     private void Start()
     {
-        _bulletPooler = BulletPooler.Instance;
+        _bulletPooler = BulletPooler.instance;
     }
 
     private void Update()

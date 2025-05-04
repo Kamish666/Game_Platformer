@@ -125,7 +125,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        ChangeColor changeColor = ChangeColor.Instance;
+        ChangeColor changeColor = ChangeColor.instance;
         if (changeColor == null)
             _isEditor = true;
 

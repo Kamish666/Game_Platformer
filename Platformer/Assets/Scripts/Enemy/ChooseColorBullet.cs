@@ -9,7 +9,7 @@ public class ChooseColorBullet : MonoBehaviour
 
     private void Start()
     {
-        var player = PlayerMovementForceMode.Instance;
+        var player = PlayerMovementForceMode.instance;
         if (player == null)
             ChangePaletteColor(_all);
         else
@@ -55,7 +55,7 @@ public class ChooseColorBullet : MonoBehaviour
 
     private void ChangePaletteColor(string tag)
     {
-        var bulletPooler = BulletPooler.Instance;
+        var bulletPooler = BulletPooler.instance;
         var shooter = gameObject.GetComponent<IShot>();
 
         float fireRate = shooter.FireRate;

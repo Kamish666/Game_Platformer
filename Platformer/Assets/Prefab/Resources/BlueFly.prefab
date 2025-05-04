@@ -159,7 +159,7 @@ MonoBehaviour:
   _damage: 1
   _canTakeDamage: 0
   _points: []
-  _speed: 0.1
+  _speed: 1
   loop: 0
   _editorPoints: []
 --- !u!114 &6491068539486352665

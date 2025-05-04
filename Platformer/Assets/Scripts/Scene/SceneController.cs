@@ -10,8 +10,12 @@ public class SceneController : MonoBehaviour
 
     private SaveLevelsData _saveLvlData;
 
+    public static SceneController instance;
+
     private void Start()
     {
+        instance = this;
+
         var player = FindObjectOfType<PlayerMovement>();
         if (player != null)
         {
@@ -41,22 +45,30 @@ public class SceneController : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
 
-        DataLevels data;
 
-        data = _saveLvlData.LoadGame();
-        if (data == null || data.levelsWin < currentSceneIndex)
-        {
-            data = new DataLevels();
-            data.levelsWin = currentSceneIndex;
-            _saveLvlData.SaveGame(data);
-        }
+        if (System.IO.Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(nextSceneIndex)) != "Editor") {
 
-        OnLevelExit?.Invoke();
+            DataLevels data;
 
-        // Проверка, существует ли следующая сцена
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-        {
-            SceneManager.LoadScene(nextSceneIndex); // Загрузка следующую сцену
+            data = _saveLvlData.LoadGame();
+            if (data == null || data.levelsWin < currentSceneIndex)
+            {
+                data = new DataLevels();
+                data.levelsWin = currentSceneIndex;
+                _saveLvlData.SaveGame(data);
+            }
+
+            OnLevelExit?.Invoke();
+
+            // Проверка, существует ли следующая сцена
+            if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+            {
+                SceneManager.LoadScene(nextSceneIndex); // Загрузка следующую сцену
+            }
+            else
+            {
+                SceneManager.LoadScene(0); // Загрузка главное меню
+            }
         }
         else
         {

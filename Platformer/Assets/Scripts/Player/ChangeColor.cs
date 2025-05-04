@@ -19,11 +19,11 @@ public class ChangeColor : MonoBehaviour
     public delegate void Colors(bool red, bool green, bool blue);
     public event Colors enemyColors;
 
-    public static ChangeColor Instance;
+    public static ChangeColor instance;
 
     private void Awake()
     {
-        Instance = this;
+        instance = this;
     }
 
     private void Start()

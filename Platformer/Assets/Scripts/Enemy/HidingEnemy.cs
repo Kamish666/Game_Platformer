@@ -2,42 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Beetle : Enemy
+public class HidingEnemy : Enemy
 {
     [Range(0f, 5f)]
     [GameEditorAnnotation][SerializeField] private float _speed = 2f;
+
+    [SerializeField] private Transform _beetleBody; // ссылка на дочерний объект (сам жук)
+
     private bool _isWait = true;
+
     [GameEditorAnnotation][SerializeField] private bool _isHidden = true;
     [GameEditorAnnotation][SerializeField] private float _waitTime = 3f;
-    private Vector3 _point;
+
     [GameEditorAnnotation][SerializeField] private float _distance = 1.3f;
-    
+
+    private float _targetY;
 
     void Start()
     {
-        //_point = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        _point = transform.position;
+        _targetY = _beetleBody.localPosition.y;
     }
-
 
     void Update()
     {
         if (!_isWait)
-            transform.position = Vector3.MoveTowards(transform.position, _point, _speed * Time.deltaTime);
-        if (transform.position == _point)
+        {
+            Vector3 currentPos = _beetleBody.localPosition;
+            float newY = Mathf.MoveTowards(currentPos.y, _targetY, _speed * Time.deltaTime);
+            _beetleBody.position = new Vector3(currentPos.x, newY, currentPos.z);
+        }
+
+        if (Mathf.Approximately(_beetleBody.localPosition.y, _targetY))
         {
             if (_isHidden)
             {
-                _point = transform.position + transform.up * _distance;
-                //_point = new Vector3(transform.position.x, transform.position.y + _distance, transform.position.z);
+                _targetY = _beetleBody.localPosition.y + _distance;
                 _isHidden = false;
             }
             else
             {
-                _point = transform.position - transform.up * _distance;
-                //_point = new Vector3(transform.position.x, transform.position.y - _distance, transform.position.z);
+                _targetY = _beetleBody.localPosition.y - _distance;
                 _isHidden = true;
             }
+
             _isWait = true;
             StartCoroutine(Waiting());
         }

@@ -5,22 +5,21 @@ using UnityEngine;
 
 public class Finish : MonoBehaviour
 {
-    private SceneController _sceneController;
     private void Start()
     {
-        _sceneController = FindObjectOfType<SceneController>();
-
-        if (gameObject.GetComponent<BoxCollider2D>() != null)
+        var collider = GetComponent<BoxCollider2D>();
+        if (collider == null)
         {
-            gameObject.AddComponent<BoxCollider2D>().isTrigger = true;
+            collider = gameObject.AddComponent<BoxCollider2D>();
         }
+        collider.isTrigger = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<PlayerMovement>() != null)
         {
-            _sceneController.LoadNextScene();
+            SceneController.instance.LoadNextScene();
         }
     }
 }
