@@ -150,7 +150,7 @@ public class ChangeColor : MonoBehaviour
 
     private void DeactiveScript()
     {
-        GetComponent<ChangeColor>().enabled = false;
+        ChangeColor.instance.enabled = false;
 
         changeColor.action.Disable();
     }

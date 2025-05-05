@@ -14,7 +14,7 @@ public class SoundPlayer : MonoBehaviour
 
     private void Start()
     {
-        ChangeColor changeColorScript = FindObjectOfType<ChangeColor>();
+        ChangeColor changeColorScript = ChangeColor.instance;
         if (changeColorScript != null)
         {
             changeColorScript.enemyColors += OnColorChanged;

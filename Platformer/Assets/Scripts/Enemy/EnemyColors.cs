@@ -18,12 +18,14 @@ public class EnemyColors : MonoBehaviour
     public bool IsGreenEnemy { get { return _isGreenEnemy; } }
     public bool IsBlueEnemy { get { return _isBlueEnemy; } }
 
-    private void Start()
+    private void Awake()
     {
         _spriteRenderers = GetComponentsInChildren<SpriteRenderer>(true).ToList();
         _colliders = GetComponentsInChildren<Collider2D>(true).ToList();
 
         ChangeColor changeColorScript = ChangeColor.instance;
+        
+
         if (changeColorScript != null)
         {
             changeColorScript.enemyColors += OnColorChanged;
@@ -126,7 +128,7 @@ public class EnemyColors : MonoBehaviour
 
     private void OnDestroy()
     {
-        ChangeColor changeColorScript = FindObjectOfType<ChangeColor>();
+        ChangeColor changeColorScript = ChangeColor.instance;
         if (changeColorScript != null)
         {
             changeColorScript.enemyColors -= OnColorChanged;

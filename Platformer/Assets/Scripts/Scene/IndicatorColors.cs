@@ -13,7 +13,7 @@ public class IndicatorColors : MonoBehaviour
     {
 
         // Найти ChangeColor и подписаться на событие enemyColors
-        ChangeColor changeColorScript = FindObjectOfType<ChangeColor>();
+        ChangeColor changeColorScript = ChangeColor.instance;
         if (changeColorScript != null)
         {
             changeColorScript.enemyColors += OnColorChanged;

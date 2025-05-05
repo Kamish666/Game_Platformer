@@ -6274,6 +6274,27 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &1769706491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769706469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc793775e71f3c74fbbb9bf6ca62dbd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSourcejSound: {fileID: 1074860232}
+  _changeColor: {fileID: 8300000, guid: c9e19aa55cd30104c91d20130a3a8a18, type: 3}
+  _died:
+  - {fileID: 8300000, guid: 7761787899cba8f48be85cfd4f397677, type: 3}
+  - {fileID: 8300000, guid: e17b76ca13c0e42489180eb7bc46d95d, type: 3}
+  _jump:
+  - {fileID: 8300000, guid: b7f9bbec6891a6746b2be3f861a72c2b, type: 3}
+  - {fileID: 8300000, guid: ae637dae6f1d5244883fa64a705a875d, type: 3}
+  - {fileID: 8300000, guid: 86e86ff88481ffe42ad2b5cf5512aab3, type: 3}
 --- !u!1 &1822027887
 GameObject:
   m_ObjectHideFlags: 0
@@ -7414,6 +7435,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 940589714757680885, guid: 65d20de68bb62344e959ec0de0acff8a, type: 3}
       insertIndex: 9
       addedObject: {fileID: 1769706478}
+    - targetCorrespondingSourceObject: {fileID: 940589714757680885, guid: 65d20de68bb62344e959ec0de0acff8a, type: 3}
+      insertIndex: 10
+      addedObject: {fileID: 1769706491}
     - targetCorrespondingSourceObject: {fileID: 940589714757680885, guid: 65d20de68bb62344e959ec0de0acff8a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1769706479}
