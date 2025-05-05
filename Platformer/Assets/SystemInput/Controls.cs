@@ -62,6 +62,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Vertical Input"",
+                    ""type"": ""Value"",
+                    ""id"": ""f32171db-328c-4c72-ba71-e8efa027b3b1"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""70c6bf75-032a-4a2b-a524-d5ee34d9720f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -174,6 +192,50 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Change Color"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""0f3d1114-3b56-4e21-8eed-b94c043d4361"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vertical Input"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""1614de62-ac9d-4954-8123-0491577c3e3e"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keybord"",
+                    ""action"": ""Vertical Input"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""2e6f7cf0-7ce3-4f01-af8e-53fdf1632486"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keybord"",
+                    ""action"": ""Vertical Input"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5bcb6a20-e45f-4c6f-ac60-e83d1ecd002c"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keybord"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -203,6 +265,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
         m_Gameplay_PauseCall = m_Gameplay.FindAction("Pause Call", throwIfNotFound: true);
         m_Gameplay_ChangeColor = m_Gameplay.FindAction("Change Color", throwIfNotFound: true);
+        m_Gameplay_VerticalInput = m_Gameplay.FindAction("Vertical Input", throwIfNotFound: true);
+        m_Gameplay_Dash = m_Gameplay.FindAction("Dash", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -268,6 +332,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Move;
     private readonly InputAction m_Gameplay_PauseCall;
     private readonly InputAction m_Gameplay_ChangeColor;
+    private readonly InputAction m_Gameplay_VerticalInput;
+    private readonly InputAction m_Gameplay_Dash;
     public struct GameplayActions
     {
         private @Controls m_Wrapper;
@@ -276,6 +342,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
         public InputAction @PauseCall => m_Wrapper.m_Gameplay_PauseCall;
         public InputAction @ChangeColor => m_Wrapper.m_Gameplay_ChangeColor;
+        public InputAction @VerticalInput => m_Wrapper.m_Gameplay_VerticalInput;
+        public InputAction @Dash => m_Wrapper.m_Gameplay_Dash;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -297,6 +365,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @ChangeColor.started += instance.OnChangeColor;
             @ChangeColor.performed += instance.OnChangeColor;
             @ChangeColor.canceled += instance.OnChangeColor;
+            @VerticalInput.started += instance.OnVerticalInput;
+            @VerticalInput.performed += instance.OnVerticalInput;
+            @VerticalInput.canceled += instance.OnVerticalInput;
+            @Dash.started += instance.OnDash;
+            @Dash.performed += instance.OnDash;
+            @Dash.canceled += instance.OnDash;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -313,6 +387,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @ChangeColor.started -= instance.OnChangeColor;
             @ChangeColor.performed -= instance.OnChangeColor;
             @ChangeColor.canceled -= instance.OnChangeColor;
+            @VerticalInput.started -= instance.OnVerticalInput;
+            @VerticalInput.performed -= instance.OnVerticalInput;
+            @VerticalInput.canceled -= instance.OnVerticalInput;
+            @Dash.started -= instance.OnDash;
+            @Dash.performed -= instance.OnDash;
+            @Dash.canceled -= instance.OnDash;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -345,5 +425,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnPauseCall(InputAction.CallbackContext context);
         void OnChangeColor(InputAction.CallbackContext context);
+        void OnVerticalInput(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
     }
 }

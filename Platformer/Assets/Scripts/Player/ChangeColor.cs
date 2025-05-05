@@ -32,18 +32,18 @@ public class ChangeColor : MonoBehaviour
 
         UpdateColorVisibility();
 
-        FindObjectOfType<PlayerMovement>().GetComponent<Health>().OnDie += DeactiveScript;
+        GetComponent<Health>().OnDie += DeactiveScript;
 
     }
 
 
 
-    private void OnEnable()
+/*    private void OnEnable()
     {
         //Debug.Log("OnEnable");
         //changeColor.action.Enable();
         OnChangeColor();
-    }
+    }*/
 
 
     private void OnChangeColor()

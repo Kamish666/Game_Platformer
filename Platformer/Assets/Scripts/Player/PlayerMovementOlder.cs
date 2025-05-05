@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovementOlder : MonoBehaviour
 {
     [Range (0f, 10f)]
     [SerializeField] private float _speed;
@@ -148,7 +148,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void DeactiveScript()
     {
-        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<PlayerMovementOlder>().enabled = false;
 
         move.action.Disable();
         jump.action.Disable();

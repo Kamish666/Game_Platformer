@@ -16,7 +16,7 @@ public class SceneController : MonoBehaviour
     {
         instance = this;
 
-        var player = FindObjectOfType<PlayerMovement>();
+        var player = FindObjectOfType<PlayerMovementOlder>();
         if (player != null)
         {
             player.GetComponent<Health>().OnDie += RestartSceneAfterDied;

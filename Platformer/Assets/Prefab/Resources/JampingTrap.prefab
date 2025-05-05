@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jamp: {fileID: 0}
-  _strenght: 0.5
+  _strenght: 70
 --- !u!61 &4794903686934227145
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ public class Finish : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<PlayerMovement>() != null)
+        if (collision.GetComponent<PlayerMovementOlder>() != null)
         {
             SceneController.instance.LoadNextScene();
         }

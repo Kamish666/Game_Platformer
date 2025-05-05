@@ -187,7 +187,7 @@ public class PlayerMovementForceMode : MonoBehaviour
 
     private void DeactiveScript()
     {
-        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<PlayerMovementOlder>().enabled = false;
 
         move.action.Disable();
         jump.action.Disable();

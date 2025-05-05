@@ -25,7 +25,7 @@ public class SoundPlayer : MonoBehaviour
         }
 
 
-        PlayerMovement playerMovementScript = FindObjectOfType<PlayerMovement>();
+        PlayerMovementOlder playerMovementScript = FindObjectOfType<PlayerMovementOlder>();
         if (playerMovementScript != null)
         {
             playerMovementScript.jumpAct += OnJump;
