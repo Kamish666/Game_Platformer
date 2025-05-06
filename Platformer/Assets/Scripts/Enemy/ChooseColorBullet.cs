@@ -18,7 +18,7 @@ public class ChooseColorBullet : MonoBehaviour
 
     private void GetColors()
     {
-        var enemyColors = gameObject.GetComponent<EnemyColors>();
+        var enemyColors = GetComponent<EnemyColors>();
 
         bool red = enemyColors.IsRedEnemy;
         bool green = enemyColors.IsGreenEnemy;
@@ -56,7 +56,7 @@ public class ChooseColorBullet : MonoBehaviour
     private void ChangePaletteColor(string tag)
     {
         var bulletPooler = BulletPooler.instance;
-        var shooter = gameObject.GetComponent<IShot>();
+        var shooter = GetComponent<IShot>();
 
         float fireRate = shooter.FireRate;
 

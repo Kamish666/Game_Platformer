@@ -6,19 +6,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using UnityEngine;
-using UnityEngine.UI;
-
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 public class ObjectInspector : MonoBehaviour
 {
@@ -48,43 +35,17 @@ public class ObjectInspector : MonoBehaviour
         ClearUI();
 
         Transform objTransform = obj.transform;
-        CreateUIField("Координаты X", objTransform.position.x.ToString(), value => objTransform.position = new Vector3(float.Parse(value), objTransform.position.y, objTransform.position.z));
-        CreateUIField("Координаты Y", objTransform.position.y.ToString(), value => objTransform.position = new Vector3(objTransform.position.x, float.Parse(value), objTransform.position.z));
-        CreateUIField("Поворот Z", objTransform.rotation.eulerAngles.z.ToString(), value => objTransform.rotation = Quaternion.Euler(0, 0, float.Parse(value)));
+
+        CreateUIField("Координаты X", objTransform.position.x,
+            value => objTransform.position = new Vector3(float.Parse(value), objTransform.position.y, objTransform.position.z));
+
+        CreateUIField("Координаты Y", objTransform.position.y,
+            value => objTransform.position = new Vector3(objTransform.position.x, float.Parse(value), objTransform.position.z));
+
+        CreateUIField("Поворот Z", objTransform.rotation.eulerAngles.z,
+            value => objTransform.rotation = Quaternion.Euler(0, 0, float.Parse(value)));
 
         MonoBehaviour[] scripts = obj.GetComponents<MonoBehaviour>();
-        /*foreach (MonoBehaviour script in scripts)
-        {
-            Type type = script.GetType();
-            while (type != null && type != typeof(MonoBehaviour))
-            {
-                FieldInfo[] fields = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-                foreach (FieldInfo field in fields)
-                {
-                    if (field.GetCustomAttribute<GameEditorAnnotation>() != null)
-
-                    {
-                        if (field.FieldType == typeof(bool))
-                        {
-                            bool boolValue = (bool)field.GetValue(script);
-                            CreateUIField(field.Name, boolValue, newValue => field.SetValue(script, newValue == "True"));
-                        }
-                        else if (field.FieldType == typeof(Vector2[]))
-                        {
-                            Vector2[] points = (Vector2[])field.GetValue(script);
-                            CreateVector2Scroll(field.Name, points, updatedArray => field.SetValue(script, updatedArray));
-                        }
-
-                        else
-                        {
-                            object fieldValue = field.GetValue(script);
-                            CreateUIField(field.Name, fieldValue, newValue => field.SetValue(script, ConvertValue(newValue, field.FieldType)));
-                        }
-                    }
-                }
-                type = type.BaseType;
-            }
-        }*/
 
         HashSet<string> shownFields = new HashSet<string>();
 
@@ -149,7 +110,6 @@ public class ObjectInspector : MonoBehaviour
 
             label.text = name;
             toggle.isOn = (bool)value;
-
             toggle.onValueChanged.AddListener(isChecked => onValueChanged(isChecked.ToString()));
         }
         else
@@ -159,10 +119,11 @@ public class ObjectInspector : MonoBehaviour
             InputField inputField = panel.transform.Find("InputField").GetComponent<InputField>();
 
             label.text = name;
-            inputField.text = value.ToString();
-            inputField.onEndEdit.AddListener((string newValue) => onValueChanged(newValue));
+            ConfigureInputField(inputField, value, onValueChanged);
         }
     }
+
+
 
     private void CreateVector2Scroll(string name, Vector2[] points, Action<Vector2[]> onChanged)
     {
@@ -182,33 +143,30 @@ public class ObjectInspector : MonoBehaviour
             {
                 int index = i;
                 Vector2 point = pointList[i];
-                GameObject element = Instantiate(vector2ElementPrefab, content);
+                float prevX = point.x;
+                float prevY = point.y;
 
+                GameObject element = Instantiate(vector2ElementPrefab, content);
                 element.transform.Find("Index").GetComponent<Text>().text = (i + 1).ToString();
 
                 InputField xField = element.transform.Find("X").GetComponent<InputField>();
                 InputField yField = element.transform.Find("Y").GetComponent<InputField>();
 
-                xField.text = point.x.ToString();
-                yField.text = point.y.ToString();
 
-                xField.onEndEdit.AddListener(val =>
+                ConfigureInputField(xField, point.x, newX =>
                 {
-                    if (float.TryParse(val, out float newX))
-                    {
-                        pointList[index] = new Vector2(newX, pointList[index].y);
-                        onChanged(pointList.ToArray());
-                    }
+                    prevX = float.Parse(newX);
+                    pointList[index] = new Vector2(prevX, pointList[index].y);
+                    onChanged(pointList.ToArray());
                 });
 
-                yField.onEndEdit.AddListener(val =>
+                ConfigureInputField(yField, point.y, newY =>
                 {
-                    if (float.TryParse(val, out float newY))
-                    {
-                        pointList[index] = new Vector2(pointList[index].x, newY);
-                        onChanged(pointList.ToArray());
-                    }
+                    prevY = float.Parse(newY);
+                    pointList[index] = new Vector2(pointList[index].x, prevY);
+                    onChanged(pointList.ToArray());
                 });
+
 
                 Button removeButton = element.transform.Find("Remove").GetComponent<Button>();
                 removeButton.onClick.AddListener(() =>
@@ -230,6 +188,51 @@ public class ObjectInspector : MonoBehaviour
 
         Redraw();
     }
+
+    private void ConfigureInputField(InputField inputField, object initialValue, Action<string> onValueChanged)
+    {
+        string lastValidValue = initialValue.ToString();
+        inputField.text = lastValidValue;
+
+        inputField.onEndEdit.AddListener((string newValueRaw) =>
+        {
+            string newValue = newValueRaw.Replace('.', ',').Trim();
+            bool isValid = false;
+
+            if (initialValue is float || initialValue is double)
+            {
+                isValid = float.TryParse(newValue, out _);
+            }
+            else if (initialValue is int)
+            {
+                isValid = int.TryParse(newValue, out _);
+            }
+            else
+            {
+                isValid = true;
+            }
+
+            if (isValid)
+            {
+                lastValidValue = newValue;
+                onValueChanged(newValue);
+            }
+            else
+            {
+                inputField.text = lastValidValue;
+            }
+        });
+
+        inputField.onValidateInput += (string text, int charIndex, char addedChar) =>
+        {
+            if (initialValue is int)
+                return char.IsDigit(addedChar) ? addedChar : '\0';
+            if (initialValue is float || initialValue is double)
+                return (char.IsDigit(addedChar) || addedChar == '.' || addedChar == ',' || addedChar == '-') ? addedChar : '\0';
+            return addedChar;
+        };
+    }
+
 
     private object ConvertValue(string value, Type type)
     {
