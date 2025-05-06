@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class HidingEnemy : Enemy
 {
@@ -16,12 +17,40 @@ public class HidingEnemy : Enemy
 
     [GameEditorAnnotation][SerializeField] private float _distance = 1.3f;
 
+    [GameEditorAnnotation][SerializeField] private float _scaleX = 1f;
+    [GameEditorAnnotation][SerializeField] private float _scaleY = 1f;
+
     private float _targetY;
 
-    void Start()
+    private void Start()
     {
         _targetY = 0;
+
+        if (_isEditor == true)
+            StartCoroutine(Editor());
     }
+
+
+    protected virtual void OnValidate()
+    {
+        ApplyScale();
+    }
+
+    protected void ApplyScale()
+    {
+        _beetleBody.localScale = new Vector3(_scaleX, _scaleY, _beetleBody.localScale.z);
+    }
+
+    IEnumerator Editor()
+    {
+        while (true)
+        {
+            ApplyScale();
+            yield return new WaitForSeconds(0.1f);
+
+        }
+    }
+
 
     void Update()
     {

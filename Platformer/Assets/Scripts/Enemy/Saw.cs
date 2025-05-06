@@ -6,7 +6,7 @@ public class Saw : Enemy
 {
     [Header("Настройки масштабирования")]
     [Range(0f, 10f)]
-    [GameEditorAnnotation][SerializeField] private float _scaleSaw = 1f;
+    [GameEditorAnnotation][SerializeField] protected float _scaleSaw = 1f;
 
     [Header("Целевой объект")]
     [SerializeField] private Transform _target;
