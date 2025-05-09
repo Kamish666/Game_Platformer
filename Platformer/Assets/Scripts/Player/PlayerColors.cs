@@ -6,11 +6,13 @@ public class PlayerColors : MonoBehaviour
 {
     private SpriteRenderer _spriteRenderer;
 
+    [SerializeField] private Material redMaterial;
+    [SerializeField] private Material greenMaterial;
+    [SerializeField] private Material blueMaterial;
     private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
-        // Найти ChangeColor и подписаться на событие enemyColors
         ChangeColor changeColorScript = ChangeColor.instance;
         if (changeColorScript != null)
         {
@@ -18,30 +20,29 @@ public class PlayerColors : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("ChangeColor script not found in the scene!");
+            Debug.LogWarning("ChangeColor script not found in the scene");
         }
     }
 
     private void OnColorChanged(bool red, bool green, bool blue)
     {
-        // Проверка условий на основе цвета врага
         if (red)
         {
-            EnableEnemy(Color.red);
+            ChacgedMaterial(redMaterial);
         }
         else if (green)
         {
-            EnableEnemy(Color.white);
+            ChacgedMaterial(greenMaterial);
         }
         else
         {
-            EnableEnemy(new Color(0f, 0.231f, 1f));
+            ChacgedMaterial(blueMaterial);
         }
 
     }
 
-    private void EnableEnemy(Color color)
+    private void ChacgedMaterial(Material material)
     {
-        _spriteRenderer.color = color;
+        _spriteRenderer.material = material;
     }
 }
