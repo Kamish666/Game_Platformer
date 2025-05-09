@@ -50,11 +50,6 @@ public class PlayerAnimator : MonoBehaviour
 
     private void UpdateAnimatorParameters()
     {
-        // Устанавливаем скорость
-        anim.SetFloat("Vel X", Mathf.Abs(mov.RB.velocity.x));
-        anim.SetFloat("Vel Y", mov.RB.velocity.y);
-
-        // Срабатывание триггеров
         if (startedJumping)
         {
             anim.SetTrigger("Jump");
@@ -66,5 +61,8 @@ public class PlayerAnimator : MonoBehaviour
             anim.SetTrigger("Land");
             justLanded = false;
         }
+        
+        anim.SetFloat("Vel X", Mathf.Abs(mov.RB.velocity.x));
+        anim.SetFloat("Vel Y", mov.RB.velocity.y);
     }
 }

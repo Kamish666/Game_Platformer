@@ -9,7 +9,7 @@ public class PlayerColors : MonoBehaviour
     [SerializeField] private Material redMaterial;
     [SerializeField] private Material greenMaterial;
     [SerializeField] private Material blueMaterial;
-    private void Start()
+    private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
