@@ -2,9 +2,10 @@ Shader "Custom/PaletteSwap"
 {
     Properties
     {
-        _MainTex ("Sprite Texture", 2D) = "white" {}
-        _Count ("Count", Float) = 1
+        _MainTex ("Base (RGB)", 2D) = "white" { }
+        _Color ("Color", Color) = (1, 1, 1, 1)
 
+        _Count ("Count", Float) = 1
         _FromColors0("FromColor0", Color) = (1,1,1,1)
         _ToColors0("ToColor0", Color) = (1,0,0,1)
         _FromColors1("FromColor1", Color) = (1,1,1,1)
@@ -29,8 +30,7 @@ Shader "Custom/PaletteSwap"
 
     SubShader
     {
-        Tags { "RenderType"="Transparent" "Queue"="Transparent" }
-        LOD 100
+        Tags { "RenderType"="Transparent" "Queue"="Overlay" }
 
         Pass
         {
@@ -43,7 +43,12 @@ Shader "Custom/PaletteSwap"
             #pragma fragment frag
             #include "UnityCG.cginc"
 
+            // Объявление переменных для текстуры и цвета
             sampler2D _MainTex;
+            float4 _Color;
+            float4 _MainTex_ST;
+
+            // Переменные для PaletteSwap
             float4 _FromColors0, _ToColors0;
             float4 _FromColors1, _ToColors1;
             float4 _FromColors2, _ToColors2;
@@ -57,28 +62,33 @@ Shader "Custom/PaletteSwap"
 
             float _Count;
 
-            struct appdata_t {
+            struct appdata
+            {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
+                float4 color : COLOR;
             };
 
-            struct v2f {
+            struct v2f
+            {
+                float4 pos : POSITION;
                 float2 uv : TEXCOORD0;
-                float4 vertex : SV_POSITION;
+                float4 color : COLOR;
             };
 
-            v2f vert(appdata_t v)
+            // Вершинный шейдер
+            v2f vert(appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.pos = UnityObjectToClipPos(v.vertex);
                 o.uv = v.uv;
+                o.color = v.color * _Color; // Передаем цвет с учетом альфа-канала
                 return o;
             }
 
-            fixed4 frag(v2f i) : SV_Target
+            // Функция для PaletteSwap
+            fixed4 PaletteSwap(fixed4 col)
             {
-                fixed4 col = tex2D(_MainTex, i.uv);
-
                 float4 fromColors[10] = {
                     _FromColors0, _FromColors1, _FromColors2, _FromColors3, _FromColors4,
                     _FromColors5, _FromColors6, _FromColors7, _FromColors8, _FromColors9
@@ -99,11 +109,25 @@ Shader "Custom/PaletteSwap"
                         break;
                     }
                 }
-
                 return col;
             }
 
+            // Фрагментный шейдер
+            half4 frag(v2f i) : SV_Target
+            {
+                // Получаем цвет из текстуры
+                half4 texColor = tex2D(_MainTex, i.uv);
+
+                // Применяем PaletteSwap
+                texColor = PaletteSwap(texColor);
+
+                // Применяем цвет Test
+                texColor *= i.color;
+
+                return texColor;
+            }
             ENDCG
         }
     }
+    Fallback "Sprites/Default"
 }
