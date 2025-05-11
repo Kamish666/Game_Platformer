@@ -53,6 +53,8 @@ MonoBehaviour:
   _isHidden: 1
   _waitTime: 3
   _distance: 1.3
+  _scaleX: 1
+  _scaleY: 1
 --- !u!114 &7467647238223597746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,6 +70,10 @@ MonoBehaviour:
   _isRedEnemy: 0
   _isGreenEnemy: 0
   _isBlueEnemy: 0
+  redMaterial: {fileID: 2100000, guid: 43562d72f26eea5468fbc98b9dc9278a, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 5f649f4bf110d7f4fa13f69df00ba2d2, type: 2}
+  blueMaterial: {fileID: 2100000, guid: 1c07dc47b97f4654bb56dcb1f9a7b9ec, type: 2}
+  grayMaterial: {fileID: 2100000, guid: b65aba487ce5fc9449c01052ca6c28de, type: 2}
 --- !u!1001 &5655508551500414656
 PrefabInstance:
   m_ObjectHideFlags: 0

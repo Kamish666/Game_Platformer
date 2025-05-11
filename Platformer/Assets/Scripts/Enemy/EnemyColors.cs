@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TreeEditor;
 using UnityEngine;
 
 public class EnemyColors : MonoBehaviour
@@ -13,6 +14,11 @@ public class EnemyColors : MonoBehaviour
     [GameEditorAnnotation][SerializeField] private bool _isRedEnemy;
     [GameEditorAnnotation][SerializeField] private bool _isGreenEnemy;
     [GameEditorAnnotation][SerializeField] private bool _isBlueEnemy;
+
+    [SerializeField] private Material redMaterial;
+    [SerializeField] private Material greenMaterial;
+    [SerializeField] private Material blueMaterial;
+    [SerializeField] private Material grayMaterial;
 
     public bool IsRedEnemy{ get{ return _isRedEnemy; } }
     public bool IsGreenEnemy { get { return _isGreenEnemy; } }
@@ -44,19 +50,19 @@ public class EnemyColors : MonoBehaviour
         if ((!_isGreenEnemy && !_isBlueEnemy && !_isRedEnemy) ||
             (_isGreenEnemy && _isBlueEnemy && _isRedEnemy))
         {
-            EnableEnemy(Color.gray);
+            EnableEnemy(grayMaterial);
         }       
         else if (_isRedEnemy && red)
         {
-            EnableEnemy(Color.red);
+            EnableEnemy(redMaterial);
         }
         else if (_isGreenEnemy && green)
         {
-            EnableEnemy(Color.green);
+            EnableEnemy(greenMaterial);
         }
         else if (_isBlueEnemy && blue)
         {
-            EnableEnemy(Color.blue);
+            EnableEnemy(blueMaterial);
         }
         else
         {
@@ -64,7 +70,7 @@ public class EnemyColors : MonoBehaviour
         }
     }
 
-    private void EnableEnemy(Color color)
+    private void EnableEnemy(Material material)
     {
         foreach (var col in _colliders)
             col.enabled = true;
@@ -72,7 +78,7 @@ public class EnemyColors : MonoBehaviour
         foreach (var sr in _spriteRenderers)
         {
             sr.enabled = true;
-            sr.color = color;
+            sr.material = material;
         }
     }
 

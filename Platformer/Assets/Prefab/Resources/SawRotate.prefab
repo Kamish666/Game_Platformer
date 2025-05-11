@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 603035155316651916}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.016, y: 0.002, z: 44}
-  m_LocalScale: {x: 1.25, y: 0.2, z: 1}
+  m_LocalPosition: {x: 0.011, y: 0, z: 44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8871956912865351586}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9b899974fef2ec2468ce1528acd439db, type: 3}
+  m_Sprite: {fileID: -1405280955, guid: f390dfc3c51443344b5e1055c0672330, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 1754915852734289045}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.170721, y: -3.4176817, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -138,7 +138,7 @@ MonoBehaviour:
   _rotationSpeed: 90
   _stick: {fileID: 4155362555418518368}
   _saw: {fileID: 8051716190716350394}
-  _stickLength: 2
+  _stickLength: 3
 --- !u!114 &6185400372035042754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +154,10 @@ MonoBehaviour:
   _isRedEnemy: 0
   _isGreenEnemy: 0
   _isBlueEnemy: 0
+  redMaterial: {fileID: 2100000, guid: 43562d72f26eea5468fbc98b9dc9278a, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 5f649f4bf110d7f4fa13f69df00ba2d2, type: 2}
+  blueMaterial: {fileID: 2100000, guid: 1c07dc47b97f4654bb56dcb1f9a7b9ec, type: 2}
+  grayMaterial: {fileID: 2100000, guid: b65aba487ce5fc9449c01052ca6c28de, type: 2}
 --- !u!1 &7971232052429134529
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,6 +170,7 @@ GameObject:
   - component: {fileID: 2445267264652819057}
   - component: {fileID: 2789210170680790444}
   - component: {fileID: 634209252752514222}
+  - component: {fileID: 6710328966637022839}
   m_Layer: 0
   m_Name: saw
   m_TagString: Untagged
@@ -182,7 +187,7 @@ Transform:
   m_GameObject: {fileID: 7971232052429134529}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -229,7 +234,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 306de3170671dfa42ae7bbb4cdf5701a, type: 3}
+  m_Sprite: {fileID: 712710294, guid: f390dfc3c51443344b5e1055c0672330, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -274,7 +279,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.64
+  m_Radius: 0.92
 --- !u!114 &634209252752514222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,3 +292,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9790c9cd6b958ed4d9d32e58ba82d2b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &6710328966637022839
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7971232052429134529}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8708e12d90ec9594faf8426833c72bd7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

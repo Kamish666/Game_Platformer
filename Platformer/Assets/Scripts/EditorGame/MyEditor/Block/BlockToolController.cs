@@ -25,7 +25,8 @@ public class BlockToolController : Singleton<BlockToolController>
     {
         _tilemaps.ForEach(map =>
         {
-            map.SetTile(position, null);
+            if(map.gameObject.activeInHierarchy)
+                map.SetTile(position, null);
         });
     }
 

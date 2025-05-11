@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8154951063673027290}
   - component: {fileID: 8227413693415932374}
-  - component: {fileID: 5199173103693231568}
   - component: {fileID: 3241917149563374912}
+  - component: {fileID: 5199173103693231568}
   - component: {fileID: 7768030374072268331}
-  - component: {fileID: 3128840012358325641}
   - component: {fileID: 8096587180827119594}
+  - component: {fileID: 8430837179016374490}
+  - component: {fileID: 5612461208594516287}
   m_Layer: 0
   m_Name: MachineGun
   m_TagString: Untagged
@@ -30,14 +31,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4784451317466501370}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.93966275, w: 0.3421022}
-  m_LocalPosition: {x: 5.8094687, y: -0.73374957, z: 0}
-  m_LocalScale: {x: 1, y: 0.3886, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1047701681226752196}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -139.99}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8227413693415932374
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1fa17bd03c2f1ce47bc8128856a997e6, type: 3}
+  m_Sprite: {fileID: 1423275969, guid: f390dfc3c51443344b5e1055c0672330, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -90,6 +91,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &3241917149563374912
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4784451317466501370}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.5, y: 1}
+    newSize: {x: 1.6, y: 1.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1}
+  m_EdgeRadius: 0
 --- !u!114 &5199173103693231568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,11 +148,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ce5ff739cef01418125a4770301d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isRedEnemy: 1
-  _isGreenEnemy: 1
-  _isBlueEnemy: 1
---- !u!61 &3241917149563374912
-BoxCollider2D:
+  _isRedEnemy: 0
+  _isGreenEnemy: 0
+  _isBlueEnemy: 0
+  redMaterial: {fileID: 2100000, guid: 43562d72f26eea5468fbc98b9dc9278a, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 5f649f4bf110d7f4fa13f69df00ba2d2, type: 2}
+  blueMaterial: {fileID: 2100000, guid: 1c07dc47b97f4654bb56dcb1f9a7b9ec, type: 2}
+  grayMaterial: {fileID: 2100000, guid: b65aba487ce5fc9449c01052ca6c28de, type: 2}
+--- !u!114 &7768030374072268331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4784451317466501370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b425516342ccf9745b915ffc335b393d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileTag: 
+  _firePoint: {fileID: 1047701681226752196}
+  _fireRate: 2
+  _projectileSpeed: 8
+--- !u!114 &8096587180827119594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4784451317466501370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4223fd503128e24ba4fb35d3c4dcf0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _red: MachineGun Red
+  _green: MachineGun Green
+  _blue: MachineGun Blue
+  _redGreen: MachineGun Red Green
+  _redBlue: MachineGun Red Blue
+  _greenBlue: MachineGun Green Blue
+  _all: MachineGun All
+--- !u!95 &8430837179016374490
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4784451317466501370}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c4ee7041beaecf745b98293746688edb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &5612461208594516287
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -134,72 +240,12 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 1.6}
-    newSize: {x: 1.6, y: 1.6}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.6, y: 1.6}
-  m_EdgeRadius: 0
---- !u!114 &7768030374072268331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4784451317466501370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b425516342ccf9745b915ffc335b393d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileTag: 
-  _firePoint: {fileID: 1047701681226752196}
-  _fireRate: 2
-  _projectileSpeed: 8
---- !u!114 &3128840012358325641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4784451317466501370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70ce5ff739cef01418125a4770301d9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isRedEnemy: 0
-  _isGreenEnemy: 0
-  _isBlueEnemy: 0
---- !u!114 &8096587180827119594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4784451317466501370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4223fd503128e24ba4fb35d3c4dcf0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _red: 
-  _green: 
-  _blue: 
-  _redGreen: 
-  _redBlue: 
-  _greenBlue: 
-  _all: 
+  m_Size: {x: 1.5, y: 1}
+  m_Direction: 1
 --- !u!1 &4849144046840005356
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +271,7 @@ Transform:
   m_GameObject: {fileID: 4849144046840005356}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.36, y: 0.04, z: 0}
+  m_LocalPosition: {x: 1.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

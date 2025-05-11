@@ -24,26 +24,29 @@ public class TilemapInitializer : Singleton<TilemapInitializer>
             string name = category.buildingBlockBase.name;
             GameObject obj = GameObject.Find(name);
 
-            //Debug.Log("Имя tilemapa: " + obj.name);
+            Tilemap map;
+            TilemapRenderer render;
+
             if (obj != null)
             {
-                category.buildingBlockBase.TileMap = obj.GetComponent<Tilemap>();
-                category.buildingBlockBase.TileRenderer = obj.GetComponent<TilemapRenderer>();
-                continue;
+                // Существующий объект
+                map = obj.GetComponent<Tilemap>();
+                render = obj.GetComponent<TilemapRenderer>();
+
+                if (map == null) map = obj.AddComponent<Tilemap>();
+                if (render == null) render = obj.AddComponent<TilemapRenderer>();
             }
+            else
+            {
+                // Новый объект
+                obj = new GameObject(name);
+                map = obj.AddComponent<Tilemap>();
+                render = obj.AddComponent<TilemapRenderer>();
 
-            // Create new GameObject
-            obj = new GameObject(name);
-
-            // Assign Tilemap Features
-            Tilemap map = obj.AddComponent<Tilemap>();
-            TilemapRenderer render = obj.AddComponent<TilemapRenderer>();
-
-            // Set Parent
-            obj.transform.SetParent(_grid);
-
-            obj.layer = _layerIndex;
-            obj.AddComponent<TilemapCollider2D>();
+                obj.transform.SetParent(_grid);
+                obj.layer = _layerIndex;
+                obj.AddComponent<TilemapCollider2D>();
+            }
 
             category.buildingBlockBase.TileMap = map;
             category.buildingBlockBase.TileRenderer = render;

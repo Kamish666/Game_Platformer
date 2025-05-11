@@ -31,6 +31,8 @@ public class ParticleSystemColors : MonoBehaviour
         {
             Debug.LogWarning("ChangeColor script not found in the scene");
         }
+
+        GetComponentInParent<Health>().OnDie += DeactiveScript;
     }
 
     private void OnColorChanged(bool red, bool green, bool blue)
@@ -54,5 +56,10 @@ public class ParticleSystemColors : MonoBehaviour
         //_renderer.material = material;
         _colorOverLifetime.enabled = true;
         _colorOverLifetime.color = new ParticleSystem.MinMaxGradient(gradient);
+    }
+
+    private void DeactiveScript()
+    {
+        GetComponent<ParticleSystem>().Stop();
     }
 }

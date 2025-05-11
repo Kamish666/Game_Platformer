@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\u0422\u0435\u0441\u0442\u043E\u0432\u044B\u0445 4 \u043A\u0443\u0431\u0430
     01_16_\u0413\u0435\u043D_1_1"
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1899535917, guid: 8e796e26b6d214145ae5d7d9849fe67e, type: 3}
+  m_Sprite: {fileID: 329682800, guid: f877aedaa7480ca4d8d9a242f63c1e9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

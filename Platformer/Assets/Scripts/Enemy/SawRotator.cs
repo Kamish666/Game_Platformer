@@ -48,10 +48,8 @@ public class SawRotator : Saw
         // Вычисляем масштаб, чтобы длина палки = stickLength
         float scaleX = _stickLength / originalWidth;
 
-        float scaleY = _scaleSaw / 5;
-
         // Применяем масштаб
-        _stick.localScale = new Vector3(scaleX, scaleY, _stick.localScale.z);
+        _stick.localScale = new Vector3(scaleX, _scaleSaw, _stick.localScale.z);
 
         // Смещаем пилу на конец палки
         _saw.localPosition = new Vector3(_stickLength, 0f, 0f);
