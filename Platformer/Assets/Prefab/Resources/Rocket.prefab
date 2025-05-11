@@ -192,8 +192,8 @@ MonoBehaviour:
   _red: Rocket Red
   _green: Rocket Green
   _blue: Rocket Blue
-  _redGreen: Rocket Red Blue
-  _redBlue: Rocket Red Green
+  _redGreen: Rocket Red Green
+  _redBlue: Rocket Red Blue
   _greenBlue: Rocket Green Blue
   _all: Rocket All
 --- !u!95 &9191090359904319329

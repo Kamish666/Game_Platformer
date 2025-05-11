@@ -9,11 +9,18 @@ public class ChooseColorBullet : MonoBehaviour
 
     private void Start()
     {
-        var player = PlayerMovementForceMode.instance;
+        var player = ChangeColor.instance;
         if (player == null)
+        {
             ChangePaletteColor(_all);
+            Debug.Log("ChooseColorBullet –≈ƒ¿ “Œ¬");
+        }
         else
+        {
             GetColors();
+            Debug.Log("ChooseColorBullet »√–¿");
+        }
+        Debug.Log("ChooseColorBullet");
     }
 
     private void GetColors()

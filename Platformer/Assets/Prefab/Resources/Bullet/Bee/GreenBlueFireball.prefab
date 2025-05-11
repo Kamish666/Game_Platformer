@@ -133,7 +133,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -181,7 +181,7 @@ MonoBehaviour:
   _isRedEnemy: 0
   _isGreenEnemy: 1
   _isBlueEnemy: 1
-  redMaterial: {fileID: 0}
-  greenMaterial: {fileID: 0}
-  blueMaterial: {fileID: 0}
-  grayMaterial: {fileID: 0}
+  redMaterial: {fileID: 2100000, guid: 43562d72f26eea5468fbc98b9dc9278a, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 5f649f4bf110d7f4fa13f69df00ba2d2, type: 2}
+  blueMaterial: {fileID: 2100000, guid: 1c07dc47b97f4654bb56dcb1f9a7b9ec, type: 2}
+  grayMaterial: {fileID: 2100000, guid: b65aba487ce5fc9449c01052ca6c28de, type: 2}

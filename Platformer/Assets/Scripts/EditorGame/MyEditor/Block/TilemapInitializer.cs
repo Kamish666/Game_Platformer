@@ -11,8 +11,9 @@ public class TilemapInitializer : Singleton<TilemapInitializer>
     [SerializeField] private Transform _grid;
     [SerializeField] private int _layerIndex;
 
-    private void Start()
+    private void Awake()
     {
+        Debug.Log("TilemapInitializer");
         CreateMaps();
     }
 

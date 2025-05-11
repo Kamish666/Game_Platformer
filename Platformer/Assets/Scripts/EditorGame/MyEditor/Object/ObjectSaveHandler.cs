@@ -12,10 +12,11 @@ public class ObjectSaveHandler : MonoBehaviour, ISaveHandler
 
     private string _path;
 
-    private void Start()
+    private void Awake()
     {
         if (_enemyParent == null)
             _enemyParent = GameObject.Find("Enemy").transform;
+        Debug.Log("ObjectSaveHandler");
     }
 
     public void Save(string pathForFolder)

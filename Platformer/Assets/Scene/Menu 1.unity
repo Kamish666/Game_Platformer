@@ -8651,7 +8651,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 98.75
+  m_fontSize: 113.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9932,7 +9932,7 @@ MonoBehaviour:
   levelsFolder: Levels
   levelItemPrefab: {fileID: 8890146536449920426, guid: 2dc28add7a7ed98499c63e0b262bfc39, type: 3}
   contentParent: {fileID: 563188213}
-  playSceneName: TtrainingEmpty
+  playSceneName: TtrainingEmpty 1
   editSceneName: Editor
   selectedLevel: SelectedLevel
 --- !u!1 &1625200251

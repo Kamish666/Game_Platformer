@@ -22,9 +22,10 @@ public class BlockSaveHandler : MonoBehaviour, ISaveHandler
     [SerializeField] private string _fileName = "tilemapData.json";
     private string _path;
 
-    private void Start()
+    private void Awake()
     {
         initTilemap();
+        Debug.Log("BlockSaveHandler");
     }
 
     private void initTilemap()

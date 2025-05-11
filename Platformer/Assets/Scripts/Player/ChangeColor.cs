@@ -21,9 +21,15 @@ public class ChangeColor : MonoBehaviour
 
     public static ChangeColor instance;
 
+    public bool IsRed => _activeColorsM[0];
+    public bool IsGreen => _activeColorsM[1];
+    public bool IsBlue => _activeColorsM[2];
+
+
     private void Awake()
     {
         instance = this;
+        Debug.Log("ChangeColor Awake");
     }
 
     private void Start()
@@ -33,17 +39,18 @@ public class ChangeColor : MonoBehaviour
         UpdateColorVisibility();
 
         GetComponent<Health>().OnDie += DeactiveScript;
+        Debug.Log("ChangeColor Start");
 
     }
 
 
 
-/*    private void OnEnable()
-    {
-        //Debug.Log("OnEnable");
-        //changeColor.action.Enable();
-        OnChangeColor();
-    }*/
+    /*    private void OnEnable()
+        {
+            //Debug.Log("OnEnable");
+            //changeColor.action.Enable();
+            OnChangeColor();
+        }*/
 
 
     private void OnChangeColor()

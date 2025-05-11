@@ -19,7 +19,7 @@ public class MenuSave : MonoBehaviour
     private string _fullCurrentPath;
     private string _currentPath;
 
-    private void Start()
+    private void Awake()
     {
         var handlers = GetComponents<ISaveHandler>();
         foreach (var handler in handlers)
@@ -30,12 +30,14 @@ public class MenuSave : MonoBehaviour
 
 
         string levelName = PlayerPrefs.GetString("SelectedLevel");
-        Debug.Log(levelName);
+        //Debug.Log(levelName);
         if (levelName != "")
         {
             GetPath(levelName);
             OnLoad?.Invoke(_currentPath);
         }
+
+        Debug.Log("MenuSave");
     }
 
 

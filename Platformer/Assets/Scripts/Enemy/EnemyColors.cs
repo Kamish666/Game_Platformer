@@ -20,6 +20,8 @@ public class EnemyColors : MonoBehaviour
     [SerializeField] private Material blueMaterial;
     [SerializeField] private Material grayMaterial;
 
+    private ChangeColor changeColor;
+
     public bool IsRedEnemy{ get{ return _isRedEnemy; } }
     public bool IsGreenEnemy { get { return _isGreenEnemy; } }
     public bool IsBlueEnemy { get { return _isBlueEnemy; } }
@@ -29,18 +31,21 @@ public class EnemyColors : MonoBehaviour
         _spriteRenderers = GetComponentsInChildren<SpriteRenderer>(true).ToList();
         _colliders = GetComponentsInChildren<Collider2D>(true).ToList();
 
-        ChangeColor changeColorScript = ChangeColor.instance;
-        
+        changeColor = ChangeColor.instance;
 
-        if (changeColorScript != null)
+        Debug.Log("EnemyColors");
+
+        if (changeColor != null)
         {
-            changeColorScript.enemyColors += OnColorChanged;
+            Debug.Log("EnemyColors успешно подписался");
+            changeColor.enemyColors += OnColorChanged;
         }
         else
         {
-            Debug.Log("ChangeColor script not found in the scene!");
+            Debug.Log("EnemyColors не подписался");
             StartCoroutine(SwitchColor());
         }
+
     }
 
 
@@ -138,6 +143,18 @@ public class EnemyColors : MonoBehaviour
         if (changeColorScript != null)
         {
             changeColorScript.enemyColors -= OnColorChanged;
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (changeColor ==  null)
+        {
+            changeColor = ChangeColor.instance;
+        }
+        if (changeColor !=  null)
+        {
+            OnColorChanged(changeColor.IsRed, changeColor.IsGreen, changeColor.IsBlue);
         }
     }
 

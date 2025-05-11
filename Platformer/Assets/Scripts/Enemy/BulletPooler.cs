@@ -15,15 +15,16 @@ public class BulletPooler : MonoBehaviour
     private void Awake()
     {
         instance = this;
-    }
+/*    }
 
     private void Start()
-    {
+    {*/
 
         foreach (Pool pool in _pools)
         {
             AddBullets(pool);
         }
+        Debug.Log("BulletPooler");
     }
 
     public void FindBulletTag(string tag, int amount)
