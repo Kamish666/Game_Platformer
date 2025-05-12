@@ -9932,7 +9932,7 @@ MonoBehaviour:
   levelsFolder: Levels
   levelItemPrefab: {fileID: 8890146536449920426, guid: 2dc28add7a7ed98499c63e0b262bfc39, type: 3}
   contentParent: {fileID: 563188213}
-  playSceneName: TtrainingEmpty 1
+  playSceneName: TtrainingEmpty
   editSceneName: Editor
   selectedLevel: SelectedLevel
 --- !u!1 &1625200251
@@ -13466,7 +13466,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A/D
+  m_text: "\u0424/\u0412"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d741c3dbf4d9d684fbc7d23f5a4dee27, type: 2}
   m_sharedMaterial: {fileID: -2190630984955199265, guid: d741c3dbf4d9d684fbc7d23f5a4dee27, type: 2}
