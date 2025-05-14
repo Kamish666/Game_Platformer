@@ -4,38 +4,66 @@ using UnityEngine;
 
 public class Background : MonoBehaviour
 {
-    private float _lengthX, _lengthY, _startPosX, _startPosY;
-    [SerializeField] private GameObject _background;
-    [Range(0, 1)]
-    [SerializeField] private float _paralaxEffect;
+    [SerializeField] private List<BackgroundLayer> _layers;
 
     private void Start()
     {
-        _startPosX = _background.transform.position.x;
-        _startPosY = _background.transform.position.y;
-        _lengthX = _background.GetComponent<SpriteRenderer>().bounds.size.x;
-        _lengthY = _background.GetComponent<SpriteRenderer>().bounds.size.y; // Добавлено для Y
+        foreach (var layer in _layers)
+        {
+            if (layer.background == null) continue;
+
+            var renderer = layer.background.GetComponent<SpriteRenderer>();
+            if (renderer != null)
+            {
+                layer.startPosX = layer.background.transform.position.x;
+                layer.startPosY = layer.background.transform.position.y;
+                layer.lengthX = renderer.bounds.size.x;
+                layer.lengthY = renderer.bounds.size.y;
+            }
+        }
     }
 
     private void FixedUpdate()
     {
-        float tempX = transform.position.x * (1 - _paralaxEffect);
-        float tempY = transform.position.y * (1 - _paralaxEffect); // Добавлено для Y
-        float distX = transform.position.x * _paralaxEffect;
-        float distY = transform.position.y * _paralaxEffect; // Добавлено для Y
+        foreach (var layer in _layers)
+        {
+            if (layer.background == null) continue;
 
-        _background.transform.position = new Vector3(_startPosX + distX, _startPosY + distY, _background.transform.position.z); // Обновлено для Y
+            float tempX = transform.position.x * (1 - layer.parallaxEffectX);
+            float distX = transform.position.x * layer.parallaxEffectX;
 
-        // Проверка границ для X
-        if (tempX > _startPosX + _lengthX)
-            _startPosX += _lengthX;
-        else if (tempX < _startPosX - _lengthX)
-            _startPosX -= _lengthX;
+            float tempY = transform.position.y * (1 - layer.parallaxEffectY);
+            float distY = transform.position.y * layer.parallaxEffectY;
 
-        // Проверка границ для Y
-        if (tempY > _startPosY + _lengthY)
-            _startPosY += _lengthY;
-        else if (tempY < _startPosY - _lengthY)
-            _startPosY -= _lengthY;
+            layer.background.transform.position = new Vector3(
+                layer.startPosX + distX,
+                layer.startPosY + distY,
+                layer.background.transform.position.z
+            );
+
+            if (tempX > layer.startPosX + layer.lengthX)
+                layer.startPosX += layer.lengthX;
+            else if (tempX < layer.startPosX - layer.lengthX)
+                layer.startPosX -= layer.lengthX;
+
+            if (tempY > layer.startPosY + layer.lengthY)
+                layer.startPosY += layer.lengthY;
+            else if (tempY < layer.startPosY - layer.lengthY)
+                layer.startPosY -= layer.lengthY;
+        }
     }
+}
+
+
+
+[System.Serializable]
+public class BackgroundLayer
+{
+    public GameObject background;
+
+    [Range(0, 1)] public float parallaxEffectX = 0.5f;
+    [Range(0, 1)] public float parallaxEffectY = 0.5f;
+
+    [HideInInspector] public float startPosX, startPosY;
+    [HideInInspector] public float lengthX, lengthY;
 }
