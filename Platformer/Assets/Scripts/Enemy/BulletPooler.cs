@@ -24,7 +24,7 @@ public class BulletPooler : MonoBehaviour
         {
             AddBullets(pool);
         }
-        Debug.Log("BulletPooler");
+        //Debug.Log("BulletPooler");
     }
 
     public void FindBulletTag(string tag, int amount)

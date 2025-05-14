@@ -14,7 +14,7 @@ public class TilemapInitializer : Singleton<TilemapInitializer>
     protected override void Awake()
     {
         base.Awake();
-        Debug.Log("TilemapInitializer");
+        //Debug.Log("TilemapInitializer");
         CreateMaps();
     }
 

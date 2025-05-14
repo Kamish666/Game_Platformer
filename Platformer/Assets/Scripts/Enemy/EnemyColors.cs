@@ -32,7 +32,7 @@ public class EnemyColors : MonoBehaviour
 
         changeColor = ChangeColor.instance;
 
-        Debug.Log("EnemyColors");
+        //Debug.Log("EnemyColors");
 
         if (changeColor != null)
         {

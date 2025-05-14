@@ -37,7 +37,7 @@ public class MenuSave : MonoBehaviour
             OnLoad?.Invoke(_currentPath);
         }
 
-        Debug.Log("MenuSave");
+        //Debug.Log("MenuSave");
     }
 
 

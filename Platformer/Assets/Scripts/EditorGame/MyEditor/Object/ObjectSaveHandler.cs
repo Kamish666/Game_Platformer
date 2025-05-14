@@ -16,7 +16,7 @@ public class ObjectSaveHandler : MonoBehaviour, ISaveHandler
     {
         if (_enemyParent == null)
             _enemyParent = GameObject.Find("Enemy").transform;
-        Debug.Log("ObjectSaveHandler");
+        //Debug.Log("ObjectSaveHandler");
     }
 
     public void Save(string pathForFolder)

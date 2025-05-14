@@ -25,7 +25,7 @@ public class BlockSaveHandler : MonoBehaviour, ISaveHandler
     private void Awake()
     {
         initTilemap();
-        Debug.Log("BlockSaveHandler");
+        //Debug.Log("BlockSaveHandler");
     }
 
     private void initTilemap()
