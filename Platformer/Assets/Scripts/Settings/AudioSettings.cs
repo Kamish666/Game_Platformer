@@ -7,7 +7,7 @@ public class AudioSettings : MonoBehaviour
 {
     [SerializeField] private AudioSource _musicSource, _soundSource;
 
-    [SerializeField] private int _maxVolumeLivel = 10;
+    [SerializeField] private int _maxVolumeLivel = 20;
 
     private string _musicKey = "MusicVolume", _soundKey = "SoundVolume";
 

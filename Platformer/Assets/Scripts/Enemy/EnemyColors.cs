@@ -21,6 +21,10 @@ public class EnemyColors : MonoBehaviour
 
     private ChangeColor changeColor;
 
+    private string _objectKey = "TransparencyObjectValue";
+    private int _maxValue = 20;
+    private float _currentValue;
+
     public bool IsRedEnemy{ get{ return _isRedEnemy; } }
     public bool IsGreenEnemy { get { return _isGreenEnemy; } }
     public bool IsBlueEnemy { get { return _isBlueEnemy; } }
@@ -33,6 +37,8 @@ public class EnemyColors : MonoBehaviour
         changeColor = ChangeColor.instance;
 
         //Debug.Log("EnemyColors");
+
+        _currentValue = CalculateValue(PlayerPrefs.GetInt(_objectKey));
 
         if (changeColor != null)
         {
@@ -47,6 +53,7 @@ public class EnemyColors : MonoBehaviour
 
     }
 
+    private float CalculateValue(float value) => 1 - value/_maxValue;
 
     private void OnColorChanged(bool red, bool green, bool blue)
     {
@@ -70,7 +77,7 @@ public class EnemyColors : MonoBehaviour
         }
         else
         {
-            DisableEnemy();
+            DisableEnemy(grayMaterial);
         }
     }
 
@@ -81,18 +88,27 @@ public class EnemyColors : MonoBehaviour
 
         foreach (var sr in _spriteRenderers)
         {
-            sr.enabled = true;
+            Color color = sr.color;
+            color.a = 1;
+            sr.color = color;
+
             sr.material = material;
         }
     }
 
-    private void DisableEnemy()
+    private void DisableEnemy(Material material)
     {
         foreach (var col in _colliders)
             col.enabled = false;
 
         foreach (var sr in _spriteRenderers)
-            sr.enabled = false;
+        {
+            Color color = sr.color;
+            color.a = _currentValue;
+            sr.color = color;
+
+            sr.material = material;
+        }
     }
 
     IEnumerator SwitchColor()

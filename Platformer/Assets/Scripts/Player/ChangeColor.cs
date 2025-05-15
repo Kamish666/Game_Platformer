@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
+using UnityEngine.Tilemaps;
 
 public class ChangeColor : MonoBehaviour
 {
@@ -12,14 +13,20 @@ public class ChangeColor : MonoBehaviour
 
     private int _currentColorIndex = 1; // 0: Красный, 1: Зеленый, 2: Синий
 
-    private bool[] _activeColorsM = { true, false, false}; // 0: Красный, 1: Зеленый, 2: Синий
+    private bool[] _activeColorsM = { true, false, false }; // 0: Красный, 1: Зеленый, 2: Синий
 
-    private GameObject[] _colorBlocs;
+    private TilemapSetting[] _tilemaps;
 
     public delegate void Colors(bool red, bool green, bool blue);
     public event Colors enemyColors;
 
     public static ChangeColor instance;
+
+    private string _platformKey = "TransparencyPlatformValue", _toggleKey = "TransparencyPlatformType";
+    private int _maxValue = 20;
+    private float _currentValue;
+
+    int _sortedOrderTilemap;
 
     public bool IsRed => _activeColorsM[0];
     public bool IsGreen => _activeColorsM[1];
@@ -29,29 +36,47 @@ public class ChangeColor : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        Debug.Log("ChangeColor Awake");
+        //Debug.Log("ChangeColor Awake");
+
+        _currentValue = CalculateValue(PlayerPrefs.GetInt(_platformKey));
+
+        int value = PlayerPrefs.GetInt(_toggleKey);
+        if (value == 0)
+            _sortedOrderTilemap = 9;
+        else
+            _sortedOrderTilemap = 11;
     }
 
     private void Start()
     {
-        _colorBlocs = new GameObject[] {GameObject.Find("RedBlocks"), GameObject.Find("GreenBlocks"),  GameObject.Find("BlueBlocks")};
+        List<Tilemap> colorBlocs = FindObjectsOfType<Tilemap>().ToList();
+
+        for (int i = colorBlocs.Count - 1; i >= 0; i--)
+        {
+            if (colorBlocs[i].name == "Black")
+                colorBlocs.RemoveAt(i);
+        }
+
+        colorBlocs = colorBlocs.OrderByDescending(t => t.name).ToList();
+
+        _tilemaps = new TilemapSetting[colorBlocs.Count];
+
+        for (int i = 0; i < colorBlocs.Count; i++)
+        {
+            _tilemaps[i] = new TilemapSetting();
+            _tilemaps[i].tilemap = colorBlocs[i];
+            _tilemaps[i].renderer = colorBlocs[i].GetComponent<TilemapRenderer>();
+            _tilemaps[i].collider = colorBlocs[i].GetComponent<Collider2D>();
+        }
 
         UpdateColorVisibility();
 
         GetComponent<Health>().OnDie += DeactiveScript;
-        Debug.Log("ChangeColor Start");
+        //Debug.Log("ChangeColor Start");
 
     }
 
-
-
-    /*    private void OnEnable()
-        {
-            //Debug.Log("OnEnable");
-            //changeColor.action.Enable();
-            OnChangeColor();
-        }*/
-
+    private float CalculateValue(float value) => 1 - value/_maxValue;
 
     private void OnChangeColor()
     {
@@ -69,87 +94,41 @@ public class ChangeColor : MonoBehaviour
         }
     }
 
-
-
-
-
-
-    /*    private void OnEnable()
-        {
-            // Подписываемся на событие started
-            changeColor.action.Enable();
-            changeColor.action.started += OnChangeColor;
-        }
-
-        private void OnDisable()
-        {
-            // Отписываемся от события
-            changeColor.action.started -= OnChangeColor;
-            changeColor.action.Disable();
-        }
-
-
-        private void OnChangeColor(InputAction.CallbackContext context)
-        {
-            // Получаем значение оси
-            float changeInput = context.ReadValue<float>();
-
-            if (changeInput > 0)
-            {
-                ChangeColorIndex(1); // Вызов изменения цвета вперёд
-            }
-            else if (changeInput < 0)
-            {
-                ChangeColorIndex(-1); // Вызов изменения цвета назад
-            }
-        }*/
-
-
-    /*    private void Update()
-        {
-            _changeInput = changeColor.action.ReadValue<float>();
-
-            if (_changeInput == -1)
-            {
-                ChangeColorIndex(1);
-            }
-
-            if (_changeInput == 1)
-            {
-                ChangeColorIndex(-1);
-            }
-        }*/
-
-
-
-    /*    private void Update()
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-
-                ChangeColorIndex(1);
-            }
-
-            if (Input.GetMouseButtonDown(1))
-            {
-                ChangeColorIndex(-1);
-            }
-
-        }
-    */
-
     private void ChangeColorIndex(int number)
     {
-        _currentColorIndex = (_currentColorIndex + number + _colorBlocs.Length) % _colorBlocs.Length;
+        _currentColorIndex = (_currentColorIndex + number + _tilemaps.Length) % _tilemaps.Length;
         UpdateColorVisibility();
     }
 
     private void UpdateColorVisibility()
     {
-        for (int i = 0; i < _colorBlocs.Length; i++)
+        for (int i = 0; i < _tilemaps.Length; i++)
         {
             bool acitiv = i == _currentColorIndex;
-            _colorBlocs[i].SetActive(acitiv);
+
+            Color color = _tilemaps[i].tilemap.color;
+
+            if (acitiv)
+            {
+                color.a = 1;
+
+                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                //ПОМЕНЯЙ ЗДЕСЬ ЗНАЧЕНИЕ НА 9 ДЛЯ ПОКАЗА
+                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                _tilemaps[i].renderer.sortingOrder = _sortedOrderTilemap;
+            }
+            else
+            {
+                color.a = _currentValue;
+
+                _tilemaps[i].renderer.sortingOrder = 10;
+            }
+
+            Debug.Log(color.a);
+
+            _tilemaps[i].tilemap.color = color;
+            _tilemaps[i].collider.enabled = acitiv;
+
             _activeColorsM[i] = acitiv;
         }
         enemyColors?.Invoke(_activeColorsM[0], _activeColorsM[1], _activeColorsM[2]);
@@ -160,5 +139,12 @@ public class ChangeColor : MonoBehaviour
         ChangeColor.instance.enabled = false;
 
         changeColor.action.Disable();
+    }
+
+    private class TilemapSetting
+    {
+        public Tilemap tilemap;
+        public TilemapRenderer renderer;
+        public Collider2D collider;
     }
 }
