@@ -10,7 +10,7 @@ public class RocketLauncher : MonoBehaviour, IShot
     [GameEditorAnnotation][SerializeField] private float _detectionRange = 10f;
 
     [SerializeField] private LayerMask _obstacleMask;
-    private BulletPooler _bulletPooler;
+    private PoolerBulletsAndParticalSystems _bulletPooler;
 
     [SerializeField] private float _offsetAngle = 0f; // угол на который надо повернуть, чтобы было ок
 
@@ -28,7 +28,7 @@ public class RocketLauncher : MonoBehaviour, IShot
 
     private void Start()
     {
-        _bulletPooler = BulletPooler.instance;
+        _bulletPooler = PoolerBulletsAndParticalSystems.instance;
         _player = FindAnyObjectByType<ChangeColor>()?.transform;
         StartCoroutine(Shooting());
     }

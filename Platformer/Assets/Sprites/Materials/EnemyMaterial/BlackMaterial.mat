@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GreyMaterial
+  m_Name: BlackMaterial
   m_Shader: {fileID: 4800000, guid: ee50dabe43f0ff04892c8b43848533ef, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0

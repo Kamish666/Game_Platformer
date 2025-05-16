@@ -18,7 +18,7 @@ public class Bomber : AirPatrol, IShot
     [SerializeField] private Transform _shoot;
     [GameEditorAnnotation] private float _fireRate = 4f;
 
-    private BulletPooler _bulletPooler;
+    private PoolerBulletsAndParticalSystems _bulletPooler;
 
     public float FireRate { get => _fireRate; }
 
@@ -28,7 +28,7 @@ public class Bomber : AirPatrol, IShot
     {
         base.Start();
 
-        _bulletPooler = BulletPooler.instance;
+        _bulletPooler = PoolerBulletsAndParticalSystems.instance;
 
         StartCoroutine(Shooting());
     }

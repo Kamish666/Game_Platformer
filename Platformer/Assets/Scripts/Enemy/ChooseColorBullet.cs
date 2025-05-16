@@ -3,16 +3,64 @@ using System.Collections.Generic;
 using System.Net.Http.Headers;
 using UnityEngine;
 
+public enum ColorType
+{
+    Red,
+    Green,
+    Blue,
+    RedGreen,
+    RedBlue,
+    GreenBlue,
+    All
+}
+
+
 public class ChooseColorBullet : MonoBehaviour
 {
-    [SerializeField] private string _red, _green, _blue, _redGreen, _redBlue, _greenBlue, _all;
+//    [Header("Снаряды")]
+    [SerializeField] 
+    private GameObject _redBullet, _greenBullet, _blueBullet,
+        _redGreenBullet, _redBlueBullet, _greenBlueBullet, _allBullet;
+
+/*    [Space(10)]
+    [Header("Система частиц")]*/
+    [SerializeField]
+    private GameObject _redPS, _greenPS, _bluePS,
+        _redGreenPS, _redBluePS, _greenBluePS, _allPS;
+
+    private Dictionary<ColorType, GameObject> _colorPrefabsBullet, _colorPrefabsPS;
+
+    private void Awake()
+    {
+        _colorPrefabsBullet = new Dictionary<ColorType, GameObject>
+        {
+            { ColorType.Red, _redBullet },
+            { ColorType.Green, _greenBullet },
+            { ColorType.Blue, _blueBullet },
+            { ColorType.RedGreen, _redGreenBullet },
+            { ColorType.RedBlue, _redBlueBullet },
+            { ColorType.GreenBlue, _greenBlueBullet },
+            { ColorType.All, _allBullet }
+        };
+
+        _colorPrefabsPS = new Dictionary<ColorType, GameObject>
+        {
+            { ColorType.Red, _redPS },
+            { ColorType.Green, _greenPS },
+            { ColorType.Blue, _bluePS },
+            { ColorType.RedGreen, _redGreenPS },
+            { ColorType.RedBlue, _redBluePS },
+            { ColorType.GreenBlue, _greenBluePS },
+            { ColorType.All, _allPS }
+        };
+    }
 
     private void Start()
     {
         var player = ChangeColor.instance;
         if (player == null)
         {
-            ChangePaletteColor(_all);
+            ChangePaletteColor(ColorType.All);
             Debug.Log("ChooseColorBullet РЕДАКТОВ");
         }
         else
@@ -31,45 +79,37 @@ public class ChooseColorBullet : MonoBehaviour
         bool green = enemyColors.IsGreenEnemy;
         bool blue = enemyColors.IsBlueEnemy;
 
-        string tag;
+        ColorType colorType;
 
         if (red && green && blue)
-        {
-            tag = _all;
-        }
+            colorType = ColorType.All;
         else if (red)
-        {
-            tag = _red;
-            if (green)
-                tag = _redGreen;
-            else if (blue)
-                tag = _redBlue;
-        }
+            colorType = green ? ColorType.RedGreen : (blue ? ColorType.RedBlue : ColorType.Red);
         else if (green)
-        {
-            tag = _green;
-            if (blue)
-                tag = _greenBlue;
-        }
+            colorType = blue ? ColorType.GreenBlue : ColorType.Green;
         else if (blue)
-            tag = _blue;
+            colorType = ColorType.Blue;
         else
-            tag = _all;
+            colorType = ColorType.All;
 
-
-        ChangePaletteColor(tag);
+        ChangePaletteColor(colorType);
     }
 
-    private void ChangePaletteColor(string tag)
+    private void ChangePaletteColor(ColorType colorType)
     {
-        var bulletPooler = BulletPooler.instance;
+        var bulletPooler = PoolerBulletsAndParticalSystems.instance;
         var shooter = GetComponent<IShot>();
 
         float fireRate = shooter.FireRate;
+        int amountBullet = (int)(10 / fireRate + (10 / fireRate == 0 ? 0 : 1));
 
-        int amountBullet = Mathf.RoundToInt(10/fireRate);
+        var prefabBullet = _colorPrefabsBullet[colorType];
+        var prefabPS = _colorPrefabsPS[colorType];
 
-        bulletPooler.FindBulletTag(tag, amountBullet);
-        shooter.ProjectileTag = tag;
+        bulletPooler.Preload(prefabBullet, amountBullet);
+        bulletPooler.Preload(prefabPS, 
+            amountBullet / 2 + (amountBullet % 2 == 0 ? 0 : 1));
+
+        shooter.ProjectileTag = prefabBullet.name;
     }
 }

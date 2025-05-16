@@ -189,13 +189,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4223fd503128e24ba4fb35d3c4dcf0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _red: Rocket Red
-  _green: Rocket Green
-  _blue: Rocket Blue
-  _redGreen: Rocket Red Green
-  _redBlue: Rocket Red Blue
-  _greenBlue: Rocket Green Blue
-  _all: Rocket All
+  _redBullet: {fileID: 6145970992995845452, guid: df25759fac8ff55458e4f61e49652bf9, type: 3}
+  _greenBullet: {fileID: 6145970992995845452, guid: 2d1eb7bf963cf86468112b5c56167370, type: 3}
+  _blueBullet: {fileID: 6145970992995845452, guid: dc48c42db20d8eb438168dd81ad47878, type: 3}
+  _redGreenBullet: {fileID: 6145970992995845452, guid: f7f73c802efd8f54b8331e8039bc6b24, type: 3}
+  _redBlueBullet: {fileID: 6145970992995845452, guid: 9374754dc160d2d4984eed0986f76bd4, type: 3}
+  _greenBlueBullet: {fileID: 6145970992995845452, guid: 524e0640f6a4df745919f8f0ed1b0125, type: 3}
+  _allBullet: {fileID: 6145970992995845452, guid: 3ed0d751a9d960949a3230455e09ba67, type: 3}
+  _redPS: {fileID: 0}
+  _greenPS: {fileID: 0}
+  _bluePS: {fileID: 0}
+  _redGreenPS: {fileID: 0}
+  _redBluePS: {fileID: 0}
+  _greenBluePS: {fileID: 0}
+  _allPS: {fileID: 0}
 --- !u!95 &9191090359904319329
 Animator:
   serializedVersion: 5

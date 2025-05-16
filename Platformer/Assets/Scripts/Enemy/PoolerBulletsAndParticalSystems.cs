@@ -2,32 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using static BulletPooler;
+using static PoolerBulletsAndParticalSystems;
 
-public class BulletPooler : MonoBehaviour
+public class PoolerBulletsAndParticalSystems : MonoBehaviour
 {
     [SerializeField] private List<Pool> _pools = new List<Pool>();
 
     private Dictionary<string, Queue<GameObject>> _poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
-    public static BulletPooler instance;
+    public static PoolerBulletsAndParticalSystems instance;
 
     private void Awake()
     {
         instance = this;
-/*    }
-
-    private void Start()
-    {*/
 
         foreach (Pool pool in _pools)
         {
-            AddBullets(pool);
+            pool.tag = pool.bullet.name;
+            AddToPooler(pool);
         }
-        //Debug.Log("BulletPooler");
+        // Debug.Log("BulletPooler");
     }
 
-    public void FindBulletTag(string tag, int amount)
+
+    public void Preload(GameObject obj, int amount)
+    {
+        Pool necessaryPool = new Pool();
+
+        necessaryPool.tag = obj.name;
+        necessaryPool.amount = amount;
+        necessaryPool.bullet = obj;
+
+        AddToPooler(necessaryPool);
+    }
+
+    public void FindByTag(string tag, int amount)
     {
         Pool necessaryPool = new Pool();
 
@@ -42,10 +51,10 @@ public class BulletPooler : MonoBehaviour
 
         necessaryPool.amount = amount;
 
-        AddBullets(necessaryPool);
+        AddToPooler(necessaryPool);
     }
 
-    private void AddBullets(Pool pool)
+    private void AddToPooler(Pool pool)
     {
         Queue<GameObject> objectDictionary = new Queue<GameObject>();
         for (int i = 0; i < pool.amount; i++)

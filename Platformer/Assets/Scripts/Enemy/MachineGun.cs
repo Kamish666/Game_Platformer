@@ -8,7 +8,7 @@ public class MachineGun : MonoBehaviour, IShot
     [SerializeField] private Transform _firePoint;
     [GameEditorAnnotation][SerializeField] private float _fireRate = 2f;
     [GameEditorAnnotation][SerializeField] private float _projectileSpeed = 1f;
-    private BulletPooler _bulletPooler;
+    private PoolerBulletsAndParticalSystems _bulletPooler;
 
     public float FireRate { get => _fireRate; }
 
@@ -16,7 +16,7 @@ public class MachineGun : MonoBehaviour, IShot
 
     private void Start()
     {
-        _bulletPooler = BulletPooler.instance;
+        _bulletPooler = PoolerBulletsAndParticalSystems.instance;
         StartCoroutine(Shooting());
     }
 

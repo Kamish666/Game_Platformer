@@ -183,13 +183,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4223fd503128e24ba4fb35d3c4dcf0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _red: MachineGun Red
-  _green: MachineGun Green
-  _blue: MachineGun Blue
-  _redGreen: MachineGun Red Green
-  _redBlue: MachineGun Red Blue
-  _greenBlue: MachineGun Green Blue
-  _all: MachineGun All
+  _redBullet: {fileID: 6475534258011753593, guid: 414f3a0c6d7575c4f9ffa3df0354ef82, type: 3}
+  _greenBullet: {fileID: 6475534258011753593, guid: ca0886fdd0f245a468772110742525db, type: 3}
+  _blueBullet: {fileID: 6475534258011753593, guid: 51fa9447fa27d1046a4db9dc603cf264, type: 3}
+  _redGreenBullet: {fileID: 6475534258011753593, guid: 20c4d6abb0659a94797cca2218b76da3, type: 3}
+  _redBlueBullet: {fileID: 6475534258011753593, guid: c01b21a959219d04bb0d881e231820ff, type: 3}
+  _greenBlueBullet: {fileID: 6475534258011753593, guid: f9eaeaef9529cf541bd873becaf43785, type: 3}
+  _allBullet: {fileID: 6475534258011753593, guid: cfe7752dad05fc648a5914f7acd152ff, type: 3}
+  _redPS: {fileID: 0}
+  _greenPS: {fileID: 0}
+  _bluePS: {fileID: 0}
+  _redGreenPS: {fileID: 0}
+  _redBluePS: {fileID: 0}
+  _greenBluePS: {fileID: 0}
+  _allPS: {fileID: 0}
 --- !u!95 &8430837179016374490
 Animator:
   serializedVersion: 5

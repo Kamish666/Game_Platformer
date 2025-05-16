@@ -37,5 +37,7 @@ public class Bullet : Enemy
 
         //Destroy(gameObject);
         _bullet.SetActive(false);
+
+        PoolerBulletsAndParticalSystems.instance.SpawnFromPool(gameObject.name, transform.position, transform.rotation);
     }
 }
