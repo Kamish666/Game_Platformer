@@ -18,7 +18,7 @@ public class PoolerBulletsAndParticalSystems : MonoBehaviour
 
         foreach (Pool pool in _pools)
         {
-            pool.tag = pool.bullet.name;
+            pool.tag = pool.obj.name;
             AddToPooler(pool);
         }
         // Debug.Log("BulletPooler");
@@ -31,7 +31,7 @@ public class PoolerBulletsAndParticalSystems : MonoBehaviour
 
         necessaryPool.tag = obj.name;
         necessaryPool.amount = amount;
-        necessaryPool.bullet = obj;
+        necessaryPool.obj = obj;
 
         AddToPooler(necessaryPool);
     }
@@ -59,7 +59,7 @@ public class PoolerBulletsAndParticalSystems : MonoBehaviour
         Queue<GameObject> objectDictionary = new Queue<GameObject>();
         for (int i = 0; i < pool.amount; i++)
         {
-            GameObject obj = Instantiate(pool.bullet);
+            GameObject obj = Instantiate(pool.obj);
             obj.SetActive(false);
             objectDictionary.Enqueue(obj);
         }
@@ -99,6 +99,6 @@ public class PoolerBulletsAndParticalSystems : MonoBehaviour
 public class Pool
 {
     public string tag;
-    public GameObject bullet;
+    public GameObject obj;
     public int amount;
 }
