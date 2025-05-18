@@ -190,13 +190,13 @@ MonoBehaviour:
   _redBlueBullet: {fileID: 6475534258011753593, guid: c01b21a959219d04bb0d881e231820ff, type: 3}
   _greenBlueBullet: {fileID: 6475534258011753593, guid: f9eaeaef9529cf541bd873becaf43785, type: 3}
   _allBullet: {fileID: 6475534258011753593, guid: cfe7752dad05fc648a5914f7acd152ff, type: 3}
-  _redPS: {fileID: 0}
-  _greenPS: {fileID: 0}
-  _bluePS: {fileID: 0}
-  _redGreenPS: {fileID: 0}
-  _redBluePS: {fileID: 0}
-  _greenBluePS: {fileID: 0}
-  _allPS: {fileID: 0}
+  _redPS: {fileID: 7392983636074429437, guid: 0fbbabf1a2be6ed449aeb66ea658525b, type: 3}
+  _greenPS: {fileID: 7392983636074429437, guid: 01873ef2b57567442b051a539b26f868, type: 3}
+  _bluePS: {fileID: 7392983636074429437, guid: fa6b08c98aefd8641b15dfc0480f460b, type: 3}
+  _redGreenPS: {fileID: 7392983636074429437, guid: 5a34f3da7d0a64e4391dd00843953a4d, type: 3}
+  _redBluePS: {fileID: 7392983636074429437, guid: 692f3fa586812be44b8b9bccdcb3192b, type: 3}
+  _greenBluePS: {fileID: 7392983636074429437, guid: 4d8a50c0ef04de64e93fe6c3c1c191d2, type: 3}
+  _allPS: {fileID: 7392983636074429437, guid: b9a63537a59d1c74ab8df43cf6df4477, type: 3}
 --- !u!95 &8430837179016374490
 Animator:
   serializedVersion: 5

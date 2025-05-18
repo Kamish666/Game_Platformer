@@ -205,13 +205,13 @@ MonoBehaviour:
   _redBlueBullet: {fileID: 150653084952982317, guid: c2741940806121f4ca6cb66df2d721e7, type: 3}
   _greenBlueBullet: {fileID: 150653084952982317, guid: a6eb3c425a0ae294eac6de786b44c1de, type: 3}
   _allBullet: {fileID: 150653084952982317, guid: 4d72ff3d35cb3134c9ca962d4f40683c, type: 3}
-  _redPS: {fileID: 0}
-  _greenPS: {fileID: 0}
-  _bluePS: {fileID: 0}
-  _redGreenPS: {fileID: 0}
-  _redBluePS: {fileID: 0}
-  _greenBluePS: {fileID: 0}
-  _allPS: {fileID: 0}
+  _redPS: {fileID: 5050355767157220534, guid: bea8e494d19f33b4dba33166b83864d8, type: 3}
+  _greenPS: {fileID: 5050355767157220534, guid: 1227861b19ac79c4cb801f37144b06c5, type: 3}
+  _bluePS: {fileID: 5050355767157220534, guid: 8fe4bc9fa2344ff458554b21f0ac71c7, type: 3}
+  _redGreenPS: {fileID: 5050355767157220534, guid: 6d58bb0982335e44a88f3876caf9c535, type: 3}
+  _redBluePS: {fileID: 5050355767157220534, guid: 561f8dc02687cfc4ea289c439cb3df27, type: 3}
+  _greenBluePS: {fileID: 5050355767157220534, guid: df6b69202ce19f94381a6e635b6c93c1, type: 3}
+  _allPS: {fileID: 5050355767157220534, guid: ade1984393ed1f6458b14eb514582fbd, type: 3}
 --- !u!70 &915444984871691092
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
