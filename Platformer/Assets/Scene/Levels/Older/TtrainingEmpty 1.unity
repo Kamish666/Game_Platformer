@@ -1915,67 +1915,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pools:
   - tag: Bomber All Projectile
-    obj: {fileID: 0}
+    obj: {fileID: 4808511787446679198, guid: 771e321471ce2004499e46975f4d8fc5, type: 3}
     amount: 5
   - tag: Bomber Red Projectile
-    obj: {fileID: 0}
+    obj: {fileID: 4808511787446679198, guid: b0ee847f67e9cce44b1ac2b41b7061d1, type: 3}
     amount: 5
   - tag: Bomber Green Projectile
-    obj: {fileID: 0}
+    obj: {fileID: 4808511787446679198, guid: 50117bc8f03dd2b41a3cfd96e2f41883, type: 3}
     amount: 5
   - tag: Bomber Blue Projectile
-    obj: {fileID: 0}
+    obj: {fileID: 4808511787446679198, guid: c09d1e0dc3981be4f99b2e35fc2bbcd9, type: 3}
     amount: 5
   - tag: Bomber Red Green Projectile
-    obj: {fileID: 0}
+    obj: {fileID: 4808511787446679198, guid: deea691e4f7466844b456c863432d123, type: 3}
     amount: 5
   - tag: Bomber Red Blue Projectile
-    obj: {fileID: 0}
+    obj: {fileID: 4808511787446679198, guid: d7a1c24fef4b2824b91e1940e35f057b, type: 3}
     amount: 5
   - tag: Bomber Green Blue Projectile
-    obj: {fileID: 0}
+    obj: {fileID: 4808511787446679198, guid: 56d6d65ceca5edd46a2e0f67da043273, type: 3}
     amount: 5
   - tag: Rocket All
-    obj: {fileID: 0}
+    obj: {fileID: 7030956262142281772, guid: bc6cda7b2b3386c4bab9e407caaba215, type: 3}
     amount: 5
   - tag: Rocket Red
-    obj: {fileID: 0}
+    obj: {fileID: 7030956262142281772, guid: 7dd4cacc29b0bed4d911d794b9e4e1da, type: 3}
     amount: 5
   - tag: Rocket Green
-    obj: {fileID: 0}
+    obj: {fileID: 7030956262142281772, guid: e17e836a86c97494f9178561ab64e93f, type: 3}
     amount: 5
   - tag: Rocket Blue
-    obj: {fileID: 0}
-    amount: 5
-  - tag: Rocket Red Blue
-    obj: {fileID: 0}
+    obj: {fileID: 7030956262142281772, guid: 51929f3824726f848b21c60dee9577a3, type: 3}
     amount: 5
   - tag: Rocket Red Green
-    obj: {fileID: 0}
+    obj: {fileID: 7030956262142281772, guid: 6ad89ee21c1c8b14c9b2938aeebbabd3, type: 3}
+    amount: 5
+  - tag: Rocket Red Blue
+    obj: {fileID: 7030956262142281772, guid: f3016107c7234284ea0ae4b77adc3a95, type: 3}
     amount: 5
   - tag: Rocket Green Blue
-    obj: {fileID: 0}
+    obj: {fileID: 7030956262142281772, guid: 44c7ae4e2f4a9ad4ca92648d2c1230e3, type: 3}
     amount: 5
   - tag: MachineGun All
-    obj: {fileID: 0}
+    obj: {fileID: 2644314189053595805, guid: dcebc7645b409084ba9ef1d31d9ee693, type: 3}
     amount: 5
   - tag: MachineGun Red
-    obj: {fileID: 0}
+    obj: {fileID: 2644314189053595805, guid: c0e776e3c3c726d4d957418508b41457, type: 3}
     amount: 5
   - tag: MachineGun Green
-    obj: {fileID: 0}
+    obj: {fileID: 2644314189053595805, guid: b643489b3a4921c479dd87c0ef670213, type: 3}
     amount: 5
   - tag: MachineGun Blue
-    obj: {fileID: 0}
+    obj: {fileID: 2644314189053595805, guid: db5b6867ad5dc714b8d9b5ac4ba528fd, type: 3}
     amount: 5
   - tag: MachineGun Red Green
-    obj: {fileID: 0}
+    obj: {fileID: 2644314189053595805, guid: 14f9ed26dc260cb458f69550b32a4a1e, type: 3}
     amount: 5
   - tag: MachineGun Red Blue
-    obj: {fileID: 0}
+    obj: {fileID: 2644314189053595805, guid: 3ad82449363ecc2449d8fe09addfcb14, type: 3}
     amount: 5
   - tag: MachineGun Green Blue
-    obj: {fileID: 0}
+    obj: {fileID: 2644314189053595805, guid: 65dc43cbbd5aa694caec338ca14b5ef4, type: 3}
     amount: 5
 --- !u!114 &519420046
 MonoBehaviour:

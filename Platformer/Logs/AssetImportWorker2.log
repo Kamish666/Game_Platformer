@@ -1,0 +1,1075 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.36f1 (95a4219250e5) revision 9806881'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26100) 64bit Core' Language: 'ru' Physical Memory: 14188 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.36f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+D:/БГУИР/ПГиЗ/КУРСАЧ/Решение/Game_Platformer/Platformer
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+9251
+Successfully changed project path to: D:/БГУИР/ПГиЗ/КУРСАЧ/Решение/Game_Platformer/Platformer
+D:/БГУИР/ПГиЗ/КУРСАЧ/Решение/Game_Platformer/Platformer
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [30948] Host "[IP] 192.168.31.67 [Port] 0 [Flags] 2 [Guid] 1558942959 [EditorId] 1558942959 [Version] 1048832 [Id] WindowsEditor(7,Legion) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [30948] Host "[IP] 192.168.31.67 [Port] 0 [Flags] 2 [Guid] 1558942959 [EditorId] 1558942959 [Version] 1048832 [Id] WindowsEditor(7,Legion) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+Refreshing native plugins compatible for Editor in 12.44 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.36f1 (95a4219250e5)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.36f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/БГУИР/ПГиЗ/КУРСАЧ/Решение/Game_Platformer/Platformer/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3060 Laptop GPU (ID=0x2560)
+    Vendor:   NVIDIA
+    VRAM:     5996 MB
+    Driver:   32.0.15.6603
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.36f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.36f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.36f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56004
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.36f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.36f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.36f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.36f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.019874 seconds.
+- Loaded All Assemblies, in  0.506 seconds
+Native extension for WindowsStandalone target not found
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 345 ms
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.745 seconds
+Domain Reload Profiling: 1248ms
+	BeginReloadAssembly (176ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (49ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (88ms)
+	LoadAllAssembliesAndSetupDomain (177ms)
+		LoadAssemblies (172ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (173ms)
+			TypeCache.Refresh (172ms)
+				TypeCache.ScanAssembly (154ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (746ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (674ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (483ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (127ms)
+			ProcessInitializeOnLoadMethodAttributes (57ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.047 seconds
+Refreshing native plugins compatible for Editor in 5.51 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.971 seconds
+Domain Reload Profiling: 2016ms
+	BeginReloadAssembly (192ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (34ms)
+	RebuildCommonClasses (53ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (61ms)
+	LoadAllAssembliesAndSetupDomain (724ms)
+		LoadAssemblies (527ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (313ms)
+			TypeCache.Refresh (258ms)
+				TypeCache.ScanAssembly (227ms)
+			ScanForSourceGeneratedMonoScriptInfo (42ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (972ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (763ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (43ms)
+			SetLoadedEditorAssemblies (6ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (100ms)
+			ProcessInitializeOnLoadAttributes (514ms)
+			ProcessInitializeOnLoadMethodAttributes (91ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 3.90 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6271 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 110 unused Assets / (0.8 MB). Loaded Objects now: 6733.
+Memory consumption went from 232.9 MB to 232.1 MB.
+Total: 5.214400 ms (FindLiveObjects: 0.468700 ms CreateObjectMapping: 0.451500 ms MarkObjects: 3.757000 ms  DeleteObjects: 0.536200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 131359.384958 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/MachineGun Red Green.prefab
+  artifactKey: Guid(20c4d6abb0659a94797cca2218b76da3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/MachineGun Red Green.prefab using Guid(20c4d6abb0659a94797cca2218b76da3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '49da8a7b2baede66fa3f3c50062c4f9a') in 0.088520 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/MachineGun Red Blue.prefab
+  artifactKey: Guid(c01b21a959219d04bb0d881e231820ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/MachineGun Red Blue.prefab using Guid(c01b21a959219d04bb0d881e231820ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '35d516bcffcba86bf8f547abe34dd042') in 0.008152 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 4.981826 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/Parent
+  artifactKey: Guid(dfd934fdc1764db4fb192672c87b2858) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/Parent using Guid(dfd934fdc1764db4fb192672c87b2858) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f8e4a1862bbcf1937a3bb858ae762886') in 0.000741 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.801955 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket
+  artifactKey: Guid(07e367ccf845233438a7a32500b78541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket using Guid(07e367ccf845233438a7a32500b78541) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fb317cf65eaa072f33d8e45ba4ecf5f2') in 0.001310 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.032786 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/Rocket Bullet All.prefab
+  artifactKey: Guid(3ed0d751a9d960949a3230455e09ba67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/Rocket Bullet All.prefab using Guid(3ed0d751a9d960949a3230455e09ba67) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd892cc64043e3863d4ef01b2171f8acc') in 0.101574 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.338643 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/Parent
+  artifactKey: Guid(38163224f5107b441a420e74cfdec44b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/Parent using Guid(38163224f5107b441a420e74cfdec44b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '307b518bf9c1d27608829a3a0cac70eb') in 0.000604 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.516528 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee
+  artifactKey: Guid(e4ef0af4df64d5e4594f2484d626c80c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee using Guid(e4ef0af4df64d5e4594f2484d626c80c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '22e476dfae6cbe0235ba8726151ae05e') in 0.000537 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/RedGreenFireball.prefab
+  artifactKey: Guid(5365ab7ee3074b54c853eebbe76f12cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/RedGreenFireball.prefab using Guid(5365ab7ee3074b54c853eebbe76f12cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd0045fafe94a6c747e53f9129d27877e') in 0.015984 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.014995 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/RedFireball.prefab
+  artifactKey: Guid(7bc548dd3a6071f49b500553fd357dd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/RedFireball.prefab using Guid(7bc548dd3a6071f49b500553fd357dd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e80eb1f46a09ab51b8889617a0203262') in 0.011621 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.329590 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/Parent
+  artifactKey: Guid(f3eee95f0fa587c4497069db61bc3346) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/Parent using Guid(f3eee95f0fa587c4497069db61bc3346) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '66a18c33e23bf9f8f161d69f9660672a') in 0.000679 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 89.428281 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/DadBeeBullet.prefab
+  artifactKey: Guid(4d72ff3d35cb3134c9ca962d4f40683c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/DadBeeBullet.prefab using Guid(4d72ff3d35cb3134c9ca962d4f40683c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ff70b574c21adba411fd3c853d75ae37') in 0.009405 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 20.906629 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/AllBeeBullet Variant.prefab
+  artifactKey: Guid(771e321471ce2004499e46975f4d8fc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/AllBeeBullet Variant.prefab using Guid(771e321471ce2004499e46975f4d8fc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8cdbfa0c19fc5fdf68e0aac6eb4bfd8d') in 0.015777 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 8.992639 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/AllBeeBullet.prefab
+  artifactKey: Guid(771e321471ce2004499e46975f4d8fc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/AllBeeBullet.prefab using Guid(771e321471ce2004499e46975f4d8fc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f86876872f8136e2016076cf55c10f2f') in 0.008696 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 12.607901 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/AllBeeBullet 1.prefab
+  artifactKey: Guid(b0ee847f67e9cce44b1ac2b41b7061d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/AllBeeBullet 1.prefab using Guid(b0ee847f67e9cce44b1ac2b41b7061d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a8954ea547cee5096d7dcba4818b4bbd') in 0.008812 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 5.348561 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/RedBeeBullet 1.prefab
+  artifactKey: Guid(b0ee847f67e9cce44b1ac2b41b7061d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/RedBeeBullet 1.prefab using Guid(b0ee847f67e9cce44b1ac2b41b7061d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6312a0b530a00d8a37c3e902dddb81f9') in 0.008752 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.566957 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/AllBeeBullet 1.prefab
+  artifactKey: Guid(50117bc8f03dd2b41a3cfd96e2f41883) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/AllBeeBullet 1.prefab using Guid(50117bc8f03dd2b41a3cfd96e2f41883) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e20e32e724de1cf49577f5da24123697') in 0.008791 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 8.980856 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/GreenBeeBullet.prefab
+  artifactKey: Guid(50117bc8f03dd2b41a3cfd96e2f41883) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/GreenBeeBullet.prefab using Guid(50117bc8f03dd2b41a3cfd96e2f41883) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e3f3eb5884053d4fa31074bfff6f2f14') in 0.008978 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 3.428099 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/RedBeeBullet.prefab
+  artifactKey: Guid(b0ee847f67e9cce44b1ac2b41b7061d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/RedBeeBullet.prefab using Guid(b0ee847f67e9cce44b1ac2b41b7061d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b7ff784aeb62e685e6f9116c1b34da2f') in 0.008772 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 7.336918 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/AllBeeBullet 1.prefab
+  artifactKey: Guid(c09d1e0dc3981be4f99b2e35fc2bbcd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/AllBeeBullet 1.prefab using Guid(c09d1e0dc3981be4f99b2e35fc2bbcd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ef7e913fd979883e89fb564e1d3277c3') in 0.012159 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 5.758587 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/BlueBeeBullet.prefab
+  artifactKey: Guid(c09d1e0dc3981be4f99b2e35fc2bbcd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/BlueBeeBullet.prefab using Guid(c09d1e0dc3981be4f99b2e35fc2bbcd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '03970d9edc19639911f48f5347a5e642') in 0.008110 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 1.215760 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/AllBeeBullet 1.prefab
+  artifactKey: Guid(deea691e4f7466844b456c863432d123) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/AllBeeBullet 1.prefab using Guid(deea691e4f7466844b456c863432d123) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0d55e0b5634b77f5819fe556adc853d8') in 0.009986 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 18.401825 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/RedGreenBeeBullet.prefab
+  artifactKey: Guid(deea691e4f7466844b456c863432d123) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/RedGreenBeeBullet.prefab using Guid(deea691e4f7466844b456c863432d123) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b204e9bb95b0f02bab7564014966be9f') in 0.008988 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 3.238413 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/AllBeeBullet 1.prefab
+  artifactKey: Guid(d7a1c24fef4b2824b91e1940e35f057b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/AllBeeBullet 1.prefab using Guid(d7a1c24fef4b2824b91e1940e35f057b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5fcbedca7c029e2cdfcd93dc4fefdf20') in 0.008271 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 8.171699 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/RedBlueBeeBullet.prefab
+  artifactKey: Guid(d7a1c24fef4b2824b91e1940e35f057b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/RedBlueBeeBullet.prefab using Guid(d7a1c24fef4b2824b91e1940e35f057b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fa061e06943d5f4899c32b3f119cd3fe') in 0.008379 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 1.209997 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/AllBeeBullet 1.prefab
+  artifactKey: Guid(56d6d65ceca5edd46a2e0f67da043273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/AllBeeBullet 1.prefab using Guid(56d6d65ceca5edd46a2e0f67da043273) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd83fe0366863eaba448a39d02e8aaaeb') in 0.009281 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 8.888212 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/GreenBlueBeeBullet.prefab
+  artifactKey: Guid(56d6d65ceca5edd46a2e0f67da043273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/GreenBlueBeeBullet.prefab using Guid(56d6d65ceca5edd46a2e0f67da043273) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '678ba70c01d0eb34ed8ce09a429d766c') in 0.008265 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 10.408251 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/BlueBeeBullet.prefab
+  artifactKey: Guid(c09d1e0dc3981be4f99b2e35fc2bbcd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/BlueBeeBullet.prefab using Guid(c09d1e0dc3981be4f99b2e35fc2bbcd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a6829db64be786a907e2a9e790f97c52') in 0.008037 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.381292 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/BlueBeeBullet.prefab
+  artifactKey: Guid(c09d1e0dc3981be4f99b2e35fc2bbcd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/BlueBeeBullet.prefab using Guid(c09d1e0dc3981be4f99b2e35fc2bbcd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c8c45c4ef0d90f5ab3cf4834d821fe9f') in 0.008311 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 3.060552 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/GreenBeeBullet.prefab
+  artifactKey: Guid(50117bc8f03dd2b41a3cfd96e2f41883) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/GreenBeeBullet.prefab using Guid(50117bc8f03dd2b41a3cfd96e2f41883) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ecd188dec8d3cbe21fa3d23f856ee762') in 0.008380 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.579636 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/GreenBeeBullet.prefab
+  artifactKey: Guid(50117bc8f03dd2b41a3cfd96e2f41883) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/GreenBeeBullet.prefab using Guid(50117bc8f03dd2b41a3cfd96e2f41883) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b7387fc7746fc68f699856ac58dec9ea') in 0.008441 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 5.685348 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/GreenBlueBeeBullet.prefab
+  artifactKey: Guid(56d6d65ceca5edd46a2e0f67da043273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/GreenBlueBeeBullet.prefab using Guid(56d6d65ceca5edd46a2e0f67da043273) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '40f7c383085646413d6faf0956e430cf') in 0.008999 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 2.844189 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/RedBeeBullet.prefab
+  artifactKey: Guid(b0ee847f67e9cce44b1ac2b41b7061d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/RedBeeBullet.prefab using Guid(b0ee847f67e9cce44b1ac2b41b7061d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f3280699c2f4ce0d7a1609bfc6e33f3c') in 0.008599 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.541774 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/RedBeeBullet.prefab
+  artifactKey: Guid(b0ee847f67e9cce44b1ac2b41b7061d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/RedBeeBullet.prefab using Guid(b0ee847f67e9cce44b1ac2b41b7061d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ecf18a6fb6da9c1ebebfd156671b526d') in 0.009896 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 3.495793 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/RedBlueBeeBullet.prefab
+  artifactKey: Guid(d7a1c24fef4b2824b91e1940e35f057b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/RedBlueBeeBullet.prefab using Guid(d7a1c24fef4b2824b91e1940e35f057b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '63f411e0f1a25cc46ea8452f2b6cd251') in 0.007978 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.339835 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/RedBlueBeeBullet.prefab
+  artifactKey: Guid(d7a1c24fef4b2824b91e1940e35f057b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/RedBlueBeeBullet.prefab using Guid(d7a1c24fef4b2824b91e1940e35f057b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5b0974e4b42e4fc050a80bf2534c21ed') in 0.008291 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 3.725623 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/RedGreenBeeBullet.prefab
+  artifactKey: Guid(deea691e4f7466844b456c863432d123) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/RedGreenBeeBullet.prefab using Guid(deea691e4f7466844b456c863432d123) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '472295f2260f9f49b578dbcd8b9d91d0') in 0.008026 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 25.383667 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/RedBlueBeeBullet.prefab
+  artifactKey: Guid(d7a1c24fef4b2824b91e1940e35f057b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/RedBlueBeeBullet.prefab using Guid(d7a1c24fef4b2824b91e1940e35f057b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b10cdaaa1a20e55cda9d9dbb0dba6337') in 0.008968 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 3.938676 seconds.
+  path: Assets/Prefab/Resources/Bullet/Bee/RedGreenBeeBullet.prefab
+  artifactKey: Guid(deea691e4f7466844b456c863432d123) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Bee/RedGreenBeeBullet.prefab using Guid(deea691e4f7466844b456c863432d123) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '299389919d790534f079d45172767325') in 0.009825 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 91.640661 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/Parent/DadMachineGunBullet.prefab
+  artifactKey: Guid(cfe7752dad05fc648a5914f7acd152ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/Parent/DadMachineGunBullet.prefab using Guid(cfe7752dad05fc648a5914f7acd152ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e474d4fad37fb770f1ad7144e513ce70') in 0.008156 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 12.828058 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/DadMachineGunBullet Variant.prefab
+  artifactKey: Guid(dcebc7645b409084ba9ef1d31d9ee693) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/DadMachineGunBullet Variant.prefab using Guid(dcebc7645b409084ba9ef1d31d9ee693) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5d0c00a2f43d3a3b7def1a7611b99181') in 0.016516 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 13.275240 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/AllMachineGunBullet.prefab
+  artifactKey: Guid(dcebc7645b409084ba9ef1d31d9ee693) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/AllMachineGunBullet.prefab using Guid(dcebc7645b409084ba9ef1d31d9ee693) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd2f698b7db6ce67f8e8526af42181b53') in 0.009584 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 3.701003 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/AllMachineGunBullet 1.prefab
+  artifactKey: Guid(c0e776e3c3c726d4d957418508b41457) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/AllMachineGunBullet 1.prefab using Guid(c0e776e3c3c726d4d957418508b41457) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6cf5b671311db0ed6fbbc3d6b6b2c462') in 0.011332 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 5.459261 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/RedMachineGunBullet.prefab
+  artifactKey: Guid(c0e776e3c3c726d4d957418508b41457) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/RedMachineGunBullet.prefab using Guid(c0e776e3c3c726d4d957418508b41457) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a96dbcade17777c4d360934c029b5977') in 0.010074 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.803624 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/AllMachineGunBullet 1.prefab
+  artifactKey: Guid(b643489b3a4921c479dd87c0ef670213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/AllMachineGunBullet 1.prefab using Guid(b643489b3a4921c479dd87c0ef670213) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'abc8ec77aca25bd09a63a0f9ef5b6d9f') in 0.011479 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 8.871828 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/GreenMachineGunBullet.prefab
+  artifactKey: Guid(b643489b3a4921c479dd87c0ef670213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/GreenMachineGunBullet.prefab using Guid(b643489b3a4921c479dd87c0ef670213) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd024084c456cc33999789181d76ed5b4') in 0.009331 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 1.352359 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/AllMachineGunBullet 1.prefab
+  artifactKey: Guid(db5b6867ad5dc714b8d9b5ac4ba528fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/AllMachineGunBullet 1.prefab using Guid(db5b6867ad5dc714b8d9b5ac4ba528fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2820ff260fa67cb98c49575d7c3ecb63') in 0.011588 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 5.905277 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/BlueMachineGunBullet.prefab
+  artifactKey: Guid(db5b6867ad5dc714b8d9b5ac4ba528fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/BlueMachineGunBullet.prefab using Guid(db5b6867ad5dc714b8d9b5ac4ba528fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b01c9c3d13f585deae8c966b2bdc2fa7') in 0.009289 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.906686 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/AllMachineGunBullet 1.prefab
+  artifactKey: Guid(14f9ed26dc260cb458f69550b32a4a1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/AllMachineGunBullet 1.prefab using Guid(14f9ed26dc260cb458f69550b32a4a1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f397dda5450d1f8ad1a4d2b0c9c554b3') in 0.013686 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 9.039347 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/RedGreenMachineGunBullet.prefab
+  artifactKey: Guid(14f9ed26dc260cb458f69550b32a4a1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/RedGreenMachineGunBullet.prefab using Guid(14f9ed26dc260cb458f69550b32a4a1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0625982ce9d31e547e5dde48657f6085') in 0.008432 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.923132 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/AllMachineGunBullet 1.prefab
+  artifactKey: Guid(3ad82449363ecc2449d8fe09addfcb14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/AllMachineGunBullet 1.prefab using Guid(3ad82449363ecc2449d8fe09addfcb14) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '82ae421b28f83ad9e165cac5797739c3') in 0.009555 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 9.846807 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/RedBlueMachineGunBullet.prefab
+  artifactKey: Guid(3ad82449363ecc2449d8fe09addfcb14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/RedBlueMachineGunBullet.prefab using Guid(3ad82449363ecc2449d8fe09addfcb14) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0dc0f4eb665efd6f3b642f1cf5c96f6f') in 0.009022 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 3.816992 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/AllMachineGunBullet 1.prefab
+  artifactKey: Guid(65dc43cbbd5aa694caec338ca14b5ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/AllMachineGunBullet 1.prefab using Guid(65dc43cbbd5aa694caec338ca14b5ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '04b48a925ad7b48fe9fef427de3ef74b') in 0.010288 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 9.774282 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/GreenBlueMachineGunBullet.prefab
+  artifactKey: Guid(65dc43cbbd5aa694caec338ca14b5ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/GreenBlueMachineGunBullet.prefab using Guid(65dc43cbbd5aa694caec338ca14b5ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1ec37fcb5bc9198e9f306b478ef0e6a0') in 0.008303 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 9.733155 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/BlueMachineGunBullet.prefab
+  artifactKey: Guid(db5b6867ad5dc714b8d9b5ac4ba528fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/BlueMachineGunBullet.prefab using Guid(db5b6867ad5dc714b8d9b5ac4ba528fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0dca90368a4db79d3d0fc80d0d10eb97') in 0.008940 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 7.053575 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/GreenBlueMachineGunBullet.prefab
+  artifactKey: Guid(65dc43cbbd5aa694caec338ca14b5ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/GreenBlueMachineGunBullet.prefab using Guid(65dc43cbbd5aa694caec338ca14b5ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fb022e94ec9a6c5cc639fcd3b9265039') in 0.016915 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.565030 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/GreenBlueMachineGunBullet.prefab
+  artifactKey: Guid(65dc43cbbd5aa694caec338ca14b5ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/GreenBlueMachineGunBullet.prefab using Guid(65dc43cbbd5aa694caec338ca14b5ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ec9fcc408da65b5eb96fac28246fa741') in 0.036179 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 4.407195 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/GreenBlueMachineGunBullet.prefab
+  artifactKey: Guid(65dc43cbbd5aa694caec338ca14b5ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/GreenBlueMachineGunBullet.prefab using Guid(65dc43cbbd5aa694caec338ca14b5ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b36f340bb4d8d4c1226a485ad7f7ad45') in 0.008344 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 4.948931 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/GreenMachineGunBullet.prefab
+  artifactKey: Guid(b643489b3a4921c479dd87c0ef670213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/GreenMachineGunBullet.prefab using Guid(b643489b3a4921c479dd87c0ef670213) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '685ab3a09ae4019cc059ce802c903ee4') in 0.008632 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 4.541243 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/RedBlueMachineGunBullet.prefab
+  artifactKey: Guid(3ad82449363ecc2449d8fe09addfcb14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/RedBlueMachineGunBullet.prefab using Guid(3ad82449363ecc2449d8fe09addfcb14) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd92fdc6de4f8635a34e9eb00339b9bc4') in 0.009125 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 3.799104 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/RedGreenMachineGunBullet.prefab
+  artifactKey: Guid(14f9ed26dc260cb458f69550b32a4a1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/RedGreenMachineGunBullet.prefab using Guid(14f9ed26dc260cb458f69550b32a4a1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b77335596a560c95ef2b4c693e91c529') in 0.007863 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 2.827294 seconds.
+  path: Assets/Prefab/Resources/Bullet/MachineGun/RedMachineGunBullet.prefab
+  artifactKey: Guid(c0e776e3c3c726d4d957418508b41457) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/MachineGun/RedMachineGunBullet.prefab using Guid(c0e776e3c3c726d4d957418508b41457) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ff68a9353073a25a05065f2b5180ac88') in 0.008371 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 64.919394 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/Parent/DadRocketBullet.prefab
+  artifactKey: Guid(3ed0d751a9d960949a3230455e09ba67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/Parent/DadRocketBullet.prefab using Guid(3ed0d751a9d960949a3230455e09ba67) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '226ebc443591bfce44f27e818e251a48') in 0.008861 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 11.706038 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/DadRocketBullet Variant.prefab
+  artifactKey: Guid(bc6cda7b2b3386c4bab9e407caaba215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/DadRocketBullet Variant.prefab using Guid(bc6cda7b2b3386c4bab9e407caaba215) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd726e13bd2e6cfdf7f4bc52d815a518d') in 0.023370 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 12.332747 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/AllRocketBullet.prefab
+  artifactKey: Guid(bc6cda7b2b3386c4bab9e407caaba215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/AllRocketBullet.prefab using Guid(bc6cda7b2b3386c4bab9e407caaba215) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2dff8e44fc81cb4d10c3f735b58eb434') in 0.009779 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 2.863326 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/AllRocketBullet 1.prefab
+  artifactKey: Guid(7dd4cacc29b0bed4d911d794b9e4e1da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/AllRocketBullet 1.prefab using Guid(7dd4cacc29b0bed4d911d794b9e4e1da) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f38c7f23a212b7af8bd89697fe8c50d5') in 0.008383 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 7.320325 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/RedRocketBullet.prefab
+  artifactKey: Guid(7dd4cacc29b0bed4d911d794b9e4e1da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/RedRocketBullet.prefab using Guid(7dd4cacc29b0bed4d911d794b9e4e1da) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '03cf67c8e3092b0342f64e64dbf273da') in 0.008477 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 1.602974 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/AllRocketBullet 1.prefab
+  artifactKey: Guid(e17e836a86c97494f9178561ab64e93f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/AllRocketBullet 1.prefab using Guid(e17e836a86c97494f9178561ab64e93f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd90e44d911fdd21c7a83d206b895606b') in 0.014103 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 6.304547 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/GreenRocketBullet.prefab
+  artifactKey: Guid(e17e836a86c97494f9178561ab64e93f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/GreenRocketBullet.prefab using Guid(e17e836a86c97494f9178561ab64e93f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd08b163c572b8b4c8981abd14da8a028') in 0.008766 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 1.179058 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/AllRocketBullet 1.prefab
+  artifactKey: Guid(51929f3824726f848b21c60dee9577a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/AllRocketBullet 1.prefab using Guid(51929f3824726f848b21c60dee9577a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2948e02f3bae47a6bdb4c22ce70b9d4e') in 0.011553 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 5.797463 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/BlueRocketBullet.prefab
+  artifactKey: Guid(51929f3824726f848b21c60dee9577a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/BlueRocketBullet.prefab using Guid(51929f3824726f848b21c60dee9577a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'de9eca4ce9cd44d0056c17bb1f5c6b53') in 0.009864 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 1.026092 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/AllRocketBullet 1.prefab
+  artifactKey: Guid(6ad89ee21c1c8b14c9b2938aeebbabd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/AllRocketBullet 1.prefab using Guid(6ad89ee21c1c8b14c9b2938aeebbabd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a9e41457b3aa92adb06a66f1d1d03fb1') in 0.010711 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 12.674625 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/RedGreenRocketBullet.prefab
+  artifactKey: Guid(6ad89ee21c1c8b14c9b2938aeebbabd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/RedGreenRocketBullet.prefab using Guid(6ad89ee21c1c8b14c9b2938aeebbabd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '795d1f545ad378581221f6c23b25b9f2') in 0.010904 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 1.195250 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/AllRocketBullet 1.prefab
+  artifactKey: Guid(f3016107c7234284ea0ae4b77adc3a95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/AllRocketBullet 1.prefab using Guid(f3016107c7234284ea0ae4b77adc3a95) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '541684447ea2b5c044d3d144d38eb581') in 0.011514 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 8.184641 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/RedBlueRocketBullet.prefab
+  artifactKey: Guid(f3016107c7234284ea0ae4b77adc3a95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/RedBlueRocketBullet.prefab using Guid(f3016107c7234284ea0ae4b77adc3a95) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2c7f8cd36a19336fadffc3b7004e8ba2') in 0.009824 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 1.090765 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/AllRocketBullet 1.prefab
+  artifactKey: Guid(44c7ae4e2f4a9ad4ca92648d2c1230e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/AllRocketBullet 1.prefab using Guid(44c7ae4e2f4a9ad4ca92648d2c1230e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3706b35b74f6f31c480b5037197e34b3') in 0.019326 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 7.869449 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/GreenBlueRocketBullet.prefab
+  artifactKey: Guid(44c7ae4e2f4a9ad4ca92648d2c1230e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/GreenBlueRocketBullet.prefab using Guid(44c7ae4e2f4a9ad4ca92648d2c1230e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7324105f370a84b011b73366746d5683') in 0.009437 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 19.580245 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/RedRocketBullet.prefab
+  artifactKey: Guid(7dd4cacc29b0bed4d911d794b9e4e1da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/RedRocketBullet.prefab using Guid(7dd4cacc29b0bed4d911d794b9e4e1da) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '48872f2e77a59b811c41397c2e5b8030') in 0.009377 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 3.415488 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/GreenRocketBullet.prefab
+  artifactKey: Guid(e17e836a86c97494f9178561ab64e93f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/GreenRocketBullet.prefab using Guid(e17e836a86c97494f9178561ab64e93f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '42c0a23cdd01c9513ed106e8758501ab') in 0.010140 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 6.268815 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/BlueRocketBullet.prefab
+  artifactKey: Guid(51929f3824726f848b21c60dee9577a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/BlueRocketBullet.prefab using Guid(51929f3824726f848b21c60dee9577a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a9054e9a464c216e327ad76623cf50c6') in 0.010189 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 3.921308 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/RedGreenRocketBullet.prefab
+  artifactKey: Guid(6ad89ee21c1c8b14c9b2938aeebbabd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/RedGreenRocketBullet.prefab using Guid(6ad89ee21c1c8b14c9b2938aeebbabd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bec8c50c7feffd831da18d4e623a428c') in 0.008679 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 4.927827 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/RedBlueRocketBullet.prefab
+  artifactKey: Guid(f3016107c7234284ea0ae4b77adc3a95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/RedBlueRocketBullet.prefab using Guid(f3016107c7234284ea0ae4b77adc3a95) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '72a3cf72f9dfc50bd70b19f3180cbb27') in 0.009843 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 2.116596 seconds.
+  path: Assets/Prefab/Resources/Bullet/Rocket/GreenBlueRocketBullet.prefab
+  artifactKey: Guid(44c7ae4e2f4a9ad4ca92648d2c1230e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Bullet/Rocket/GreenBlueRocketBullet.prefab using Guid(44c7ae4e2f4a9ad4ca92648d2c1230e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '30654759361872c9903120a6f1aed45d') in 0.010389 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 62.962510 seconds.
+  path: Assets/Prefab/Resources/BlueRedBee.prefab
+  artifactKey: Guid(5be6c43fb25626241bb5653830a0baec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/BlueRedBee.prefab using Guid(5be6c43fb25626241bb5653830a0baec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1f491944ed840ee5358cd34aeb93f1d4') in 0.062427 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 98
+========================================================================
+Received Import Request.
+  Time since last request: 128.973586 seconds.
+  path: Assets/Prefab/Resources/BlueRedBee.prefab
+  artifactKey: Guid(5be6c43fb25626241bb5653830a0baec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/BlueRedBee.prefab using Guid(5be6c43fb25626241bb5653830a0baec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ed7a5603fb79991edf641825be591fd1') in 0.020267 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 161
+========================================================================
+Received Import Request.
+  Time since last request: 71.386125 seconds.
+  path: Assets/Prefab/Resources/MachineGun.prefab
+  artifactKey: Guid(818f466efd1901042ba41248a5bc8484) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/MachineGun.prefab using Guid(818f466efd1901042ba41248a5bc8484) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '91801df77b4c4068b5e853b5171cf3a8') in 0.024407 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 155
+========================================================================
+Received Import Request.
+  Time since last request: 112.458601 seconds.
+  path: Assets/Prefab/Resources/Rocket.prefab
+  artifactKey: Guid(f1df2b95e9a0a6c4689ed9abe08bca36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Resources/Rocket.prefab using Guid(f1df2b95e9a0a6c4689ed9abe08bca36) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '676afacf6cae95c384f8219f77a6c83f') in 0.022947 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 172
+========================================================================
+Received Import Request.
+  Time since last request: 317.159535 seconds.
+  path: Assets/Scene/Levels/Older/TtrainingEmpty.unity
+  artifactKey: Guid(3aa2b872b015a3a41af3483470ef1765) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scene/Levels/Older/TtrainingEmpty.unity using Guid(3aa2b872b015a3a41af3483470ef1765) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'eac8e5ad95ad53bb413d9863a9d3742a') in 0.000683 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 33.355403 seconds.
+  path: Assets/Scene/Editor.unity
+  artifactKey: Guid(8242166972e7105468554650cd733467) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scene/Editor.unity using Guid(8242166972e7105468554650cd733467) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c347ea5021f4317fd1daa29343931ce8') in 0.000725 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 45.818583 seconds.
+  path: Assets/Scene/Levels/Older/TtrainingEmpty 1.unity
+  artifactKey: Guid(6d98f2e418787d644a9c4c5747b8dfd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scene/Levels/Older/TtrainingEmpty 1.unity using Guid(6d98f2e418787d644a9c4c5747b8dfd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8237bd2fb36ee5d23d84062ad4a519ed') in 0.000521 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
