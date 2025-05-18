@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 150653084952982317, guid: 4d72ff3d35cb3134c9ca962d4f40683c, type: 3}
       propertyPath: m_Name
-      value: AllBeeBullet Variant
+      value: AllBeeBullet
       objectReference: {fileID: 0}
     - target: {fileID: 5719983204276550522, guid: 4d72ff3d35cb3134c9ca962d4f40683c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7216941456728464529, guid: 4d72ff3d35cb3134c9ca962d4f40683c, type: 3}
+      propertyPath: _bulletPS
+      value: 
+      objectReference: {fileID: 5050355767157220534, guid: ade1984393ed1f6458b14eb514582fbd, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

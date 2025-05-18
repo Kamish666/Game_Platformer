@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: _isGreenEnemy
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4026369815334082901, guid: 3ed0d751a9d960949a3230455e09ba67, type: 3}
+      propertyPath: _bulletPS
+      value: 
+      objectReference: {fileID: 19169200383526127, guid: 96d20c210bba3ed4ca64acf1a1828dee, type: 3}
     - target: {fileID: 6067484765491997982, guid: 3ed0d751a9d960949a3230455e09ba67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

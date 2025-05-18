@@ -6,12 +6,13 @@ public class Bullet : Enemy
 {
 
     [SerializeField] private float _timeToDestroy = 10f;
-    private GameObject _bullet;
+    //private GameObject _bullet;
+    [SerializeField] private GameObject _bulletPS;
 
     protected void Awake()
     {
         //Debug.Log("Метод успешно отработал");
-        _bullet = this.gameObject;
+        //_bullet = this.gameObject;
     }
 
     private void Start()
@@ -27,7 +28,7 @@ public class Bullet : Enemy
 
 
         //Destroy(gameObject);
-        _bullet.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     protected void OnTriggerEnter2D(Collider2D collision)
@@ -35,9 +36,9 @@ public class Bullet : Enemy
         //Debug.Log("Я ребенок");
         base.OnTriggerEnter2D(collision);
 
-        //Destroy(gameObject);
-        _bullet.SetActive(false);
+        PoolerBulletsAndParticalSystems.instance.SpawnFromPool(_bulletPS.name, transform.position, transform.rotation);
 
-        PoolerBulletsAndParticalSystems.instance.SpawnFromPool(gameObject.name, transform.position, transform.rotation);
+        //Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

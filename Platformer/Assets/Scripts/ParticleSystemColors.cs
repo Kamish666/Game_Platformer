@@ -41,8 +41,12 @@ public class ParticleSystemColors : MonoBehaviour
             Debug.LogWarning("ChangeColor script not found in the scene");
         }
 
-        GetComponentInParent<Health>().OnDie += DeactiveScript;
-    }
+        var player = GetComponentInParent<Health>();
+        if (player != null)
+        {
+            player.OnDie += DeactiveScript;
+        }
+        }
 
     private void OnColorChanged(bool red, bool green, bool blue)
     {
