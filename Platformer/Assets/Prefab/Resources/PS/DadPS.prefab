@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9058625361883614969}
   - component: {fileID: 6534274793993441181}
   - component: {fileID: 5774810832677322272}
+  - component: {fileID: 8630888686421951357}
   m_Layer: 0
   m_Name: DadPS
   m_TagString: Untagged
@@ -5029,3 +5030,15 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+--- !u!114 &8630888686421951357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5283848426706877433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e997d1095e94a5429a705ad624552f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
