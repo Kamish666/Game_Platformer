@@ -79,7 +79,7 @@ public class ParticleSystemColors : MonoBehaviour
 
     private void ApplyMaterialAndGradient(Material material, Gradient gradient)
     {
-        //_renderer.material = material;
+        _renderer.material = material;
         _colorOverLifetime.enabled = true;
         _colorOverLifetime.color = new ParticleSystem.MinMaxGradient(gradient);
         GetComponent<ParticleSystemRenderer>().enabled = true;

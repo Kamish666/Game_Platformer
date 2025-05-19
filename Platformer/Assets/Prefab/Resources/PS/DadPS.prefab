@@ -4858,7 +4858,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4906,10 +4906,10 @@ MonoBehaviour:
   _isRed: 1
   _isGreen: 1
   _isBlue: 1
-  _redMaterial: {fileID: 2100000, guid: 43562d72f26eea5468fbc98b9dc9278a, type: 2}
-  _greenMaterial: {fileID: 2100000, guid: 5f649f4bf110d7f4fa13f69df00ba2d2, type: 2}
-  _blueMaterial: {fileID: 2100000, guid: 1c07dc47b97f4654bb56dcb1f9a7b9ec, type: 2}
-  _blackMaterial: {fileID: 2100000, guid: b65aba487ce5fc9449c01052ca6c28de, type: 2}
+  _redMaterial: {fileID: 2100000, guid: 692c98d9177bc054fb21e486368fcb04, type: 2}
+  _greenMaterial: {fileID: 2100000, guid: b0fe2d9316b29df4899f9cc8bf6868b4, type: 2}
+  _blueMaterial: {fileID: 2100000, guid: 27d98da55af71f346b3d4dbf7c9f05a5, type: 2}
+  _blackMaterial: {fileID: 2100000, guid: efb2d83cde6b3af409b30fa17553631f, type: 2}
   _redGradient:
     serializedVersion: 2
     key0: {r: 0.96862745, g: 0.34117648, b: 0.44705883, a: 1}
