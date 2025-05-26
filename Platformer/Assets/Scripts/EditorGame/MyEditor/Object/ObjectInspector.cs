@@ -67,20 +67,23 @@ public class ObjectInspector : MonoBehaviour
                     if (field.GetCustomAttribute<GameEditorAnnotation>() == null)
                         continue;
 
+                    var annotation = field.GetCustomAttribute<GameEditorAnnotation>();
+                    string displayName = string.IsNullOrEmpty(annotation.DisplayName) ? field.Name : annotation.DisplayName;
+
                     if (field.FieldType == typeof(bool))
                     {
                         bool boolValue = (bool)field.GetValue(script);
-                        CreateUIField(field.Name, boolValue, newValue => field.SetValue(script, newValue == "True"));
+                        CreateUIField(displayName, boolValue, newValue => field.SetValue(script, newValue == "True"));
                     }
                     else if (field.FieldType == typeof(Vector2[]))
                     {
                         Vector2[] points = (Vector2[])field.GetValue(script);
-                        CreateVector2Scroll(field.Name, points, updatedArray => field.SetValue(script, updatedArray));
+                        CreateVector2Scroll(displayName, points, updatedArray => field.SetValue(script, updatedArray));
                     }
                     else
                     {
                         object fieldValue = field.GetValue(script);
-                        CreateUIField(field.Name, fieldValue, newValue => field.SetValue(script, ConvertValue(newValue, field.FieldType)));
+                        CreateUIField(displayName, fieldValue, newValue => field.SetValue(script, ConvertValue(newValue, field.FieldType)));
                     }
                 }
 

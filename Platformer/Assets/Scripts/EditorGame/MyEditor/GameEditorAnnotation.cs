@@ -6,5 +6,11 @@ using UnityEngine;
 [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
 public class GameEditorAnnotation : Attribute
 {
+    public string DisplayName { get; }
+
+    public GameEditorAnnotation(string displayName = null)
+    {
+        DisplayName = displayName;
+    }
 }
 
