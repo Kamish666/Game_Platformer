@@ -16,7 +16,7 @@ public class Bomber : AirPatrol, IShot
     //public GameObject bullet;
     [SerializeField] private string projectileTag;
     [SerializeField] private Transform _shoot;
-    [GameEditorAnnotation] private float _fireRate = 4f;
+    [GameEditorAnnotation][SerializeField] private float _fireRate = 4f;
 
     private PoolerBulletsAndParticalSystems _bulletPooler;
 

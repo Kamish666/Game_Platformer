@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3690524975840124391}
   - component: {fileID: 670644028556615794}
   - component: {fileID: 9191090359904319329}
+  - component: {fileID: 46857074562826663}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -224,6 +225,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &46857074562826663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6830667724471266439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de426b406b453743a89d3ab50e16dfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+  _canTakeDamage: 0
 --- !u!1 &7531731274249990626
 GameObject:
   m_ObjectHideFlags: 0
