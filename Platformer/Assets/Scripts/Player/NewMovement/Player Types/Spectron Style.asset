@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab63415f4caf1a34cb850863de971ec4, type: 3}
+  m_Name: Spectron Style
+  m_EditorClassIdentifier: 
+  gravityStrength: -118.84444
+  gravityScale: 12.114621
+  fallGravityMult: 1.5
+  maxFallSpeed: 38
+  fastFallGravityMult: 2
+  maxFastFallSpeed: 46
+  runMaxSpeed: 16.808
+  runAcceleration: 2.292
+  runAccelAmount: 6.818182
+  runDecceleration: 7.64
+  runDeccelAmount: 22.727272
+  accelInAir: 0.65
+  deccelInAir: 0.65
+  doConserveMomentum: 1
+  jumpHeight: 5.348
+  jumpTimeToApex: 0.3
+  jumpForce: 35.65333
+  jumpCutGravityMult: 2
+  jumpHangGravityMult: 0.5
+  jumpHangTimeThreshold: 1
+  jumpHangAccelerationMult: 1.1
+  jumpHangMaxSpeedMult: 1.3
+  wallJumpForce: {x: 22.92, y: 38.2}
+  wallJumpRunLerp: 0.5
+  wallJumpTime: 0.15
+  doTurnOnWallJump: 0
+  slideSpeed: 0
+  slideAccel: 0
+  coyoteTime: 0.1
+  jumpInputBufferTime: 0.1
+  dashAmount: 1
+  dashSpeed: 30.56
+  dashSleepTime: 0.05
+  dashAttackTime: 0.15
+  dashEndTime: 0.15
+  dashEndSpeed: {x: 22.92, y: 22.92}
+  dashEndRunLerp: 0.5
+  dashRefillTime: 0.1
+  dashInputBufferTime: 0.1

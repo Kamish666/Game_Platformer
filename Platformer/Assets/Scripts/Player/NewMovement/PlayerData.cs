@@ -80,7 +80,7 @@ public class PlayerData : ScriptableObject
 	
 
 	//Unity Callback, called when the inspector updates
-    private void OnValidate()
+    public void OnValidate()
     {
 		//Calculate gravity strength using the formula (gravity = 2 * jumpHeight / timeToJumpApex^2) 
 		gravityStrength = -(2 * jumpHeight) / (jumpTimeToApex * jumpTimeToApex);

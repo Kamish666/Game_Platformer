@@ -690,7 +690,7 @@ MonoBehaviour:
   verticalInput: {fileID: 9002266966063022465, guid: e8308c682d47d7849b3519a14d2128ee, type: 3}
   jump: {fileID: -9128473724114582487, guid: e8308c682d47d7849b3519a14d2128ee, type: 3}
   dash: {fileID: -5669570429518295700, guid: e8308c682d47d7849b3519a14d2128ee, type: 3}
-  Data: {fileID: 11400000, guid: e6de6150ab38ff74b9ee0fa32028adf7, type: 2}
+  Data: {fileID: 11400000, guid: 592b239b095409340815a6360b7dd3c7, type: 2}
   _groundCheckPoint: {fileID: 8937385430770099794}
   _groundCheckSize: {x: 0.5, y: 0.15}
   _frontWallCheckPoint: {fileID: 1934055032599670512}
