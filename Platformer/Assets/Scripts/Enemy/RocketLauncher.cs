@@ -90,4 +90,13 @@ public class RocketLauncher : MonoBehaviour, IShot
         RaycastHit2D hit = Physics2D.Raycast(_firePoint.position, direction, distance, _obstacleMask);
         return hit.collider == null;
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (_firePoint == null) return;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(_firePoint.position, _detectionRange);
+    }
+
 }
