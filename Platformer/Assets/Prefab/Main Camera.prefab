@@ -518,6 +518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _countLevels: 3
   _prologIndex: 0
+  prologLaunch: {fileID: 0}
 --- !u!114 &5694790420430088389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,7 +597,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musicSource: {fileID: 4950075144062097326}
   _soundSource: {fileID: 7001032842842797453}
-  _maxVolumeLivel: 10
 --- !u!114 &9159505336786990408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,6 +657,13 @@ MonoBehaviour:
   - background: {fileID: 59759280930220642}
     parallaxEffectX: 0
     parallaxEffectY: 0
+    startPosX: 0
+    startPosY: 0
+    lengthX: 0
+    lengthY: 0
+  - background: {fileID: 1725481245132087880}
+    parallaxEffectX: 0.6
+    parallaxEffectY: 0.6
     startPosX: 0
     startPosY: 0
     lengthX: 0
