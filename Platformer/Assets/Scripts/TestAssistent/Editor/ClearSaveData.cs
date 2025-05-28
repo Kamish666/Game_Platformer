@@ -1,41 +1,28 @@
 using UnityEngine;
 using System.IO;
+using UnityEditor;
 
-public class ClearSaveData : MonoBehaviour
+public static class ClearSaveDataEditor
 {
-
-#if UNITY_EDITOR
-    private string _filePath;
-
-    [ContextMenu("CleaningSaveAwake")]
-    private void Awake()
+    [MenuItem("Tools/Clear Save Data")]
+    public static void ClearAllSaves()
     {
-        // Инициализация пути сохранений в Awake
-        _filePath = Application.persistentDataPath + "/saveLevelsWin.gamesave";
-        ClearAllSaves();
-
-    }
-
-    [ContextMenu("CleaningSave")]
-    private void ClearAllSaves()
-    {
+        string filePath = Application.persistentDataPath + "/saveLevelsWin.gamesave";
 
         // Удаление файла сохранения
-        if (File.Exists(_filePath))
+        if (File.Exists(filePath))
         {
-            File.Delete(_filePath);
-            Debug.Log($"Файл сохранений удалён: {_filePath}");
+            File.Delete(filePath);
+            Debug.Log($"Файл сохранений удалён: {filePath}");
         }
         else
         {
-            Debug.LogWarning($"Файл сохранений не найден: {_filePath}");
+            Debug.LogWarning($"Файл сохранений не найден: {filePath}");
         }
 
         // Очистка PlayerPrefs
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
         Debug.Log("PlayerPrefs очищены!");
-
     }
-#endif
 }

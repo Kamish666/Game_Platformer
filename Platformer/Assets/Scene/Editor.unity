@@ -3162,7 +3162,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musicSource: {fileID: 2067226194}
   _soundSource: {fileID: 977029460}
-  _maxVolumeLivel: 10
 --- !u!114 &519420062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3574,7 +3573,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0432\u043E\u0437\u0432\u0440\u0430\u0442 \u043A\u0430\u043C\u0435\u0440\u044B"
+  m_text: Reset Camera
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d741c3dbf4d9d684fbc7d23f5a4dee27, type: 2}
   m_sharedMaterial: {fileID: -2190630984955199265, guid: d741c3dbf4d9d684fbc7d23f5a4dee27, type: 2}
@@ -9300,7 +9299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u0430\u0443\u0437\u0430"
+  m_text: Pause
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d741c3dbf4d9d684fbc7d23f5a4dee27, type: 2}
   m_sharedMaterial: {fileID: -2190630984955199265, guid: d741c3dbf4d9d684fbc7d23f5a4dee27, type: 2}

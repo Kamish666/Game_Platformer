@@ -167,6 +167,7 @@ MonoBehaviour:
   _editorPoints: []
   projectileTag: 
   _shoot: {fileID: 433824912452117809}
+  _fireRate: 4
 --- !u!114 &2020052462043708762
 MonoBehaviour:
   m_ObjectHideFlags: 0

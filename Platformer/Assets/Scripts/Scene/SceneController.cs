@@ -12,10 +12,13 @@ public class SceneController : MonoBehaviour
 
     public static SceneController instance;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
+    }
 
+    private void Start()
+    {
         var player = FindObjectOfType<PlayerMovementOlder>();
         if (player != null)
         {

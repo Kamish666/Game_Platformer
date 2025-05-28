@@ -5,19 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scene/Menu.unity
-    guid: b0cc80aa6c8e1384a870303f3bcdafc7
   - enabled: 1
     path: Assets/Scene/Menu 1.unity
     guid: 1eefcc580deacc34ba213955afc6e08d
   - enabled: 1
+    path: Assets/Scene/NewLevels/Lvl_1.unity
+    guid: 8591453ed2b2f5340ae2e17cf3605d5f
+  - enabled: 1
+    path: Assets/Scene/NewLevels/Lvl_2.unity
+    guid: 14770793f56f88e49bf4fd0fba67451f
+  - enabled: 1
+    path: Assets/Scene/NewLevels/Lvl_3.unity
+    guid: cf4d5f41dd9b5c7489bdaa876cf54a91
+  - enabled: 0
+    path: Assets/Scene/Menu.unity
+    guid: b0cc80aa6c8e1384a870303f3bcdafc7
+  - enabled: 0
     path: Assets/Scene/Levels/Level1.unity
     guid: 9706b1a1b11414a499a1326723be0234
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/Levels/Level2.unity
     guid: 88895a980ea8d6d4d9b049778d8b2118
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/Levels/Level3.unity
     guid: c00fac1b19ae1794f8218c11aa17c71a
   - enabled: 0
@@ -36,6 +45,9 @@ EditorBuildSettings:
     path: Assets/Scene/Prologue.unity
     guid: 8334f4cf252941f4e9b185dc443c3b13
   - enabled: 1
+    path: Assets/Scene/NewLevels/Trainitng.unity
+    guid: 28449988ae1198947a65b63b3cd9fa3a
+  - enabled: 0
     path: Assets/Scene/Levels/Training.unity
     guid: 3d8f57f69ad48144292d6c94424c622e
   - enabled: 0
@@ -45,9 +57,9 @@ EditorBuildSettings:
     path: Assets/Scene/Levels/Older/TtrainingEmpty older2.unity
     guid: 3aa2b872b015a3a41af3483470ef1765
   - enabled: 1
-    path: Assets/Scene/Levels/Older/TtrainingEmpty.unity
-    guid: 6d98f2e418787d644a9c4c5747b8dfd0
-  - enabled: 1
     path: Assets/Scene/Editor.unity
     guid: 8242166972e7105468554650cd733467
+  - enabled: 1
+    path: Assets/Scene/Levels/Older/TtrainingEmpty.unity
+    guid: 6d98f2e418787d644a9c4c5747b8dfd0
   m_configObjects: {}

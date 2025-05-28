@@ -151,7 +151,7 @@ MonoBehaviour:
   projectileTag: 
   _firePoint: {fileID: 2334110370045650834}
   _fireRate: 2
-  _detectionRange: 10
+  _detectionRange: 50
   _obstacleMask:
     serializedVersion: 2
     m_Bits: 256

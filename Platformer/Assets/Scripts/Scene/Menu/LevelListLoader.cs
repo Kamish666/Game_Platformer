@@ -7,13 +7,13 @@ using UnityEngine.SceneManagement;
 public class LevelListLoader : MonoBehaviour
 {
     public string levelsFolder = "Levels";  // Папка, где хранятся уровни
-    public GameObject levelItemPrefab;      // Твой префаб ChoiceLevelElementPrefab
+    public GameObject levelItemPrefab;      // Пефаб ChoiceLevelElementPrefab (имя играть редактировать мусорка)
     public Transform contentParent;         // Контейнер внутри ScrollView
 
     public string playSceneName = "GameScene";    // Сцена для игры
     public string editSceneName = "EditorScene";  // Сцена для редактирования
 
-    public string selectedLevel = "SelectedLevel";
+    private string selectedLevel = "SelectedLevel";
 
     private void Start()
     {

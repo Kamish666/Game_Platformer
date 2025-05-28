@@ -17,9 +17,9 @@ public class TransparencyMenu : MonoBehaviour
     private void Start()
     {
         if (!PlayerPrefs.HasKey(_objectKey))
-            PlayerPrefs.SetInt(_objectKey, 20);
+            PlayerPrefs.SetInt(_objectKey, 16);
         if (!PlayerPrefs.HasKey(_platformKey))
-            PlayerPrefs.SetInt(_platformKey, 20);
+            PlayerPrefs.SetInt(_platformKey, 16);
         if (!PlayerPrefs.HasKey(_toggleKey))
             PlayerPrefs.SetInt(_toggleKey, 1);
 

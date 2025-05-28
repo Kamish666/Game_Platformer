@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Menu : MonoBehaviour
 
     [SerializeField] private int _countLevels = 3;
     [SerializeField] private int _prologIndex;
+    [SerializeField] public Button prologLaunch;
 
     private void Start()
     {
@@ -25,6 +27,9 @@ public class Menu : MonoBehaviour
 
             LoadScene(_prologIndex);
         }
+
+        if (prologLaunch != null)
+            prologLaunch.onClick.AddListener(() => LoadScene(_prologIndex) );
     }
 
     public void PlayGame()

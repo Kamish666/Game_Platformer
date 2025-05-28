@@ -17,9 +17,9 @@ public class AudioMenu : MonoBehaviour
     private void Start()
     {
         if (!PlayerPrefs.HasKey(_musicKey))
-            PlayerPrefs.SetInt(_musicKey, 3);
+            PlayerPrefs.SetInt(_musicKey, 8);
         if (!PlayerPrefs.HasKey(_soundKey))
-            PlayerPrefs.SetInt(_soundKey, 8);
+            PlayerPrefs.SetInt(_soundKey, 16);
 
         _musicSlider.value = PlayerPrefs.GetInt(_musicKey);
         _soundSlider.value = PlayerPrefs.GetInt(_soundKey);

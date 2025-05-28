@@ -175,10 +175,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 1
   _canTakeDamage: 0
-  _timeToDestroy: 5
+  _timeToDestroy: 10
   _bulletPS: {fileID: 0}
   _speed: 10
-  _rotationSpeed: 50
+  _rotationSpeed: 75
 --- !u!114 &-3038893625635213786
 MonoBehaviour:
   m_ObjectHideFlags: 0
