@@ -36,13 +36,13 @@ public class ObjectInspector : MonoBehaviour
 
         Transform objTransform = obj.transform;
 
-        CreateUIField("Координаты X", objTransform.position.x,
+        CreateUIField("Coordinates X", objTransform.position.x,
             value => objTransform.position = new Vector3(float.Parse(value), objTransform.position.y, objTransform.position.z));
 
-        CreateUIField("Координаты Y", objTransform.position.y,
+        CreateUIField("Coordinates Y", objTransform.position.y,
             value => objTransform.position = new Vector3(objTransform.position.x, float.Parse(value), objTransform.position.z));
 
-        CreateUIField("Поворот Z", objTransform.rotation.eulerAngles.z,
+        CreateUIField("Rotation", objTransform.rotation.eulerAngles.z,
             value => objTransform.rotation = Quaternion.Euler(0, 0, float.Parse(value)));
 
         MonoBehaviour[] scripts = obj.GetComponents<MonoBehaviour>();

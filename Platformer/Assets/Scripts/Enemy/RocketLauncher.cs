@@ -6,17 +6,22 @@ public class RocketLauncher : MonoBehaviour, IShot
 {
     [SerializeField] private string projectileTag;
     [SerializeField] private Transform _firePoint;
-    [GameEditorAnnotation][SerializeField] private float _fireRate = 2f;
-    [GameEditorAnnotation][SerializeField] private float _detectionRange = 10f;
+    [GameEditorAnnotation("Fire interval")]
+    [SerializeField] private float _fireRate = 2f;
+    [GameEditorAnnotation("Detection range")]
+    [SerializeField] private float _detectionRange = 10f;
 
     [SerializeField] private LayerMask _obstacleMask;
     private PoolerBulletsAndParticalSystems _bulletPooler;
 
     [SerializeField] private float _offsetAngle = 0f; // угол на который надо повернуть, чтобы было ок
 
-    [GameEditorAnnotation][SerializeField] private bool _useRotationLimits = false;
-    [GameEditorAnnotation][SerializeField] private float _minRotation = -45f;
-    [GameEditorAnnotation][SerializeField] private float _maxRotation = 45f;
+    [GameEditorAnnotation("Rotation limits")]
+    [SerializeField] private bool _useRotationLimits = false;
+    [GameEditorAnnotation("Min rotation")]
+    [SerializeField] private float _minRotation = -45f;
+    [GameEditorAnnotation("Max rotation")]
+    [SerializeField] private float _maxRotation = 45f;
 
     private Transform _player;
 

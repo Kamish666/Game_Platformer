@@ -6,9 +6,11 @@ public class JumpingTrap : MonoBehaviour
 {
     [SerializeField] private Animation _jamp;
 
-    [GameEditorAnnotation] [SerializeField] private float _strenght;
+    [GameEditorAnnotation("Strenght")]
+    [SerializeField] private float _strenght;
 
-    [GameEditorAnnotation][SerializeField] private float _scaleX = 1f;
+    [GameEditorAnnotation("Scale X")]
+    [SerializeField] private float _scaleX = 1f;
 
     protected bool _isEditor = false;
 

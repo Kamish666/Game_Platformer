@@ -10,9 +10,12 @@ public class EnemyColors : MonoBehaviour
 
 
     // Переменные для каждого цвета
-    [GameEditorAnnotation][SerializeField] private bool _isRedEnemy;
-    [GameEditorAnnotation][SerializeField] private bool _isGreenEnemy;
-    [GameEditorAnnotation][SerializeField] private bool _isBlueEnemy;
+    [GameEditorAnnotation("Is red")]
+    [SerializeField] private bool _isRedEnemy;
+    [GameEditorAnnotation("Is green")]
+    [SerializeField] private bool _isGreenEnemy;
+    [GameEditorAnnotation("Is blue")]
+    [SerializeField] private bool _isBlueEnemy;
 
     [SerializeField] private Material redMaterial;
     [SerializeField] private Material greenMaterial;

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8154951063673027290}
   - component: {fileID: 8227413693415932374}
   - component: {fileID: 3241917149563374912}
-  - component: {fileID: 5199173103693231568}
   - component: {fileID: 7768030374072268331}
   - component: {fileID: 8096587180827119594}
+  - component: {fileID: 5199173103693231568}
   - component: {fileID: 8430837179016374490}
   - component: {fileID: 5612461208594516287}
   - component: {fileID: 4431160562999710931}
@@ -137,25 +137,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5199173103693231568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4784451317466501370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70ce5ff739cef01418125a4770301d9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isRedEnemy: 0
-  _isGreenEnemy: 0
-  _isBlueEnemy: 0
-  redMaterial: {fileID: 2100000, guid: 43562d72f26eea5468fbc98b9dc9278a, type: 2}
-  greenMaterial: {fileID: 2100000, guid: 5f649f4bf110d7f4fa13f69df00ba2d2, type: 2}
-  blueMaterial: {fileID: 2100000, guid: 1c07dc47b97f4654bb56dcb1f9a7b9ec, type: 2}
-  grayMaterial: {fileID: 2100000, guid: b65aba487ce5fc9449c01052ca6c28de, type: 2}
 --- !u!114 &7768030374072268331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +179,25 @@ MonoBehaviour:
   _redBluePS: {fileID: 7392983636074429437, guid: 692f3fa586812be44b8b9bccdcb3192b, type: 3}
   _greenBluePS: {fileID: 7392983636074429437, guid: 4d8a50c0ef04de64e93fe6c3c1c191d2, type: 3}
   _allPS: {fileID: 7392983636074429437, guid: b9a63537a59d1c74ab8df43cf6df4477, type: 3}
+--- !u!114 &5199173103693231568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4784451317466501370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ce5ff739cef01418125a4770301d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isRedEnemy: 0
+  _isGreenEnemy: 0
+  _isBlueEnemy: 0
+  redMaterial: {fileID: 2100000, guid: 43562d72f26eea5468fbc98b9dc9278a, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 5f649f4bf110d7f4fa13f69df00ba2d2, type: 2}
+  blueMaterial: {fileID: 2100000, guid: 1c07dc47b97f4654bb56dcb1f9a7b9ec, type: 2}
+  grayMaterial: {fileID: 2100000, guid: b65aba487ce5fc9449c01052ca6c28de, type: 2}
 --- !u!95 &8430837179016374490
 Animator:
   serializedVersion: 5

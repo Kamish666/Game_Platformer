@@ -6,8 +6,10 @@ public class MachineGun : MonoBehaviour, IShot
 {
     [SerializeField] private string projectileTag;
     [SerializeField] private Transform _firePoint;
-    [GameEditorAnnotation][SerializeField] private float _fireRate = 2f;
-    [GameEditorAnnotation][SerializeField] private float _projectileSpeed = 1f;
+    [GameEditorAnnotation("Fire interval")]
+    [SerializeField] private float _fireRate = 2f;
+    [GameEditorAnnotation("Projectile speed")]
+    [SerializeField] private float _projectileSpeed = 1f;
     private PoolerBulletsAndParticalSystems _bulletPooler;
 
     public float FireRate { get => _fireRate; }

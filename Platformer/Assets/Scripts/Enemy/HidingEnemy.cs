@@ -6,19 +6,24 @@ using UnityEngine.UIElements;
 public class HidingEnemy : Enemy
 {
     [Range(0f, 5f)]
-    [GameEditorAnnotation][SerializeField] private float _speed = 2f;
+    [GameEditorAnnotation("Speed")]
+    [SerializeField] private float _speed = 2f;
 
     [SerializeField] private Transform _beetleBody; // ссылка на дочерний объект (сам жук)
 
     private bool _isWait = true;
 
     [SerializeField] private bool _isHidden = true;
-    [GameEditorAnnotation][SerializeField] private float _waitTime = 3f;
+    [GameEditorAnnotation("Wait time")]
+    [SerializeField] private float _waitTime = 3f;
 
-    [GameEditorAnnotation][SerializeField] private float _distance = 1.3f;
+    [GameEditorAnnotation("Distance")]
+    [SerializeField] private float _distance = 1.3f;
 
-    [GameEditorAnnotation][SerializeField] private float _scaleX = 1f;
-    [GameEditorAnnotation][SerializeField] private float _scaleY = 1f;
+    [GameEditorAnnotation("Scale X")]
+    [SerializeField] private float _scaleX = 1f;
+    [GameEditorAnnotation("Scale Y")]
+    [SerializeField] private float _scaleY = 1f;
 
     private float _targetY;
 

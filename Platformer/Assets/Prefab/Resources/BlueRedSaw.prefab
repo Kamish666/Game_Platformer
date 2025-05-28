@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 145392428696583470}
   - component: {fileID: 7217040826242239737}
   - component: {fileID: 8633704936146599970}
-  - component: {fileID: 4633563950732363567}
   - component: {fileID: 3196099191247807035}
+  - component: {fileID: 4633563950732363567}
   m_Layer: 0
   m_Name: BlueRedSaw
   m_TagString: Untagged
@@ -144,6 +144,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3196099191247807035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3238044819595505220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 061b27bdd2c1bc34a9090960e9059f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+  _canTakeDamage: 0
+  _scaleSaw: 1
+  _target: {fileID: 7996529421970155568}
 --- !u!114 &4633563950732363567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,19 +179,3 @@ MonoBehaviour:
   greenMaterial: {fileID: 2100000, guid: 5f649f4bf110d7f4fa13f69df00ba2d2, type: 2}
   blueMaterial: {fileID: 2100000, guid: 1c07dc47b97f4654bb56dcb1f9a7b9ec, type: 2}
   grayMaterial: {fileID: 2100000, guid: b65aba487ce5fc9449c01052ca6c28de, type: 2}
---- !u!114 &3196099191247807035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3238044819595505220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 061b27bdd2c1bc34a9090960e9059f62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 1
-  _canTakeDamage: 0
-  _scaleSaw: 1
-  _target: {fileID: 7996529421970155568}

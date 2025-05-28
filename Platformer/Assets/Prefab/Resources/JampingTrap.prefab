@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6833518191704087866}
   - component: {fileID: 2614714623056197735}
   - component: {fileID: 6497292110830869106}
-  - component: {fileID: 4794903686934227145}
   - component: {fileID: 3306755865955351860}
+  - component: {fileID: 4794903686934227145}
   - component: {fileID: 2549541680649819594}
   m_Layer: 0
   m_Name: JampingTrap
@@ -103,6 +103,25 @@ MonoBehaviour:
   _jamp: {fileID: 0}
   _strenght: 70
   _scaleX: 1
+--- !u!114 &3306755865955351860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3012483197036000402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ce5ff739cef01418125a4770301d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isRedEnemy: 0
+  _isGreenEnemy: 0
+  _isBlueEnemy: 0
+  redMaterial: {fileID: 2100000, guid: 43562d72f26eea5468fbc98b9dc9278a, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 5f649f4bf110d7f4fa13f69df00ba2d2, type: 2}
+  blueMaterial: {fileID: 2100000, guid: 1c07dc47b97f4654bb56dcb1f9a7b9ec, type: 2}
+  grayMaterial: {fileID: 2100000, guid: b65aba487ce5fc9449c01052ca6c28de, type: 2}
 --- !u!61 &4794903686934227145
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,25 +167,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.625, y: 0.375}
   m_EdgeRadius: 0
---- !u!114 &3306755865955351860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3012483197036000402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70ce5ff739cef01418125a4770301d9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isRedEnemy: 0
-  _isGreenEnemy: 0
-  _isBlueEnemy: 0
-  redMaterial: {fileID: 2100000, guid: 43562d72f26eea5468fbc98b9dc9278a, type: 2}
-  greenMaterial: {fileID: 2100000, guid: 5f649f4bf110d7f4fa13f69df00ba2d2, type: 2}
-  blueMaterial: {fileID: 2100000, guid: 1c07dc47b97f4654bb56dcb1f9a7b9ec, type: 2}
-  grayMaterial: {fileID: 2100000, guid: b65aba487ce5fc9449c01052ca6c28de, type: 2}
 --- !u!95 &2549541680649819594
 Animator:
   serializedVersion: 5

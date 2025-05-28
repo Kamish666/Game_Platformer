@@ -6,14 +6,16 @@ using UnityEngine;
 public class SawRotator : Saw
 {
     [Header("Настройки вращения")]
-    [GameEditorAnnotation][SerializeField] private float _rotationSpeed = 90f;
+    [GameEditorAnnotation("Rotation speed")]
+    [SerializeField] private float _rotationSpeed = 90f;
 
     [Header("Настройки компонентов")]
     [SerializeField] private Transform _stick; // Палка
     [SerializeField] private Transform _saw;   // Пила
 
     [Header("Настройки длины")]
-    [GameEditorAnnotation][SerializeField] private float _stickLength = 2f; // Желаемая длина палки в Unity-единицах
+    [GameEditorAnnotation("Length stick")]
+    [SerializeField] private float _stickLength = 2f; // Желаемая длина палки в Unity-единицах
 
     private void Update()
     {
