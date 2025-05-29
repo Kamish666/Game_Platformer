@@ -17,6 +17,8 @@ public class JumpingTrap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ApplyScale();
+
         ChangeColor changeColor = ChangeColor.instance;
         if (changeColor == null)
             _isEditor = true;

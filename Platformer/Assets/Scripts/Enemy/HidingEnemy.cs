@@ -31,6 +31,8 @@ public class HidingEnemy : MonoBehaviour
     {
         _targetY = 0;
 
+        ApplyScale();
+
         ChangeColor changeColor = ChangeColor.instance;
         if (changeColor == null)
             StartCoroutine(Editor());
