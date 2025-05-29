@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6649546199050687369}
   - component: {fileID: 692991079843609251}
   - component: {fileID: 7467647238223597746}
+  - component: {fileID: -8383067769960722692}
   m_Layer: 0
   m_Name: HidingEnemy
   m_TagString: Untagged
@@ -74,6 +75,20 @@ MonoBehaviour:
   greenMaterial: {fileID: 2100000, guid: 5f649f4bf110d7f4fa13f69df00ba2d2, type: 2}
   blueMaterial: {fileID: 2100000, guid: 1c07dc47b97f4654bb56dcb1f9a7b9ec, type: 2}
   grayMaterial: {fileID: 2100000, guid: b65aba487ce5fc9449c01052ca6c28de, type: 2}
+--- !u!114 &-8383067769960722692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739190829328842058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de426b406b453743a89d3ab50e16dfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+  _canTakeDamage: 0
 --- !u!1001 &5655508551500414656
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7103462792753037992}
   - component: {fileID: 7733204000337888570}
   - component: {fileID: 98183396202015360}
+  - component: {fileID: -2574168109444264597}
   m_Layer: 0
   m_Name: BlueRedBarnacle
   m_TagString: Untagged
@@ -191,3 +192,17 @@ MonoBehaviour:
   greenMaterial: {fileID: 2100000, guid: 5f649f4bf110d7f4fa13f69df00ba2d2, type: 2}
   blueMaterial: {fileID: 2100000, guid: 1c07dc47b97f4654bb56dcb1f9a7b9ec, type: 2}
   grayMaterial: {fileID: 2100000, guid: b65aba487ce5fc9449c01052ca6c28de, type: 2}
+--- !u!114 &-2574168109444264597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302536323382396130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de426b406b453743a89d3ab50e16dfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+  _canTakeDamage: 0

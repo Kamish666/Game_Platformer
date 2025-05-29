@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundPatrol : Enemy
+[RequireComponent(typeof(Enemy))]
+public class GroundPatrol : MonoBehaviour
 {
     [Range(0, 5f)]
     [GameEditorAnnotation("Speed")]

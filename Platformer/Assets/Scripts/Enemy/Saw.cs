@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Saw : Enemy
+[RequireComponent(typeof(Enemy))]
+public class Saw : MonoBehaviour
 {
     [Header("Настройки масштабирования")]
     [Range(0f, 10f)]
@@ -19,7 +20,8 @@ public class Saw : Enemy
 
         ApplyScale();
 
-        if (_isEditor == true)
+        ChangeColor changeColor = ChangeColor.instance;
+        if (changeColor == null)
             StartCoroutine(Editor());
     }
 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 59786293593100401}
   - component: {fileID: 6771116448562149095}
   - component: {fileID: 6491068539486352665}
+  - component: {fileID: -851967903569829600}
   m_Layer: 0
   m_Name: BlueFly
   m_TagString: Untagged
@@ -181,3 +182,17 @@ MonoBehaviour:
   greenMaterial: {fileID: 2100000, guid: 5f649f4bf110d7f4fa13f69df00ba2d2, type: 2}
   blueMaterial: {fileID: 2100000, guid: 1c07dc47b97f4654bb56dcb1f9a7b9ec, type: 2}
   grayMaterial: {fileID: 2100000, guid: b65aba487ce5fc9449c01052ca6c28de, type: 2}
+--- !u!114 &-851967903569829600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8638278425544021435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de426b406b453743a89d3ab50e16dfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+  _canTakeDamage: 0

@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AirPatrol : Enemy
+[RequireComponent(typeof(Enemy))]
+public class AirPatrol : MonoBehaviour
 {
     [GameEditorAnnotation("Points")]
     [SerializeField] protected Vector2[] _points;

@@ -2833,6 +2833,7 @@ GameObject:
   - component: {fileID: 519420061}
   - component: {fileID: 519420062}
   - component: {fileID: 519420063}
+  - component: {fileID: 519420064}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3171,72 +3172,135 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16bc7e7feed47dd48abe42849ae6fcf4, type: 3}
+  m_Script: {fileID: 11500000, guid: 24a52d0605040a946b46252b9f4e3f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _pools:
-  - tag: Bomber All Projectile
+  - tag: 
     obj: {fileID: 4808511787446679198, guid: 771e321471ce2004499e46975f4d8fc5, type: 3}
     amount: 5
-  - tag: Bomber Red Projectile
-    obj: {fileID: 4808511787446679198, guid: b0ee847f67e9cce44b1ac2b41b7061d1, type: 3}
-    amount: 5
-  - tag: Bomber Green Projectile
-    obj: {fileID: 4808511787446679198, guid: 50117bc8f03dd2b41a3cfd96e2f41883, type: 3}
-    amount: 5
-  - tag: Bomber Blue Projectile
+  - tag: 
     obj: {fileID: 4808511787446679198, guid: c09d1e0dc3981be4f99b2e35fc2bbcd9, type: 3}
     amount: 5
-  - tag: Bomber Red Green Projectile
-    obj: {fileID: 4808511787446679198, guid: deea691e4f7466844b456c863432d123, type: 3}
+  - tag: 
+    obj: {fileID: 4808511787446679198, guid: 50117bc8f03dd2b41a3cfd96e2f41883, type: 3}
     amount: 5
-  - tag: Bomber Red Blue Projectile
-    obj: {fileID: 4808511787446679198, guid: d7a1c24fef4b2824b91e1940e35f057b, type: 3}
-    amount: 5
-  - tag: Bomber Green Blue Projectile
+  - tag: 
     obj: {fileID: 4808511787446679198, guid: 56d6d65ceca5edd46a2e0f67da043273, type: 3}
     amount: 5
-  - tag: Rocket All
-    obj: {fileID: 7030956262142281772, guid: bc6cda7b2b3386c4bab9e407caaba215, type: 3}
+  - tag: 
+    obj: {fileID: 4808511787446679198, guid: b0ee847f67e9cce44b1ac2b41b7061d1, type: 3}
     amount: 5
-  - tag: Rocket Red
-    obj: {fileID: 7030956262142281772, guid: 7dd4cacc29b0bed4d911d794b9e4e1da, type: 3}
+  - tag: 
+    obj: {fileID: 4808511787446679198, guid: d7a1c24fef4b2824b91e1940e35f057b, type: 3}
     amount: 5
-  - tag: Rocket Green
-    obj: {fileID: 7030956262142281772, guid: e17e836a86c97494f9178561ab64e93f, type: 3}
+  - tag: 
+    obj: {fileID: 4808511787446679198, guid: deea691e4f7466844b456c863432d123, type: 3}
     amount: 5
-  - tag: Rocket Blue
-    obj: {fileID: 7030956262142281772, guid: 51929f3824726f848b21c60dee9577a3, type: 3}
-    amount: 5
-  - tag: Rocket Red Green
-    obj: {fileID: 7030956262142281772, guid: 6ad89ee21c1c8b14c9b2938aeebbabd3, type: 3}
-    amount: 5
-  - tag: Rocket Red Blue
-    obj: {fileID: 7030956262142281772, guid: f3016107c7234284ea0ae4b77adc3a95, type: 3}
-    amount: 5
-  - tag: Rocket Green Blue
-    obj: {fileID: 7030956262142281772, guid: 44c7ae4e2f4a9ad4ca92648d2c1230e3, type: 3}
-    amount: 5
-  - tag: MachineGun All
+  - tag: 
     obj: {fileID: 2644314189053595805, guid: dcebc7645b409084ba9ef1d31d9ee693, type: 3}
     amount: 5
-  - tag: MachineGun Red
-    obj: {fileID: 2644314189053595805, guid: c0e776e3c3c726d4d957418508b41457, type: 3}
-    amount: 5
-  - tag: MachineGun Green
-    obj: {fileID: 2644314189053595805, guid: b643489b3a4921c479dd87c0ef670213, type: 3}
-    amount: 5
-  - tag: MachineGun Blue
+  - tag: 
     obj: {fileID: 2644314189053595805, guid: db5b6867ad5dc714b8d9b5ac4ba528fd, type: 3}
     amount: 5
-  - tag: MachineGun Red Green
-    obj: {fileID: 2644314189053595805, guid: 14f9ed26dc260cb458f69550b32a4a1e, type: 3}
+  - tag: 
+    obj: {fileID: 2644314189053595805, guid: 65dc43cbbd5aa694caec338ca14b5ef4, type: 3}
     amount: 5
-  - tag: MachineGun Red Blue
+  - tag: 
+    obj: {fileID: 2644314189053595805, guid: b643489b3a4921c479dd87c0ef670213, type: 3}
+    amount: 5
+  - tag: 
     obj: {fileID: 2644314189053595805, guid: 3ad82449363ecc2449d8fe09addfcb14, type: 3}
     amount: 5
-  - tag: MachineGun Green Blue
-    obj: {fileID: 2644314189053595805, guid: 65dc43cbbd5aa694caec338ca14b5ef4, type: 3}
+  - tag: 
+    obj: {fileID: 2644314189053595805, guid: 14f9ed26dc260cb458f69550b32a4a1e, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 2644314189053595805, guid: c0e776e3c3c726d4d957418508b41457, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 7030956262142281772, guid: bc6cda7b2b3386c4bab9e407caaba215, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 7030956262142281772, guid: 51929f3824726f848b21c60dee9577a3, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 7030956262142281772, guid: 44c7ae4e2f4a9ad4ca92648d2c1230e3, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 7030956262142281772, guid: e17e836a86c97494f9178561ab64e93f, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 7030956262142281772, guid: f3016107c7234284ea0ae4b77adc3a95, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 7030956262142281772, guid: 6ad89ee21c1c8b14c9b2938aeebbabd3, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 7030956262142281772, guid: 7dd4cacc29b0bed4d911d794b9e4e1da, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 5050355767157220534, guid: ade1984393ed1f6458b14eb514582fbd, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 5050355767157220534, guid: 8fe4bc9fa2344ff458554b21f0ac71c7, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 5050355767157220534, guid: 1227861b19ac79c4cb801f37144b06c5, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 5050355767157220534, guid: df6b69202ce19f94381a6e635b6c93c1, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 5050355767157220534, guid: bea8e494d19f33b4dba33166b83864d8, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 5050355767157220534, guid: 561f8dc02687cfc4ea289c439cb3df27, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 5050355767157220534, guid: 6d58bb0982335e44a88f3876caf9c535, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 7392983636074429437, guid: b9a63537a59d1c74ab8df43cf6df4477, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 7392983636074429437, guid: fa6b08c98aefd8641b15dfc0480f460b, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 7392983636074429437, guid: 4d8a50c0ef04de64e93fe6c3c1c191d2, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 7392983636074429437, guid: 01873ef2b57567442b051a539b26f868, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 7392983636074429437, guid: 692f3fa586812be44b8b9bccdcb3192b, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 7392983636074429437, guid: 5a34f3da7d0a64e4391dd00843953a4d, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 7392983636074429437, guid: 0fbbabf1a2be6ed449aeb66ea658525b, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 19169200383526127, guid: f5276e584786aea4ab8a7e467b2f1eae, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 19169200383526127, guid: 96d20c210bba3ed4ca64acf1a1828dee, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 19169200383526127, guid: f7f1f7afd600ad941b69ddabb632c666, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 19169200383526127, guid: c5c2e60179ffba94fa87b976a020ef9e, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 19169200383526127, guid: 16a59382ad2ddc549b0ebd8fcca8895f, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 19169200383526127, guid: 3ed13667c97fec44f957befa4ef9c9e8, type: 3}
+    amount: 5
+  - tag: 
+    obj: {fileID: 19169200383526127, guid: d08566a7a83159a4aa15286ac14d7167, type: 3}
     amount: 5
 --- !u!114 &519420063
 MonoBehaviour:
@@ -3250,6 +3314,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8600280168d36484cbaa7900f61bed10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &519420064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &529485576
 GameObject:
   m_ObjectHideFlags: 0

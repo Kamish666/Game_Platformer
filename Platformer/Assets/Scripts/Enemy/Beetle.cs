@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Beetle : Enemy
+[RequireComponent(typeof(Enemy))]
+public class Beetle : MonoBehaviour
 {
     [Range(0f, 5f)]
     [GameEditorAnnotation][SerializeField] private float _speed = 2f;

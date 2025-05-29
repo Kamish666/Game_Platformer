@@ -33,7 +33,8 @@ public class SawRotator : Saw
         base.Start();
         UpdateStickAndSaw();
 
-        if (_isEditor == true)
+        ChangeColor changeColor = ChangeColor.instance;
+        if (changeColor == null)
             StartCoroutine(Editor());
     }
 

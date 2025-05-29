@@ -123,24 +123,18 @@ public class Enemy : MonoBehaviour
     [SerializeField] private bool _canTakeDamage = false;
     private GameObject _enemy;
 
-    protected bool _isEditor = false;
-
     private void Awake()
     {
-        ChangeColor changeColor = ChangeColor.instance;
-        if (changeColor == null)
-            _isEditor = true;
-
         _enemy = gameObject;
     }
 
-    protected void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.Log("OnTriggerEnter2D работает");
         HandleCollision(collision);
     }
 
-    protected void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log("OnCollisionEnter2D работает");
         HandleCollision(collision.collider);

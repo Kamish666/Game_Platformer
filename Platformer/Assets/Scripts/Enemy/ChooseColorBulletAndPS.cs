@@ -107,8 +107,7 @@ public class ChooseColorBulletAndPS : MonoBehaviour
         var prefabPS = _colorPrefabsPS[colorType];
 
         bulletPooler.Preload(prefabBullet, amountBullet);
-        bulletPooler.Preload(prefabPS, 
-            amountBullet * 3/4 + (amountBullet % (3/4) == 0 ? 0 : 1));
+        bulletPooler.Preload(prefabPS, Mathf.CeilToInt(amountBullet * 0.75f));
 
         shooter.ProjectileTag = prefabBullet.name;
     }

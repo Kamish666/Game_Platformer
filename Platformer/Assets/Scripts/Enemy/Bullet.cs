@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : Enemy
+[RequireComponent(typeof(Enemy))]
+public class Bullet : MonoBehaviour
 {
 
     [SerializeField] private float _timeToDestroy = 10f;
@@ -31,11 +32,8 @@ public class Bullet : Enemy
         gameObject.SetActive(false);
     }
 
-    protected void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log("Я ребенок");
-        base.OnTriggerEnter2D(collision);
-
         PoolerBulletsAndPS.instance.SpawnFromPool(_bulletPS.name, transform.position, transform.rotation);
 
         //Destroy(gameObject);

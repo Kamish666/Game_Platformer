@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7522148554694635014}
   - component: {fileID: 759703811447911169}
   - component: {fileID: 1112083392303497732}
+  - component: {fileID: -4720664018602951550}
   m_Layer: 0
   m_Name: DadBeeBullet
   m_TagString: Untagged
@@ -103,6 +104,7 @@ MonoBehaviour:
   _damage: 1
   _canTakeDamage: 0
   _timeToDestroy: 10
+  _bulletPS: {fileID: 0}
   _speed: 5
 --- !u!58 &7522148554694635014
 CircleCollider2D:
@@ -185,3 +187,17 @@ MonoBehaviour:
   greenMaterial: {fileID: 2100000, guid: 5f649f4bf110d7f4fa13f69df00ba2d2, type: 2}
   blueMaterial: {fileID: 2100000, guid: 1c07dc47b97f4654bb56dcb1f9a7b9ec, type: 2}
   grayMaterial: {fileID: 2100000, guid: b65aba487ce5fc9449c01052ca6c28de, type: 2}
+--- !u!114 &-4720664018602951550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150653084952982317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de426b406b453743a89d3ab50e16dfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+  _canTakeDamage: 0

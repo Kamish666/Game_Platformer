@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AirPatrolLoop : Enemy
+[RequireComponent(typeof(Enemy))]
+public class AirPatrolLoop : MonoBehaviour
 {
     [SerializeField] protected Transform[] _points;
     protected Transform _target;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class HidingEnemy : Enemy
+public class HidingEnemy : MonoBehaviour
 {
     [Range(0f, 5f)]
     [GameEditorAnnotation("Speed")]
@@ -31,7 +31,8 @@ public class HidingEnemy : Enemy
     {
         _targetY = 0;
 
-        if (_isEditor == true)
+        ChangeColor changeColor = ChangeColor.instance;
+        if (changeColor == null)
             StartCoroutine(Editor());
     }
 
