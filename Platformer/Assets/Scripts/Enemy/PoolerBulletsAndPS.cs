@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using static PoolerBulletsAndParticalSystems;
+using static PoolerBulletsAndPS;
 
-public class PoolerBulletsAndParticalSystems : MonoBehaviour
+public class PoolerBulletsAndPS : MonoBehaviour
 {
     [SerializeField] private List<Pool> _pools = new List<Pool>();
 
     private Dictionary<string, Queue<GameObject>> _poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
-    public static PoolerBulletsAndParticalSystems instance;
+    public static PoolerBulletsAndPS instance;
 
     private void Awake()
     {

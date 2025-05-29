@@ -10,11 +10,11 @@ public class PlayerGun : MonoBehaviour
     [SerializeField] private float _projectileSpeed = 10f;
     [SerializeField] private Transform _playerTransform;
 
-    private PoolerBulletsAndParticalSystems _bulletPooler;
+    private PoolerBulletsAndPS _bulletPooler;
 
     private void Start()
     {
-        _bulletPooler = PoolerBulletsAndParticalSystems.instance;
+        _bulletPooler = PoolerBulletsAndPS.instance;
     }
 
     private void Update()

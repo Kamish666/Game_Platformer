@@ -117,7 +117,7 @@ public class Enemy : MonoBehaviour
 {
     [Range(0, 10)]
     //[GameEditorAnnotation]
-    [SerializeField] private float _damage;
+    [SerializeField] private float _damage = 1;
 
     //[GameEditorAnnotation]
     [SerializeField] private bool _canTakeDamage = false;

@@ -15,7 +15,7 @@ public enum ColorType
 }
 
 
-public class ChooseColorBullet : MonoBehaviour
+public class ChooseColorBulletAndPS : MonoBehaviour
 {
 //    [Header("Снаряды")]
     [SerializeField] 
@@ -97,7 +97,7 @@ public class ChooseColorBullet : MonoBehaviour
 
     private void ChangePaletteColor(ColorType colorType)
     {
-        var bulletPooler = PoolerBulletsAndParticalSystems.instance;
+        var bulletPooler = PoolerBulletsAndPS.instance;
         var shooter = GetComponent<IShot>();
 
         float fireRate = shooter.FireRate;
@@ -108,7 +108,7 @@ public class ChooseColorBullet : MonoBehaviour
 
         bulletPooler.Preload(prefabBullet, amountBullet);
         bulletPooler.Preload(prefabPS, 
-            amountBullet / 2 + (amountBullet % 2 == 0 ? 0 : 1));
+            amountBullet * 3/4 + (amountBullet % (3/4) == 0 ? 0 : 1));
 
         shooter.ProjectileTag = prefabBullet.name;
     }

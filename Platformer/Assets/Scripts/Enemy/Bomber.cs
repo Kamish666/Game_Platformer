@@ -19,7 +19,7 @@ public class Bomber : AirPatrol, IShot
     [GameEditorAnnotation("Fire interval")]
     [SerializeField] private float _fireRate = 4f;
 
-    private PoolerBulletsAndParticalSystems _bulletPooler;
+    private PoolerBulletsAndPS _bulletPooler;
 
     public float FireRate { get => _fireRate; }
 
@@ -29,7 +29,7 @@ public class Bomber : AirPatrol, IShot
     {
         base.Start();
 
-        _bulletPooler = PoolerBulletsAndParticalSystems.instance;
+        _bulletPooler = PoolerBulletsAndPS.instance;
 
         StartCoroutine(Shooting());
     }

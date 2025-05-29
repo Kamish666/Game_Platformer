@@ -36,7 +36,7 @@ public class Bullet : Enemy
         //Debug.Log("Я ребенок");
         base.OnTriggerEnter2D(collision);
 
-        PoolerBulletsAndParticalSystems.instance.SpawnFromPool(_bulletPS.name, transform.position, transform.rotation);
+        PoolerBulletsAndPS.instance.SpawnFromPool(_bulletPS.name, transform.position, transform.rotation);
 
         //Destroy(gameObject);
         gameObject.SetActive(false);
