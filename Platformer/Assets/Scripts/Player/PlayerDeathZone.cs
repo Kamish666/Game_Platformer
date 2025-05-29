@@ -5,32 +5,31 @@ using UnityEngine;
 public class PlayerDeathZone : MonoBehaviour
 {
     [SerializeField] private LayerMask _collisionMask;
+    private bool _isInside;
+    private DeathZoneManager _manager;
 
-    private GameObject _player;
-    private Health _health;
+    public bool IsInside => _isInside;
 
-    private void Start()
+    public void Init(DeathZoneManager manager)
     {
-        _player = GetComponentInParent<PlayerColors>().gameObject;
-        _health = GetComponentInParent<Health>();
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        HandleCollision(collision.collider);
+        _manager = manager;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        HandleCollision(collision);
+        if (((1 << collision.gameObject.layer) & _collisionMask) != 0)
+        {
+            _isInside = true;
+            _manager?.CheckZones();
+        }
     }
 
-    private void HandleCollision(Collider2D collider)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        //Debug.Log("PlayerDeathZone " + collider.name);
-        if (((1 << collider.gameObject.layer) & _collisionMask) != 0)
+        if (((1 << collision.gameObject.layer) & _collisionMask) != 0)
         {
-            _health.HandleDeath();
+            _isInside = false;
+            _manager?.CheckZones();
         }
     }
 }
