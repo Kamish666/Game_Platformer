@@ -10,10 +10,9 @@ public class RocketBullet : Bullet
 
     private Transform _player;
 
-    new private void Awake()
+    private void Awake()
     {
-        base.Awake();
-        _player = FindAnyObjectByType<ChangeColor>()?.transform;
+        _player = ChangeColor.instance?.transform;
     }
 
 

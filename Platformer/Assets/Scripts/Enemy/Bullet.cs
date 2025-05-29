@@ -10,11 +10,6 @@ public class Bullet : MonoBehaviour
     //private GameObject _bullet;
     [SerializeField] private GameObject _bulletPS;
 
-    protected void Awake()
-    {
-        //Debug.Log("Метод успешно отработал");
-        //_bullet = this.gameObject;
-    }
 
     private void Start()
     {

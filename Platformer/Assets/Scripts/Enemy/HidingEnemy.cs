@@ -37,12 +37,12 @@ public class HidingEnemy : MonoBehaviour
     }
 
 
-    protected virtual void OnValidate()
+    private void OnValidate()
     {
         ApplyScale();
     }
 
-    protected void ApplyScale()
+    private void ApplyScale()
     {
         _beetleBody.localScale = new Vector3(_scaleX, _scaleY, _beetleBody.localScale.z);
     }
