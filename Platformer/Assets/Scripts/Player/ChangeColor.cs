@@ -134,6 +134,18 @@ public class ChangeColor : MonoBehaviour
         enemyColors?.Invoke(_activeColorsM[0], _activeColorsM[1], _activeColorsM[2]);
     }
 
+    public void ChooceColor(string color)
+    {
+        if (color == "Red")
+            _currentColorIndex = 0;
+        else if (color == "Green")
+            _currentColorIndex = 1;
+        else 
+            _currentColorIndex = 2;
+
+        UpdateColorVisibility();
+    }
+
     private void DeactiveScript()
     {
         ChangeColor.instance.enabled = false;

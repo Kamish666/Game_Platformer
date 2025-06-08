@@ -48,6 +48,7 @@ public class SceneController : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
 
+        OnLevelExit?.Invoke();
 
         if (System.IO.Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(nextSceneIndex)) != "Editor") {
 
@@ -61,7 +62,6 @@ public class SceneController : MonoBehaviour
                 _saveLvlData.SaveGame(data);
             }
 
-            OnLevelExit?.Invoke();
 
             // Проверка, существует ли следующая сцена
             if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
